@@ -8,10 +8,9 @@
 	<script type="text/javascript" src="//use.typekit.net/qpm6ost.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-
 	<link rel="stylesheet" type="text/css" href="css/main.css">
-	
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="main.js"></script>
 </head>
 <body class="checkout">
@@ -44,7 +43,7 @@
 							<small class="type">Grande</small>
 							<span class="pull-right">
 								<small>1x</small>
-								<span>R$999,90</span>
+								<span>R$ 999,90</span>
 							</span>
 						</div>
 					</div>
@@ -60,7 +59,7 @@
 							<small class="type">Médio</small>
 							<span class="pull-right">
 								<small>1x</small>
-								<span>R$99,90</span>
+								<span>R$ 99,90</span>
 							</span>
 						</div>
 					</div>
@@ -70,17 +69,17 @@
 
 						<span class="pull-right">
 							<small>SUBTOTAL</small>
-							<span>R$99,90</span>
+							<span>R$ 99,90</span>
 						</span>
 
 						<span class="pull-right">
 							<small>FRETE</small>
-							<span>R$13,90</span>
+							<span>R$ 13,90</span>
 						</span>
 
 						<span class="pull-right">
 							<small>TOTAL</small>
-							<span>R$1216,10</span>
+							<span>R$ 1216,10</span>
 						</span>
 
 					</div>
@@ -95,12 +94,12 @@
 
 					<h2>Forma de envio</h2>
 
-					<div class="form-section">
+					<div class="form-section activate">
 
 						<div class="form-group">
 							<label class="radio">
 								<div>
-									<input type="radio" name="entrega">
+									<input type="radio" name="shipping" value="sedex">
 									<div class="input-radio"></div>
 								</div>
 								<div>
@@ -108,14 +107,14 @@
 									<br/>
 									<small>Entrega em até 1 dia útil</small>
 								</div>
-								<div>R$213,10</div>
+								<div class="detail">R$ 213,10</div>
 							</label>
 						</div>
 
 						<div class="form-group">
 							<label class="radio">
 								<div>
-									<input type="radio" name="entrega">
+									<input type="radio" name="shipping" value="pac">
 									<div class="input-radio"></div>
 								</div>
 								<div>
@@ -123,7 +122,7 @@
 									<br/>
 									<small>Entrega em até 7 dias úteis</small>
 								</div>
-								<div>R$8,10</div>
+								<div class="detail">R$ 8,10</div>
 							</label>
 						</div>
 
@@ -131,10 +130,39 @@
 
 					<h2>Pagamento</h2>
 
+					<div class="form-section inactive">
 
+						<div class="form-group">
+							<label class="radio">
+								<div>
+									<input type="radio" name="payment" value="boleto">
+									<div class="input-radio"></div>
+								</div>
+								<div class="type boleto">
+									Boleto bancário
+								</div>
+							</label>
+						</div>
 
-					<button type="button" class="btn btn-default">voltar à loja</button>
-					<button type="button" class="btn btn-primary pull-right">fechar pedido</button>
+						<div class="form-group">
+							<label class="radio">
+								<div>
+									<input type="radio" name="payment" value="card">
+									<div class="input-radio"></div>
+								</div>
+								<div class="type card">
+									Cartão de crédito
+								</div>
+							</label>
+						</div>
+
+						<p style="display:none">
+							Lorem ipsum dolor sit amet, consectetur elit. Pellentesque lacus dui, fringilla vitae massa in, vulputate sagittis enim. Nullam sodales non lectus non convallis. Nullam malesuada ullamcorper libero, sed ultrices eros iaculis id. Duis luctus massa purus, id eleifend tellus semper quis. Etiam sollicitudin ligula erat, eget convallis diam dignissim et.
+						</p>
+
+					</div>
+
+					<button type="button" class="btn btn-primary pull-right">efetuar pagamento</button>
 
 				</form>
 

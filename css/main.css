@@ -6042,6 +6042,11 @@ small {
   font-weight: 100;
   color: #999999;
 }
+p {
+  font-weight: 100;
+  font-size: 13px;
+  color: #5c5c5c;
+}
 .btn {
   border-width: 2px;
   border-color: transparent;
@@ -6063,23 +6068,25 @@ label {
 .radio {
   display: table;
   width: 100%;
+  height: 73px;
+  padding: 0;
   background: #f8f8f8;
   color: #5c5c5c;
   font-size: 15px;
+  line-height: 18px;
   border-radius: 5px;
-  padding: 16px 0;
   -webkit-transition: 0.2s;
   transition: 0.2s;
-}
-@media (max-width: 767px) {
-  .radio {
-    line-height: 17px;
-  }
 }
 .radio:hover {
   background: #edf5f7;
 }
-.radio.fadeout {
+.inactive .radio:hover {
+  background: #f8f8f8;
+  cursor: no-drop;
+}
+.radio.fadeout,
+.inactive .radio {
   opacity: 0.5;
 }
 .radio > div {
@@ -6087,22 +6094,63 @@ label {
   vertical-align: middle;
 }
 .radio > div:first-child {
-  width: 60px;
+  width: 70px;
   padding-left: 2px;
   text-align: center;
 }
 @media (max-width: 767px) {
   .radio > div:first-child {
-    width: 40px;
+    width: 50px;
+    padding-right: 5px;
   }
 }
-.radio > div:last-child {
+.radio > div.type {
+  position: relative;
+  top: 1px;
+}
+.radio > div.type:before {
+  content: '';
+  display: block;
+  float: left;
+  position: relative;
+  top: -2px;
+  margin-right: 12px;
+  width: 29px;
+  height: 25px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.inactive .radio > div.type:before {
+  -webkit-filter: grayscale(1);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  opacity: 0.4;
+}
+.radio > div.type.card:before {
+  background-image: url("../img/cartao.png");
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  .radio > div.type.card:before {
+    background-image: url("../img/cartao@2x.png");
+    background-size: 29px 20px;
+  }
+}
+.radio > div.type.boleto:before {
+  background-image: url("../img/boleto.png");
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  .radio > div.type.boleto:before {
+    background-image: url("../img/boleto@2x.png");
+    background-size: 21px 25px;
+  }
+}
+.radio > div.detail {
   width: 85px;
   font-weight: 100;
   font-size: 16px;
 }
 @media (max-width: 767px) {
-  .radio > div:last-child {
+  .radio > div.detail {
     text-align: right;
     padding-right: 12px;
     font-size: 14px;
@@ -6163,6 +6211,9 @@ input[type="radio"] {
 .radio:active .input-radio {
   background: rgba(30, 182, 230, 0.5);
 }
+.inactive .radio:active .input-radio {
+  background: none;
+}
 .checked .input-radio {
   text-align: center;
 }
@@ -6173,6 +6224,9 @@ input[type="radio"] {
 }
 .input-radio:focus {
   outline: none;
+}
+.inactive .input-radio {
+  box-shadow: inset 0 0 0 2px #c2c2c2;
 }
 .form-control {
   font-size: 16px;
@@ -6336,7 +6390,7 @@ input[type="radio"] {
 }
 .checkout .column .media .pull-right span {
   text-align: left;
-  width: 61px;
+  width: 68px;
   margin-left: 5px;
   display: inline-block;
 }
