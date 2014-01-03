@@ -6135,9 +6135,9 @@ input[type="radio"] {
   height: 24px;
   top: 0;
   vertical-align: middle;
-  box-shadow: inset 0 0 0 3px #1eb6e6;
+  box-shadow: inset 0 0 0 2px #1eb6e6;
   border-radius: 50%;
-  color: #f8f8f8;
+  color: #1eb6e6;
   -webkit-transition: 0.2s;
   transition: 0.2s;
 }
@@ -6164,7 +6164,6 @@ input[type="radio"] {
   background: rgba(30, 182, 230, 0.5);
 }
 .checked .input-radio {
-  background: #1eb6e6;
   text-align: center;
 }
 .checked .input-radio:before {

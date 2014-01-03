@@ -186,9 +186,9 @@ input[type="radio"] { display: none }
 	top: 0;
 	vertical-align: middle;
 
-	box-shadow: inset 0 0 0 3px @brand-info;
+	box-shadow: inset 0 0 0 2px @brand-info;
 	border-radius: 50%;
-	color: @gray-lighter;
+	color: @brand-info;
 
 	.transition (0.2s);
 
@@ -207,7 +207,7 @@ input[type="radio"] { display: none }
 	}
 
 	.checked & {
-		background: @brand-info;
+		// background: @brand-info;
 		text-align: center;
 		&:before {
 			.translate (0, 0);
