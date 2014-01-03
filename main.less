@@ -1,0 +1,391 @@
+@import url(less/bootstrap.less);
+
+// Colors
+// -------------------------
+
+@brand-primary: 	#DA1B69;
+@brand-success: 	#21CEA0;
+@brand-warning: 	#7E2A8D;
+@brand-danger:  	#F54527;
+@brand-info:  		#1EB6E6;
+
+@gray-lighter: 		#F8F8F8;
+@gray-light: 		#F4F4F4;
+@gray: 				#C9C9C9;
+@gray-dark: 		#999999;
+@black: 			#5C5C5C;
+
+
+// Typography
+// -------------------------
+
+@font-family-sans-serif:  Soleil, "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-size-base: 15px;
+@font-size-h1: 26px;
+@font-size-h2: 18px;
+
+h1 {
+	font-weight: 100;
+}
+
+h2 {
+	font-weight: 500;
+	color: @brand-warning;
+	margin: 21px 0;
+}
+
+a {
+	position: relative;
+	&:hover {
+		color: @brand-info;
+		text-decoration: none;
+		&:after {
+			content: '';
+			display: block;
+			position: absolute;
+			width: 100%; height: 1px;
+			background: @brand-info;
+		}
+	}
+}
+
+b {
+	font-weight: 500;
+}
+
+small {
+	font-weight: 100;
+	color: @gray-dark;
+}
+
+
+// Margins and Paddings
+// -------------------------
+
+@padding-base-horizontal: 14px;
+@padding-base-vertical:   12px;
+@grid-gutter-width: 13px;
+
+
+// Links
+// -------------------------
+
+@link-color: @brand-info;
+
+
+// Mixins
+// -------------------------
+
+.button-size(@padding-vertical; @padding-horizontal; @font-size; @line-height; @border-radius) {
+	padding: @padding-vertical - 2 @padding-horizontal + 15;
+	padding-bottom: @padding-vertical;
+	font-size: @font-size;
+	line-height: @line-height;
+	border-radius: @border-radius;
+	@media (max-width: @screen-xs-max) {
+		padding: @padding-vertical @padding-horizontal + 5;
+	}
+}
+
+
+// Buttons
+// -------------------------
+
+@btn-default-color: 	@brand-primary;
+@btn-default-border: 	@brand-primary;
+@btn-default-bg: 		rgba(0,0,0,0);
+
+.btn {
+	border-width: 2px;
+	border-color: transparent;
+	font-weight: 500;
+	&:hover {
+		border-color: transparent;
+	}
+}
+
+.btn-default {
+	border-color: @brand-primary;
+	&:hover {
+		border-color: darken(@brand-primary,10);
+	}
+}
+
+
+// Forms
+// -------------------------
+
+label {
+	font-size: 14px;
+	font-weight: 400;
+	&.radio {
+		display: table;
+		width: 100%;
+		background: @gray-lighter;
+		color: @black;
+		font-size: 15px;
+		border-radius: 5px;
+		padding: 16px 0;
+		@media (max-width: @screen-xs-max) {
+			line-height: 17px;
+		}
+		div {
+			display: table-cell;
+			vertical-align: middle;
+			input[type="radio"] {
+				@size: 24px;
+				-webkit-appearance: none;
+				-moz-appearance: none;
+				display: block;
+				float: none;
+				padding: 0;
+				left: 0; right: 0; margin: auto;
+				width: @size; height: @size;
+				box-shadow: inset 0 0 0 3px @brand-info;
+				border-radius: 50%;
+				background: none;
+				border: none;
+				&:checked {
+					background: @brand-info;
+					.glyphicon; .glyphicon-ok;
+					width: @size !important;
+					text-align: center;
+					color: @gray-lighter;
+					&:before {
+						font-size: 11px;
+						line-height: @size;
+					}
+				}
+			}
+			&:first-child {
+				width: 60px;
+				@media (max-width: @screen-xs-max) {
+					width: 40px;
+				}
+				padding-left: 2px;
+				text-align: center;
+			}
+			&:last-child {
+				width: 85px;
+				font-weight: 100;
+				font-size: 16px;
+				@media (max-width: @screen-xs-max) {
+					text-align: right;
+					padding-right: 12px;
+					font-size: 14px;
+				}
+			}
+			small {
+				@media (max-width: @screen-xs-max) {
+					font-size: 11px;
+				}
+			}
+		}
+	}
+}
+
+.form-control {
+	font-size: 16px;
+	line-height: 1;
+	font-weight: 100;
+	color: @black;
+	background: @gray-lighter;
+	border-color: darken(@gray-light,2);
+	box-shadow: none;
+	-webkit-appearance: none;
+	&:focus {
+		border-color: @brand-primary;
+		box-shadow: none;
+	}
+}
+
+.form-inline {
+	select.form-control {
+		width: 100%;
+	}
+	.form-group {
+		margin-bottom: 15px;
+	}
+}
+
+.form-section {
+	margin-bottom: 50px;
+}
+
+
+// Checkout
+// -------------------------
+
+.checkout {
+
+	background: @gray-lighter;	
+
+	.header {
+		background: @gray-light;
+		padding: 30px;
+		.logo {
+			background: url(../img/logo.png) no-repeat center center;
+			background-size: auto 100%;
+			height: 70px;
+		}
+		@media (max-width: @screen-xs-max) {
+			padding: 15px;
+			.logo {
+				height: 50px;
+			}
+		}
+	}
+
+	.container {
+		height: 1000px;
+	}
+
+	.steps {
+		@circle: 14px;
+		@width: 140px;
+		@margin: 40px;
+
+		margin: @margin 0 @margin - 6px;
+
+		@media (max-width: @screen-xs-max) {
+			@margin: 25px;
+			margin: @margin 0 @margin - 6px;
+		}
+
+		text-align: center;
+
+		div {
+			font-size: 12px;
+			font-weight: 600;
+			color: @brand-primary;
+			list-style: none;
+			display: inline-block;
+			position: relative;
+			width: @width;
+			padding: 30px 0 0;
+			cursor: pointer;
+			&:hover {
+				&:before {
+					.scale(1.2);
+				}
+			}
+			&:before, &:after {
+				content: '';
+				position: absolute;
+				left: 0; right: 0; margin: auto;
+				display: block;
+				width: @circle; height: @circle;
+				background: @brand-primary;
+				border-radius: 100%;
+				top: 0;
+			}
+			&:before {
+				box-shadow: 0 0 0 8px @gray-lighter;
+				z-index: 100;
+				.transition(0.3s);
+			}
+			&:after {
+				right: (@width / 2);
+				left: auto;
+				width: 100%; height: 1px;
+				top: @circle / 2;
+			}
+			&:first-child:after {
+				display: none;
+			}
+			&.active {
+				&:before {
+					box-shadow: 0 0 0 4px @gray-lighter,
+								0 0 0 6px @brand-primary,
+								0 0 0 14px @gray-lighter;
+				}
+			}
+			&.inactive {
+				color: @gray;
+				&:before, &:after {
+					background: @gray;
+				}
+			}
+		}
+		@media (max-width: @screen-xs-max) {
+			@width: 75px;	
+			div {
+				width: @width;
+				font-size: 65%;
+				&:after {
+					right: (@width / 2);
+				}
+			}
+		}
+	}
+
+	.column {
+		@margin-left: 25px;
+		@padding-sides: 23px;
+
+		background: white;
+		overflow: hidden;
+		padding-right: @padding-sides;
+		padding-left: @padding-sides;
+		padding-bottom: 25px;
+
+		@media (min-width: @screen-sm) {
+			&:last-child {
+				padding-left: @margin-left + @padding-sides;
+				box-shadow: inset @margin-left 0 0 @gray-lighter;
+			}
+		}
+
+		h1 {
+			color: @brand-primary;
+			margin: 0;
+			@padding: 24px;
+			padding: @padding 0 0;
+			margin-bottom: @padding + 3px;
+		}
+
+		hr {
+			width: 120%;
+			margin-left: -10%;
+			border-color: @gray-lighter;
+		}
+
+		.media {
+			margin: -5px 0;
+			line-height: 180%;
+			img {
+				width: 55px;
+				border-radius: 50%;
+			}
+			.pull-left {
+				margin-right: 6%;
+			}
+			.pull-right {
+				font-weight: 100;
+				color: @black;
+				clear:both;
+				span {
+					text-align: left;
+					width: 61px;
+					margin-left: 5px;
+					display: inline-block;
+				}
+			}
+			&.totals .pull-right:last-child {
+				small, span {
+					color: @black;
+					font-weight: 500;
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
