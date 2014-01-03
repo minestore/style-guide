@@ -12,12 +12,7 @@
 
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	
-	<script src="js/button.js"></script>
-	<script>
-		$(function() {
-			$('.btn').button();
-		});
-	</script>
+	<script src="main.js"></script>
 </head>
 <body class="checkout">
 
@@ -105,7 +100,8 @@
 						<div class="form-group">
 							<label class="radio">
 								<div>
-									<input type="radio" name="entrega" checked>
+									<input type="radio" name="entrega">
+									<div class="input-radio"></div>
 								</div>
 								<div>
 									SEDEX
@@ -120,6 +116,7 @@
 							<label class="radio">
 								<div>
 									<input type="radio" name="entrega">
+									<div class="input-radio"></div>
 								</div>
 								<div>
 									PAC
