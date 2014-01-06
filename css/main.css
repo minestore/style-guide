@@ -6065,6 +6065,12 @@ label {
   font-size: 14px;
   font-weight: 400;
 }
+label.span-text {
+  white-space: nowrap;
+}
+label.span-text:after {
+  content: '';
+}
 .radio {
   display: table;
   width: 100%;

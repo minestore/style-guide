@@ -128,6 +128,12 @@ p {
 label {
 	font-size: 14px;
 	font-weight: 400;
+	&.span-text {
+		white-space: nowrap;
+		&:after {
+			content: ''
+		}
+	}
 }
 
 .radio {
