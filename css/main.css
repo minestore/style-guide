@@ -6145,12 +6145,13 @@ label {
   }
 }
 .radio > div.detail {
-  width: 85px;
+  width: 92px;
   font-weight: 100;
   font-size: 16px;
 }
 @media (max-width: 767px) {
   .radio > div.detail {
+    width: 75px;
     text-align: right;
     padding-right: 12px;
     font-size: 14px;
@@ -6390,7 +6391,7 @@ input[type="radio"] {
 }
 .checkout .column .media .pull-right span {
   text-align: left;
-  width: 68px;
+  width: 75px;
   margin-left: 5px;
   display: inline-block;
 }

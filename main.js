@@ -8,9 +8,11 @@ $(function() {
 		    $('.inactive').removeClass('inactive');
 		}
 		if ($(this).find('input[name=payment][value=boleto]').length) {
-		    $('p').show();
+		    $('p.boleto').show();
+		    $('.form-section.card').hide();
 		} else if ($(this).find('input[name=payment]').length) {
-			$('p').hide();
+			$('p.boleto').hide();
+			$('.form-section.card').show();
 		}
 		$(this).closest('.form-section').find('.radio').not(this).addClass('fadeout').removeClass('checked');
 		$(this).removeClass('fadeout').addClass('checked');
