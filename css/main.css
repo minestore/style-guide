@@ -6027,14 +6027,6 @@ a:hover {
   color: #1eb6e6;
   text-decoration: none;
 }
-a:hover:after {
-  content: '';
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: 1px;
-  background: #1eb6e6;
-}
 b {
   font-weight: 500;
 }
@@ -6064,11 +6056,9 @@ p {
 label {
   font-size: 14px;
   font-weight: 400;
-}
-label.span-text {
   white-space: nowrap;
 }
-label.span-text:after {
+label:after {
   content: '\00a0';
 }
 .radio {
@@ -6090,10 +6080,6 @@ label.span-text:after {
 .inactive .radio:hover {
   background: #f8f8f8;
   cursor: no-drop;
-}
-.radio.fadeout,
-.inactive .radio {
-  opacity: 0.5;
 }
 .radio > div {
   display: table-cell;
@@ -6234,6 +6220,7 @@ input[type="radio"] {
   box-shadow: inset 0 0 0 2px #c2c2c2;
 }
 .form-control {
+  padding-top: 9px;
   font-size: 16px;
   line-height: 1;
   font-weight: 100;
@@ -6242,11 +6229,23 @@ input[type="radio"] {
   border-color: #efefef;
   box-shadow: none;
   -webkit-appearance: none;
-  background: #black;
 }
 .form-control:focus {
   border-color: #da1b69;
   box-shadow: none;
+}
+.form-control.payments {
+  padding-top: 11px;
+  background: none;
+  border: none;
+  padding-left: 0;
+  padding-right: 0;
+}
+.form-control.payments img {
+  margin-right: 1px;
+}
+.form-control.payments img.inactive {
+  opacity: 0.2;
 }
 .form-inline select.form-control {
   width: 100%;
@@ -6267,6 +6266,10 @@ select.form-control {
     background-image: url("../img/select@2x.png");
     background-size: 14px 9px;
   }
+}
+.fadeout,
+.inactive {
+  opacity: 0.5;
 }
 .checkout {
   background: #f8f8f8;

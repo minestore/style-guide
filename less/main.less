@@ -43,13 +43,6 @@ a {
 	&:hover {
 		color: @brand-info;
 		text-decoration: none;
-		&:after {
-			content: '';
-			display: block;
-			position: absolute;
-			width: 100%; height: 1px;
-			background: @brand-info;
-		}
 	}
 }
 
@@ -72,9 +65,9 @@ p {
 // Margins and Paddings
 // -------------------------
 
-@padding-base-horizontal: 14px;
-@padding-base-vertical:   12px;
-@grid-gutter-width: 13px;
+@padding-base-horizontal: 	14px;
+@padding-base-vertical: 	12px;
+@grid-gutter-width: 		13px;
 
 
 // Links
@@ -128,12 +121,9 @@ p {
 label {
 	font-size: 14px;
 	font-weight: 400;
-	&.span-text {
-		white-space: nowrap;
-		&:after {
-			content: '\00a0'
-		}
-	}
+	
+	white-space: nowrap;
+	&:after { content: '\00a0' }
 }
 
 .radio {
@@ -152,9 +142,6 @@ label {
 			background: @gray-lighter;
 			cursor: no-drop;
 		}
-	}
-	&.fadeout, .inactive & {
-		opacity: 0.5;
 	}
 	> div {
 		display: table-cell;
@@ -267,6 +254,7 @@ input[type="radio"] { display: none }
 }
 
 .form-control {
+	padding-top: @padding-base-vertical - 3;
 	font-size: 16px;
 	line-height: 1;
 	font-weight: 100;
@@ -279,7 +267,18 @@ input[type="radio"] { display: none }
 		border-color: @brand-primary;
 		box-shadow: none;
 	}
-	background: #black;
+	&.payments {
+		padding-top: @padding-base-vertical - 1;
+		background: none;
+		border: none;
+		padding-left: 0; padding-right: 0;
+		img {
+			margin-right: 1px;
+			&.inactive {
+				opacity: 0.2;
+			}
+		}
+	}
 }
 
 .form-inline {
@@ -299,6 +298,13 @@ select.form-control {
 	.img-retina ('../img/select.png','../img/select@2x.png',14px,9px);
 	background-position: right 10px center;
 	background-repeat: no-repeat;
+}
+
+// Classes
+// -------------------------
+
+.fadeout, .inactive {
+	opacity: 0.5;
 }
 
 

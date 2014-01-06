@@ -17,7 +17,7 @@ $(function() {
 		    return;
 		}
 		if ($(this).closest('.form-section').hasClass('activate')) {
-		    $(this).closest('form').find('.inactive').removeClass('inactive');
+		    $(this).closest('form').find('.form-section.inactive').removeClass('inactive');
 		}
 		if ($(this).find('input[name=payment][value=boleto]').length) {
 		    $('p.boleto').show();
