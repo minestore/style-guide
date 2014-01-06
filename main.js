@@ -1,3 +1,15 @@
+function medialistWidth() {
+	$.each($('.media-list, .form-section'), function() {
+		maxWidth = 0;
+		margin = 0;
+		$(this).find('.detail').each(function(){
+		    var itemWidth = $(this).outerWidth(false);
+		    maxWidth = Math.max(maxWidth, itemWidth);
+		    if($(this).parent().hasClass('radio')) margin = 20;
+		}).width(maxWidth+margin);
+	});
+}
+
 $(function() {
 
 	$('label.radio').click(function(){
@@ -17,4 +29,13 @@ $(function() {
 		$(this).closest('.form-section').find('.radio').not(this).addClass('fadeout').removeClass('checked');
 		$(this).removeClass('fadeout').addClass('checked');
 	});
+
 });
+
+try {
+	Typekit.load({
+		active: function() {
+     		medialistWidth();
+		}
+	})
+} catch(e) {}

@@ -131,7 +131,7 @@ label {
 	&.span-text {
 		white-space: nowrap;
 		&:after {
-			content: ''
+			content: '\00a0'
 		}
 	}
 }
@@ -159,6 +159,7 @@ label {
 	> div {
 		display: table-cell;
 		vertical-align: middle;
+		white-space: nowrap;
 		&:first-child {
 			width: 70px;
 			@media (max-width: @screen-xs-max) {
@@ -196,13 +197,10 @@ label {
 			}
 		}
 		&.detail {
-			width: 92px;
+			width: 1px;
 			font-weight: 100;
 			font-size: 16px;
 			@media (max-width: @screen-xs-max) {
-				width: 75px;
-				text-align: right;
-				padding-right: 12px;
 				font-size: 14px;
 			}
 		}
@@ -348,11 +346,6 @@ input[type="radio"] { display: none }
 			width: @width;
 			padding: 30px 0 0;
 			cursor: pointer;
-			&:hover {
-				&:before {
-					.scale(1.2);
-				}
-			}
 			&:before, &:after {
 				content: '';
 				position: absolute;
@@ -366,7 +359,6 @@ input[type="radio"] { display: none }
 			&:before {
 				box-shadow: 0 0 0 8px @gray-lighter;
 				z-index: 100;
-				.transition(0.3s);
 			}
 			&:after {
 				right: (@width / 2);
@@ -441,6 +433,19 @@ input[type="radio"] { display: none }
 				width: 55px;
 				border-radius: 50%;
 			}
+			.media-body {
+				a, .type {
+					width: 100%;
+					display: inline-block;
+					white-space: nowrap;
+					text-overflow: ellipsis;
+					overflow: hidden; 
+				}
+				.type {
+					width: auto;
+					max-width: 100%;
+				}
+			}
 			.pull-left {
 				margin-right: 6%;
 			}
@@ -450,7 +455,6 @@ input[type="radio"] { display: none }
 				clear:both;
 				span {
 					text-align: left;
-					width: 75px;
 					margin-left: 5px;
 					display: inline-block;
 				}
