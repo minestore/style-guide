@@ -6242,6 +6242,7 @@ input[type="radio"] {
   border-color: #efefef;
   box-shadow: none;
   -webkit-appearance: none;
+  background: #black;
 }
 .form-control:focus {
   border-color: #da1b69;
@@ -6255,6 +6256,17 @@ input[type="radio"] {
 }
 .form-section {
   margin-bottom: 50px;
+}
+select.form-control {
+  background-image: url("../img/select.png");
+  background-position: right 10px center;
+  background-repeat: no-repeat;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  select.form-control {
+    background-image: url("../img/select@2x.png");
+    background-size: 14px 9px;
+  }
 }
 .checkout {
   background: #f8f8f8;
@@ -6297,7 +6309,6 @@ input[type="radio"] {
   position: relative;
   width: 140px;
   padding: 30px 0 0;
-  cursor: pointer;
 }
 .checkout .steps div:before,
 .checkout .steps div:after {

@@ -279,6 +279,7 @@ input[type="radio"] { display: none }
 		border-color: @brand-primary;
 		box-shadow: none;
 	}
+	background: #black;
 }
 
 .form-inline {
@@ -292,6 +293,12 @@ input[type="radio"] { display: none }
 
 .form-section {
 	margin-bottom: 50px;
+}
+
+select.form-control {
+	.img-retina ('../img/select.png','../img/select@2x.png',14px,9px);
+	background-position: right 10px center;
+	background-repeat: no-repeat;
 }
 
 
@@ -345,7 +352,6 @@ input[type="radio"] { display: none }
 			position: relative;
 			width: @width;
 			padding: 30px 0 0;
-			cursor: pointer;
 			&:before, &:after {
 				content: '';
 				position: absolute;
