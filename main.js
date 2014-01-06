@@ -1,8 +1,8 @@
-function detailWidth() {
+function amountWidth() {
 	$.each($('.media-list, .form-section'), function() {
 		maxWidth = 0;
 		margin = 0;
-		$(this).find('.detail').each(function(){
+		$(this).find('.amount').each(function(){
 		    var itemWidth = $(this).outerWidth(false);
 		    maxWidth = Math.max(maxWidth, itemWidth);
 		    if($(this).parent().hasClass('radio')) margin = 20;
@@ -35,7 +35,7 @@ $(function() {
 try {
 	Typekit.load({
 		active: function() {
-     		detailWidth();
+     		amountWidth();
 		}
 	})
 } catch(e) {}

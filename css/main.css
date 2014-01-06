@@ -6151,13 +6151,13 @@ label.span-text:after {
     background-size: 21px 25px;
   }
 }
-.radio > div.detail {
+.radio > div.amount {
   width: 1px;
   font-weight: 100;
   font-size: 16px;
 }
 @media (max-width: 767px) {
-  .radio > div.detail {
+  .radio > div.amount {
     font-size: 14px;
   }
 }
