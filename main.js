@@ -1,4 +1,4 @@
-function medialistWidth() {
+function detailWidth() {
 	$.each($('.media-list, .form-section'), function() {
 		maxWidth = 0;
 		margin = 0;
@@ -35,7 +35,7 @@ $(function() {
 try {
 	Typekit.load({
 		active: function() {
-     		medialistWidth();
+     		detailWidth();
 		}
 	})
 } catch(e) {}
