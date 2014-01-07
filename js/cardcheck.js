@@ -645,7 +645,7 @@
             var that = this;
 
             $.each( that.acceptedCards, function( k, icon ) {
-                $('.payments').append( $('<img>').attr( 'id', 'card-' + icon + that.uniqueClass )
+                $('.payments .form-control').append( $('<img>').attr( 'id', 'card-' + icon + that.uniqueClass )
                     .attr( 'src', that.iconDir + icon + '.' + that.iconExt )
                     .addClass( that.iconClass + that.uniqueClass ) );
             });

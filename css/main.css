@@ -459,10 +459,10 @@ cite {
   color: #66512c;
 }
 .text-danger {
-  color: #a94442;
+  color: #f54527;
 }
 .text-danger:hover {
-  color: #843534;
+  color: #df290a;
 }
 .text-success {
   color: #3c763d;
@@ -1770,21 +1770,21 @@ textarea.input-lg {
 .has-error .checkbox,
 .has-error .radio-inline,
 .has-error .checkbox-inline {
-  color: #a94442;
+  color: #f54527;
 }
 .has-error .form-control {
-  border-color: #a94442;
+  border-color: #f54527;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 }
 .has-error .form-control:focus {
-  border-color: #843534;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
+  border-color: #df290a;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #fa9988;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #fa9988;
 }
 .has-error .input-group-addon {
-  color: #a94442;
-  border-color: #a94442;
+  color: #f54527;
+  border-color: #f54527;
   background-color: #f2dede;
 }
 .has-success .help-block,
@@ -4518,13 +4518,13 @@ a.thumbnail.active {
 .alert-danger {
   background-color: #f2dede;
   border-color: #ebccd1;
-  color: #a94442;
+  color: #f54527;
 }
 .alert-danger hr {
   border-top-color: #e4b9c0;
 }
 .alert-danger .alert-link {
-  color: #843534;
+  color: #df290a;
 }
 @-webkit-keyframes progress-bar-stripes {
   from {
@@ -4904,7 +4904,7 @@ a.list-group-item.active:focus .list-group-item-text {
   border-color: #ebccd1;
 }
 .panel-danger > .panel-heading {
-  color: #a94442;
+  color: #f54527;
   background-color: #f2dede;
   border-color: #ebccd1;
 }
@@ -6061,6 +6061,10 @@ label {
 label:after {
   content: '\00a0';
 }
+label abbr {
+  margin-left: 5px;
+  color: #1eb6e6;
+}
 .radio {
   display: table;
   width: 100%;
@@ -6120,20 +6124,34 @@ label:after {
   opacity: 0.4;
 }
 .radio > div.type.card:before {
-  background-image: url("../img/cartao.png");
+  background-image: url("url('../img/cartao.png')");
+  background-image: url('../img/cartao.png');
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .radio > div.type.card:before {
-    background-image: url("../img/cartao@2x.png");
+    background-image: url("url('../img/cartao@2x.png')");
+    background-size: 29px 20px;
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  .radio > div.type.card:before {
+    background-image: url('../img/cartao@2x.png');
     background-size: 29px 20px;
   }
 }
 .radio > div.type.boleto:before {
-  background-image: url("../img/boleto.png");
+  background-image: url("url('../img/boleto.png')");
+  background-image: url('../img/boleto.png');
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .radio > div.type.boleto:before {
-    background-image: url("../img/boleto@2x.png");
+    background-image: url("url('../img/boleto@2x.png')");
+    background-size: 21px 25px;
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  .radio > div.type.boleto:before {
+    background-image: url('../img/boleto@2x.png');
     background-size: 21px 25px;
   }
 }
@@ -6234,20 +6252,6 @@ input[type="radio"] {
   border-color: #da1b69;
   box-shadow: none;
 }
-.form-control.payments {
-  padding-top: 11px;
-  background: none;
-  border: none;
-  padding-left: 0;
-  padding-right: 0;
-}
-.form-control.payments img {
-  margin-right: 3px;
-  width: 32px;
-}
-.form-control.payments img:last-child {
-  margin-right: 0;
-}
 .form-inline select.form-control {
   width: 100%;
 }
@@ -6258,15 +6262,25 @@ input[type="radio"] {
   margin-bottom: 50px;
 }
 select.form-control {
-  background-image: url("../img/select.png");
+  background-image: url("url('../img/select.png')");
+  background-image: url('../img/select.png');
   background-position: right 10px center;
   background-repeat: no-repeat;
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   select.form-control {
-    background-image: url("../img/select@2x.png");
+    background-image: url("url('../img/select@2x.png')");
     background-size: 14px 9px;
   }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  select.form-control {
+    background-image: url('../img/select@2x.png');
+    background-size: 14px 9px;
+  }
+}
+.col-xs-6 {
+  z-index: 100;
 }
 .fadeout,
 .inactive {
@@ -6415,11 +6429,34 @@ select.form-control {
 }
 .checkout .column .media .pull-right span {
   text-align: left;
-  margin-left: 5px;
-  display: inline-block;
+  margin-left: 8px;
+  display: block;
+  float: right;
 }
 .checkout .column .media.totals .pull-right:last-child small,
 .checkout .column .media.totals .pull-right:last-child span {
   color: #5c5c5c;
   font-weight: 500;
+}
+.checkout .payments .form-control {
+  padding-top: 11px;
+  background: none;
+  border: none;
+  padding-left: 0;
+  padding-right: 0;
+}
+.checkout .payments .form-control img {
+  margin-right: 3px;
+  width: 32px;
+}
+.checkout .payments .form-control img:last-child {
+  margin-right: 0;
+}
+@media (max-width: 767px) {
+  .checkout .payments label {
+    display: none;
+  }
+  .checkout .payments .form-control {
+    padding-top: 0;
+  }
 }

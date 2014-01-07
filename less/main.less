@@ -9,6 +9,8 @@
 @brand-danger:  	#F54527;
 @brand-info:  		#1EB6E6;
 
+@state-danger-text: @brand-danger;
+
 @gray-lighter: 		#F8F8F8;
 @gray-light: 		#F4F4F4;
 @gray: 				#C9C9C9;
@@ -90,6 +92,21 @@ p {
 	}
 }
 
+.img-retina(@file-1x; @file-2x; @width-1x; @height-1x) {
+  background-image: @file-1x;
+
+  @media
+  only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (   min--moz-device-pixel-ratio: 2),
+  only screen and (     -o-min-device-pixel-ratio: 2/1),
+  only screen and (        min-device-pixel-ratio: 2),
+  only screen and (                min-resolution: 192dpi),
+  only screen and (                min-resolution: 2dppx) {
+    background-image: @file-2x;
+    background-size: @width-1x @height-1x;
+  }
+}
+
 
 // Buttons
 // -------------------------
@@ -124,6 +141,11 @@ label {
 	
 	white-space: nowrap;
 	&:after { content: '\00a0' }
+
+	abbr {
+		margin-left: 5px;	
+		color: @brand-info;
+	}
 }
 
 .radio {
@@ -177,10 +199,10 @@ label {
 				}
 			}
 			&.card:before {
-				.img-retina ('../img/cartao.png','../img/cartao@2x.png',@width,20px)
+				.img-retina(url('../img/cartao.png'),url('../img/cartao@2x.png'),@width,20px)
 			}
 			&.boleto:before {
-				.img-retina ('../img/boleto.png','../img/boleto@2x.png',21px,@height)
+				.img-retina(url('../img/boleto.png'),url('../img/boleto@2x.png'),21px,@height)
 			}
 		}
 		&.amount {
@@ -267,19 +289,6 @@ input[type="radio"] { display: none }
 		border-color: @brand-primary;
 		box-shadow: none;
 	}
-	&.payments {
-		padding-top: @padding-base-vertical - 1;
-		background: none;
-		border: none;
-		padding-left: 0; padding-right: 0;
-		img {
-			margin-right: 3px;
-			width: 32px;
-			&:last-child {
-				margin-right: 0;
-			}
-		}
-	}
 }
 
 .form-inline {
@@ -296,10 +305,15 @@ input[type="radio"] { display: none }
 }
 
 select.form-control {
-	.img-retina ('../img/select.png','../img/select@2x.png',14px,9px);
+	.img-retina (url('../img/select.png'),url('../img/select@2x.png'),14px,9px);
 	background-position: right 10px center;
 	background-repeat: no-repeat;
 }
+
+.col-xs-6 {
+	z-index: 100;
+}
+
 
 // Classes
 // -------------------------
@@ -468,8 +482,9 @@ select.form-control {
 				clear:both;
 				span {
 					text-align: left;
-					margin-left: 5px;
-					display: inline-block;
+					margin-left: 8px;
+					display: block;
+					float: right;
 				}
 			}
 			&.totals .pull-right:last-child {
@@ -478,6 +493,25 @@ select.form-control {
 					font-weight: 500;
 				}
 			}
+		}
+	}
+	.payments {
+		.form-control {
+			padding-top: @padding-base-vertical - 1;
+			background: none;
+			border: none;
+			padding-left: 0; padding-right: 0;
+			img {
+				margin-right: 3px;
+				width: 32px;
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+		}
+		@media (max-width: @screen-xs-max) {
+			label { display: none }
+			.form-control { padding-top: 0; }
 		}
 	}
 }
