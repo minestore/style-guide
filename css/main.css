@@ -6242,10 +6242,11 @@ input[type="radio"] {
   padding-right: 0;
 }
 .form-control.payments img {
-  margin-right: 1px;
+  margin-right: 3px;
+  width: 32px;
 }
-.form-control.payments img.inactive {
-  opacity: 0.2;
+.form-control.payments img:last-child {
+  margin-right: 0;
 }
 .form-inline select.form-control {
   width: 100%;

@@ -30,6 +30,8 @@ $(function() {
 		$(this).removeClass('fadeout').addClass('checked');
 	});
 
+	$('#credit-card').cardcheck();
+
 });
 
 try {
