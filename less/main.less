@@ -10,6 +10,7 @@
 @brand-info:  		#1EB6E6;
 
 @state-danger-text: @brand-danger;
+@state-danger-bg: 	@brand-danger;
 
 @gray-lighter: 		#F8F8F8;
 @gray-light: 		#F4F4F4;
@@ -141,10 +142,15 @@ label {
 	
 	white-space: nowrap;
 	&:after { content: '\00a0' }
-
-	abbr {
-		margin-left: 5px;	
-		color: @brand-info;
+	&.control-label {
+		small {
+			font-size: 12px;
+			font-weight: 100;
+			margin-left: 7px;	
+			opacity: 0.5;
+			position: relative;
+			top: -1px;
+		}
 	}
 }
 
@@ -437,6 +443,10 @@ select.form-control {
 				padding-left: @margin-left + @padding-sides;
 				box-shadow: inset @margin-left 0 0 @gray-lighter;
 			}
+		}
+
+		.alert {
+
 		}
 
 		h1 {

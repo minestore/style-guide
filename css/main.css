@@ -1475,12 +1475,12 @@ table th[class*="col-"] {
 .table > thead > .danger > th,
 .table > tbody > .danger > th,
 .table > tfoot > .danger > th {
-  background-color: #f2dede;
+  background-color: #f54527;
 }
 .table-hover > tbody > tr > .danger:hover,
 .table-hover > tbody > .danger:hover > td,
 .table-hover > tbody > .danger:hover > th {
-  background-color: #ebcccc;
+  background-color: #f4300f;
 }
 .table > thead > tr > .warning,
 .table > tbody > tr > .warning,
@@ -1785,7 +1785,7 @@ textarea.input-lg {
 .has-error .input-group-addon {
   color: #f54527;
   border-color: #f54527;
-  background-color: #f2dede;
+  background-color: #f54527;
 }
 .has-success .help-block,
 .has-success .control-label,
@@ -4516,12 +4516,12 @@ a.thumbnail.active {
   color: #66512c;
 }
 .alert-danger {
-  background-color: #f2dede;
-  border-color: #ebccd1;
+  background-color: #f54527;
+  border-color: #f40f13;
   color: #f54527;
 }
 .alert-danger hr {
-  border-top-color: #e4b9c0;
+  border-top-color: #df0a0f;
 }
 .alert-danger .alert-link {
   color: #df290a;
@@ -4901,18 +4901,18 @@ a.list-group-item.active:focus .list-group-item-text {
   border-bottom-color: #faebcc;
 }
 .panel-danger {
-  border-color: #ebccd1;
+  border-color: #f40f13;
 }
 .panel-danger > .panel-heading {
   color: #f54527;
-  background-color: #f2dede;
-  border-color: #ebccd1;
+  background-color: #f54527;
+  border-color: #f40f13;
 }
 .panel-danger > .panel-heading + .panel-collapse .panel-body {
-  border-top-color: #ebccd1;
+  border-top-color: #f40f13;
 }
 .panel-danger > .panel-footer + .panel-collapse .panel-body {
-  border-bottom-color: #ebccd1;
+  border-bottom-color: #f40f13;
 }
 .panel-info {
   border-color: #bce8f1;
@@ -6061,9 +6061,13 @@ label {
 label:after {
   content: '\00a0';
 }
-label abbr {
-  margin-left: 5px;
-  color: #1eb6e6;
+label.control-label small {
+  font-size: 12px;
+  font-weight: 100;
+  margin-left: 7px;
+  opacity: 0.5;
+  position: relative;
+  top: -1px;
 }
 .radio {
   display: table;
