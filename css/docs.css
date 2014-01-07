@@ -231,14 +231,55 @@ body {
   padding: 30px 15px;
   text-align: center;
   text-shadow: 0 1px 0 rgba(0,0,0,.15);
+  background: #7E2A8D;
 }
 .bs-masthead h1 {
   font-size: 50px;
   line-height: 1;
   color: #fff;
 }
+.bs-masthead .lead {
+  color:#fff;
+}
 .bs-masthead .btn-outline-inverse {
   margin: 10px;
+}
+
+.page-list {
+  width: 400px;
+  margin: 0;
+  padding: 0; 
+}
+.page-list li {
+  list-style: none;
+  font-size:18px;
+  line-height: 30px;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  padding-bottom: 5px;
+  padding-top: 5px
+}
+.page-list li h3 {
+  color:#fff;
+  margin-top: 30px;
+}
+
+.page-list li:last-child {
+  border-bottom: none;
+}
+
+.page-list li a {
+  color:#fff;
+}
+
+.page-list li ul {
+  width: auto;
+  margin: 0;
+  padding-left: 20px;
+}
+
+.page-list li ul li ul {
+  margin-top: 10px;
+  padding-left: 30px;
 }
 
 /* Links to project-level content like the repo, Expo, etc */
