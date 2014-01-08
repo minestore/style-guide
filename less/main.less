@@ -1,4 +1,5 @@
 @import url(bootstrap/bootstrap.less);
+@import url(../fonts/font-awesome/less/font-awesome.less);
 
 // Colors
 // -------------------------
@@ -163,7 +164,7 @@ label {
 	font-size: 15px;
 	line-height: 18px;
 	border-radius: 5px;
-	.transition (0.2s);
+	.transition (0.2s ease-out);
 	&:hover {
 		background: mix(@gray-lighter, @brand-info, 95%);
 		.inactive & {
@@ -230,9 +231,10 @@ label {
 
 input[type="radio"] { display: none }
 .input-radio {
-	.glyphicon; .glyphicon-ok;
+	.fa; .fa-check;
 
 	display: block;
+	position: relative;
 	left: 0; right: 0; margin: 0 auto;
 	overflow: hidden;
 
@@ -246,16 +248,16 @@ input[type="radio"] { display: none }
 	border-radius: 50%;
 	color: @brand-info;
 
-	.transition (0.2s);
+	.transition (0.2s ease-out);
 
 	&:before {
 		.translate (0, -100%);
 		font-size: 11px;
-		line-height: @size;
+		line-height: @size + 1px;
 		position: absolute;
 		margin: 0 auto; left: 0; right: 0;
 
-		.transition (0.2s);
+		.transition (0.2s ease-out);
 	}
 
 	.radio:active & {
@@ -288,12 +290,15 @@ input[type="radio"] { display: none }
 	font-weight: 100;
 	color: @black;
 	background: @gray-lighter;
-	border-color: darken(@gray-light,2);
+	border-color: darken(@gray-light,5);
 	box-shadow: none;
 	-webkit-appearance: none;
 	&:focus {
 		border-color: @brand-primary;
 		box-shadow: none;
+	}
+	&:disabled {
+		background: darken(@gray-lighter,3);
 	}
 }
 
@@ -326,6 +331,30 @@ select.form-control {
 
 .fadeout, .inactive {
 	opacity: 0.5;
+}
+
+
+// Elements
+// -------------------------
+
+.alert {
+	color: white;
+	p { color:white }
+	border-radius: 0;
+	border: none;
+	margin-bottom: 0;
+	padding: 22px 0;
+	position: relative;
+	h3 {
+		padding: 0;
+		margin: 0;
+		margin-bottom: 10px;
+		font-size: 130%;
+	}
+	.fa {
+		font-size: 160%;
+		margin-right: 12px;
+	}
 }
 
 
@@ -428,10 +457,10 @@ select.form-control {
 		}
 	}
 
-	.column {
-		@margin-left: 25px;
-		@padding-sides: 23px;
+	@margin-left: 25px;
+	@padding-sides: 23px;
 
+	.column {
 		background: white;
 		overflow: hidden;
 		padding-right: @padding-sides;
@@ -444,67 +473,73 @@ select.form-control {
 				box-shadow: inset @margin-left 0 0 @gray-lighter;
 			}
 		}
+	}
 
-		.alert {
-
+	.alert {
+		padding-right: @padding-sides;
+		padding-left: @padding-sides;
+		@media (min-width: @screen-sm) {
+			padding-left: @margin-left + @padding-sides + 2px;
+			box-shadow: inset @margin-left 0 0 @gray-lighter;
 		}
+	}
 
-		h1 {
-			color: @brand-primary;
-			margin: 0;
-			@padding: 24px;
-			padding: @padding 0 0;
-			margin-bottom: @padding + 3px;
+	h1 {
+		color: @brand-primary;
+		margin: 0;
+		@padding: 24px;
+		padding: @padding 0 0;
+		margin-bottom: @padding + 3px;
+	}
+
+	hr {
+		width: 120%;
+		margin-left: -10%;
+		border-color: @gray-lighter;
+	}
+
+	.media {
+		margin: -5px 0;
+		line-height: 180%;
+		img {
+			width: 55px;
+			border-radius: 50%;
 		}
-
-		hr {
-			width: 120%;
-			margin-left: -10%;
-			border-color: @gray-lighter;
+		.media-body {
+			a, .type {
+				width: 100%;
+				display: inline-block;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				overflow: hidden; 
+			}
+			.type {
+				width: auto;
+				max-width: 100%;
+			}
 		}
-
-		.media {
-			margin: -5px 0;
-			line-height: 180%;
-			img {
-				width: 55px;
-				border-radius: 50%;
+		.pull-left {
+			margin-right: 6%;
+		}
+		.pull-right {
+			font-weight: 100;
+			color: @black;
+			clear:both;
+			span {
+				text-align: left;
+				margin-left: 8px;
+				display: block;
+				float: right;
 			}
-			.media-body {
-				a, .type {
-					width: 100%;
-					display: inline-block;
-					white-space: nowrap;
-					text-overflow: ellipsis;
-					overflow: hidden; 
-				}
-				.type {
-					width: auto;
-					max-width: 100%;
-				}
-			}
-			.pull-left {
-				margin-right: 6%;
-			}
-			.pull-right {
-				font-weight: 100;
+		}
+		&.totals .pull-right:last-child {
+			small, span {
 				color: @black;
-				clear:both;
-				span {
-					text-align: left;
-					margin-left: 8px;
-					display: block;
-					float: right;
-				}
-			}
-			&.totals .pull-right:last-child {
-				small, span {
-					color: @black;
-					font-weight: 500;
-				}
+				font-weight: 500;
 			}
 		}
 	}
+
 	.payments {
 		.form-control {
 			padding-top: @padding-base-vertical - 1;
