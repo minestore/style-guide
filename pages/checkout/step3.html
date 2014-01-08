@@ -28,8 +28,9 @@
 
 	<div class="container">
 		<div class="row">
-			<div class="column col-sm-5 col-md-4 col-md-offset-1">
-				<h1>Itens do Pedido</h1><hr/>
+
+			<div class="column col-sm-5 col-md-4 col-md-offset-1 sticky">
+				<h1>Resumo do Pedido</h1><hr/>
 				
 				<div class="media-list">
 
@@ -87,6 +88,10 @@
 				</div>
 
 			</div>
+
+			<!-- <div class="column col-sm-5 col-md-4 col-md-offset-1">
+				<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+			</div> -->
 
 			<div class="alert alert-danger col-sm-7 col-md-6">
 				<div class="fa fa-times pull-left"></div>
@@ -172,8 +177,8 @@
 
 						<div class="form-section form-inline row card" >
 
-							<div class="form-group col-sm-6">
-								<label>Número do cartão</label>
+							<div class="form-group col-sm-6 has-success">
+								<label class="control-label">Número do cartão</label>
 								<input id="credit-card" type="text" class="form-control">
 							</div>
 							<div class="form-group col-sm-6 payments">
@@ -229,7 +234,7 @@
 
 					</div>
 
-					<button type="button" class="btn btn-primary pull-right">efetuar pagamento</button>
+					<a type="button" class="btn btn-primary pull-right">pagar <small>R$2.483,38</small></a>
 
 				</form>
 

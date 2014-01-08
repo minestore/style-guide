@@ -12,6 +12,8 @@
 
 @state-danger-text: @brand-danger;
 @state-danger-bg: 	@brand-danger;
+@state-success-text: @brand-success;
+@state-success-bg: 	@brand-success;
 
 @gray-lighter: 		#F8F8F8;
 @gray-light: 		#F4F4F4;
@@ -123,6 +125,10 @@ p {
 	font-weight: 500;
 	&:hover {
 		border-color: transparent;
+	}
+	small {
+		color: white;
+		font-size: 105%;
 	}
 }
 
@@ -291,11 +297,12 @@ input[type="radio"] { display: none }
 	color: @black;
 	background: @gray-lighter;
 	border-color: darken(@gray-light,5);
-	box-shadow: none;
+	box-shadow: none !important;
 	-webkit-appearance: none;
 	&:focus {
 		border-color: @brand-primary;
-		box-shadow: none;
+		box-shadow: none !important;
+		outline: none !important;
 	}
 	&:disabled {
 		background: darken(@gray-lighter,3);
@@ -339,16 +346,18 @@ select.form-control {
 
 .alert {
 	color: white;
-	p { color:white }
 	border-radius: 0;
 	border: none;
 	margin-bottom: 0;
 	padding: 22px 0;
 	position: relative;
+	p { 
+		color:white;
+		margin-top: 10px;
+	}
 	h3 {
 		padding: 0;
 		margin: 0;
-		margin-bottom: 10px;
 		font-size: 130%;
 	}
 	.fa {
@@ -473,6 +482,11 @@ select.form-control {
 				box-shadow: inset @margin-left 0 0 @gray-lighter;
 			}
 		}
+
+		&.sticky {
+			// position: fixed; 
+			// top: 0;
+		}
 	}
 
 	.alert {
@@ -490,6 +504,7 @@ select.form-control {
 		@padding: 24px;
 		padding: @padding 0 0;
 		margin-bottom: @padding + 3px;
+		position: relative;
 	}
 
 	hr {
