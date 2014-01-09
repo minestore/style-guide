@@ -1,0 +1,52 @@
+// Buttons
+// -------------------------
+
+	@btn-default-color: 	@brand-primary;
+	@btn-default-border: 	@brand-primary;
+	@btn-default-bg: 		rgba(0,0,0,0);
+
+	.btn {
+		border-width: 2px;
+		border-color: transparent;
+		font-weight: 500;
+		&:hover {
+			border-color: transparent;
+		}
+		small {
+			color: white;
+			font-size: 100%;
+		}
+	}
+
+	.btn-default {
+		border-color: @brand-primary;
+		&:hover {
+			border-color: darken(@brand-primary,10);
+		}
+	}
+
+	.button-size(@padding-vertical; @padding-horizontal; @font-size; @line-height; @border-radius) {
+		padding: @padding-vertical - 2 @padding-horizontal + 15;
+		padding-bottom: @padding-vertical;
+		font-size: @font-size;
+		line-height: @line-height;
+		border-radius: @border-radius;
+		@media (max-width: @screen-xs-max) {
+			padding: @padding-vertical @padding-horizontal + 5;
+		}
+	}
+
+	.image-retina(@file-1x; @file-2x; @width-1x; @height-1x) {
+	  background-image: @file-1x;
+
+	  @media
+	  only screen and (-webkit-min-device-pixel-ratio: 2),
+	  only screen and (   min--moz-device-pixel-ratio: 2),
+	  only screen and (     -o-min-device-pixel-ratio: 2/1),
+	  only screen and (        min-device-pixel-ratio: 2),
+	  only screen and (                min-resolution: 192dpi),
+	  only screen and (                min-resolution: 2dppx) {
+	    background-image: @file-2x;
+	    background-size: @width-1x @height-1x;
+	  }
+	}

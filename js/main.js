@@ -32,6 +32,8 @@ $(function() {
 
 	$('#credit-card').cardcheck();
 
+	$(".sticky").stick_in_parent()
+
 });
 
 try {
