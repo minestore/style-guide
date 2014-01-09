@@ -1,6 +1,7 @@
 // Mixins
 // -------------------------
-
+  
+  // retina
 	.image-retina(@file-1x; @file-2x; @width-1x; @height-1x) {
 	  background-image: @file-1x;
 
@@ -19,3 +20,13 @@
 	.fadeout, .inactive {
 		opacity: 0.5;
 	}
+
+  // transitions
+  .transition(@type: all, @duration: 0.3s, @ease: ease-in-out) {
+    transition: @type @duration @ease; /* Standard */
+    -moz-transition: @type @duration @ease; /* Firefox 4 */
+    -webkit-transition: @type @duration @ease; /* Safari and Chrome */
+    -o-transition: @type @duration @ease; /* Opera */
+    -ms-transition: @type @duration @ease; /* IE */
+  }
+  // usage: .transition(all, 0.2s, ease);

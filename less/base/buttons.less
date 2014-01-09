@@ -9,6 +9,8 @@
 		border-width: 2px;
 		border-color: transparent;
 		font-weight: 500;
+    .transition(all, 0.2s, ease);
+
 		&:hover {
 			border-color: transparent;
 		}
@@ -20,7 +22,9 @@
 
 	.btn-default {
 		border-color: @brand-primary;
+
 		&:hover {
+      background: lighten(@brand-primary, 50%);
 			border-color: darken(@brand-primary,10);
 		}
 	}
