@@ -7738,6 +7738,10 @@ select.form-control {
 table tr.success {
   color: #fff;
 }
+table tr.warning td {
+  background: #fcda0e !important;
+  color: #fff;
+}
 table tr.danger {
   color: #fff !important;
 }
