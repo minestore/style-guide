@@ -7577,6 +7577,22 @@ blockquote small {
 .btn-group-vertical .btn-group:last-child .btn-default:first-child {
   border-bottom: 2px solid #da1c69 !important;
 }
+.input-group-btn .btn {
+  padding: 12px 10px;
+  padding: 10px 25px;
+  padding-bottom: 12px;
+  font-size: 15px;
+  line-height: 21px;
+  border-radius: 4px;
+}
+@media (max-width: 767px) {
+  .input-group-btn .btn {
+    padding: 12px 15px;
+  }
+}
+.input-group .input-group-addon {
+  border-color: #ddd;
+}
 label {
   font-size: 14px;
   font-weight: 400;
@@ -7790,7 +7806,7 @@ input[type="radio"] {
   font-weight: 100;
   color: #5c5c5c;
   background: #f8f8f8;
-  border-color: #e7e7e7;
+  border-color: #ddd;
   box-shadow: none !important;
   -webkit-appearance: none;
 }
