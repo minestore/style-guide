@@ -10,16 +10,42 @@
 		-webkit-font-smoothing: subpixel-antialiased;
 	}
 
-	h1 {
-		font-weight: 100;
-	}
+  // headings
+  // -------------------------
 
-	h2 {
-		font-weight: 500;
-		color: @brand-warning;
-		margin: 21px 0;
-	}
+    h1, h2, h3, h4, h5, h6 {
+      
+      small {
+        color:@gray;
+      }
+    }
 
+  	h1 {
+      font-size:36px;
+  	}
+
+  	h2 {
+      font-size:30px;
+  		margin: 21px 0;
+  	}
+
+    h3 {
+      font-size:24px;
+    }
+
+    h4 {
+      font-size:18px;
+    }
+
+    h5 {
+      font-size:14px;
+    }
+
+    h6 {
+      font-size:12px;
+    }
+
+  
 	a {
 		position: relative;
 		&:hover {
@@ -38,7 +64,21 @@
 	}
 
 	p {
-		font-weight: 100;
-		font-size: 13px;
+		font-size: 14px;
 		color: @black;
 	}
+
+  // emphasis classes
+  
+    .text-muted {
+      color:@gray;
+    }
+  
+  // blockquote
+    blockquote {
+      small {
+        color:@gray;
+      }
+    }
+
+
