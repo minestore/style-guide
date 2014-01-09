@@ -7702,9 +7702,10 @@ select.form-control {
     box-shadow: inset 25px 0 0 #f8f8f8;
   }
 }
-.checkout .column.sticky {
-  padding-left: 23px;
-  box-shadow: none;
+.checkout .column .sticky {
+  background: white;
+  top: 0;
+  box-shadow: 0 0 0 23px #ffffff;
 }
 .checkout .alert {
   padding-right: 23px;

@@ -32,7 +32,7 @@ $(function() {
 
 	$('#credit-card').cardcheck();
 
-	$(".sticky").stick_in_parent()
+	$(".sticky").scrollToFixed();
 
 });
 

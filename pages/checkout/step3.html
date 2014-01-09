@@ -16,6 +16,8 @@
 </head>
 <body class="checkout">
 
+  <div class="loading"></div>
+
 	<div class="header">
 		<div class="logo"></div>
 	</div>
@@ -30,42 +32,47 @@
 	<div class="container">
 		<div class="row">
 
-			<div class="column col-sm-5 col-md-4 col-md-offset-1 sticky">
+			<div class="column col-sm-5 col-md-4 col-md-offset-1 ">
+      <div class="sticky">
 				<h1>Resumo do Pedido</h1><hr/>
 				
 				<div class="media-list">
 
-					<div class="media">
-						<a class="pull-left" href="#">
-							<img src="../../img/bike1.png">
-						</a>
-						<div class="media-body">
-							<a href="#">Campagnolo Fixed Gear</a>
-							<br/>
-							<small class="type">Grande</small>
-							<span class="pull-right">
-								<small>1x</small>
-								<span class="amount">R$ 999,90</span>
-							</span>
-						</div>
-					</div>
-					<hr/>
+          <div class="products">
 
-					<div class="media">
-						<a class="pull-left" href="#">
-							<img src="../../img/bike2.png">
-						</a>
-						<div class="media-body">
-							<a href="#">Pignssssssarellddo Fixed Gear</a>
-							<br/>
-							<small class="type">Médio / Azulicssssso / Madeiras Leves</small>
-							<span class="pull-right">
-								<small>1x</small>
-								<span class="amount">R$ 10000,90</span>
-							</span>
-						</div>
-					</div>
-					<hr/>
+  					<div class="media">
+  						<a class="pull-left" href="#">
+  							<img src="../../img/bike1.png">
+  						</a>
+  						<div class="media-body">
+  							<a href="#">Campagnolo Fixed Gear</a>
+  							<br/>
+  							<small class="type">Grande</small>
+  							<span class="pull-right">
+  								<small>1x</small>
+  								<span class="amount">R$ 999,90</span>
+  							</span>
+  						</div>
+  					</div>
+  					<hr/>
+
+  					<div class="media">
+  						<a class="pull-left" href="#">
+  							<img src="../../img/bike2.png">
+  						</a>
+  						<div class="media-body">
+  							<a href="#">Pignssssssarellddo Fixed Gear</a>
+  							<br/>
+  							<small class="type">Médio / Azulicssssso / Madeiras Leves</small>
+  							<span class="pull-right">
+  								<small>1x</small>
+  								<span class="amount">R$ 10000,90</span>
+  							</span>
+  						</div>
+  					</div>
+  					<hr/>
+
+          </div>
 
 					<div class="media totals">
 
@@ -88,7 +95,7 @@
 					
 				</div>
 
-			</div>
+			</div></div>
 
 			<div class="alert alert-danger col-sm-7 col-md-6">
 				<div class="fa fa-times pull-left"></div>
@@ -231,7 +238,7 @@
 
 					</div>
 
-					<a type="button" class="btn btn-primary pull-right"><small>pagar</small> R$2.483,38</a>
+					<a type="button" class="btn btn-primary pull-right"><small>pagar</small> <span>R$2.483,38</span></a>
 
 				</form>
 
