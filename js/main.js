@@ -31,8 +31,20 @@ $(function() {
 	});
 
 	$('#credit-card').cardcheck();
-
 	$(".sticky").scrollToFixed();
+
+	$(".btn").click(function(){
+		$('.loading').addClass('fadein');
+
+		setTimeout(function() {
+			$('html, body').animate({scrollTop:0}, 'slow');
+			$('.loading').addClass('fadeout');
+			setTimeout(function() {
+				$('.loading').removeClass('fadein fadeout');
+			}, 200);
+		}, 3000);
+
+	});
 
 });
 

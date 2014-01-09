@@ -7414,6 +7414,15 @@ td.visible-print {
 * {
   -webkit-font-smoothing: subpixel-antialiased;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 18px;
+  color: #7e2a8d;
+}
 h1 small,
 h2 small,
 h3 small,
@@ -7423,23 +7432,12 @@ h6 small {
   color: #c9c9c9;
 }
 h1 {
-  font-size: 36px;
+  font-size: 26px;
+  font-weight: 100;
+  color: #da1c69;
 }
 h2 {
-  font-size: 30px;
-  margin: 21px 0;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 14px;
-}
-h6 {
-  font-size: 12px;
+  font-size: 20px;
 }
 a {
   position: relative;
@@ -7678,20 +7676,20 @@ label.control-label small {
   opacity: 0.4;
 }
 .radio > div.type.card:before {
-  background-image: url("url('../img/cartao.png')");
+  background-image: url('../img/cartao.png');
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .radio > div.type.card:before {
-    background-image: url("url('../img/cartao@2x.png')");
+    background-image: url('../img/cartao@2x.png');
     background-size: 29px 20px;
   }
 }
 .radio > div.type.boleto:before {
-  background-image: url("url('../img/boleto.png')");
+  background-image: url('../img/boleto.png');
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .radio > div.type.boleto:before {
-    background-image: url("url('../img/boleto@2x.png')");
+    background-image: url('../img/boleto@2x.png');
     background-size: 21px 25px;
   }
 }
@@ -7828,13 +7826,13 @@ input[type="radio"] {
   margin-bottom: 50px;
 }
 select.form-control {
-  background-image: url("url('../img/select.png')");
+  background-image: url('../img/select.png');
   background-position: right 10px center;
   background-repeat: no-repeat;
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   select.form-control {
-    background-image: url("url('../img/select@2x.png')");
+    background-image: url('../img/select@2x.png');
     background-size: 14px 9px;
   }
 }
@@ -7853,14 +7851,82 @@ select.form-control {
   color: white;
   margin-top: 10px;
 }
-.alert h3 {
+.alert h2 {
   padding: 0;
   margin: 0;
   font-size: 130%;
+  color: white;
 }
 .alert .fa {
   font-size: 160%;
   margin-right: 12px;
+}
+.loading {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5000;
+  background: rgba(248, 248, 248, 0.85);
+  opacity: 0;
+  top: 100%;
+  -webkit-transition: opacity 0.3s ease-in;
+  transition: opacity 0.3s ease-in;
+  transition: opacity 0.3s ease-in 0.3s ease-in-out;
+  /* Standard */
+  -moz-transition: opacity 0.3s ease-in 0.3s ease-in-out;
+  /* Firefox 4 */
+  -webkit-transition: opacity 0.3s ease-in 0.3s ease-in-out;
+  /* Safari and Chrome */
+  -o-transition: opacity 0.3s ease-in 0.3s ease-in-out;
+  /* Opera */
+  -ms-transition: opacity 0.3s ease-in 0.3s ease-in-out;
+  /* IE */
+}
+.loading p {
+  display: block;
+  position: absolute;
+  top: 100px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 320px;
+  height: 100px;
+  text-align: center;
+  color: #da1c69;
+  font-size: 110%;
+}
+.loading:before {
+  -webkit-animation: spin 2s infinite linear;
+  -moz-animation: spin 2s infinite linear;
+  -o-animation: spin 2s infinite linear;
+  animation: spin 2s infinite linear;
+  content: '';
+  display: block;
+  width: 45px;
+  height: 45px;
+  position: absolute;
+  top: -80px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-image: url('../img/loading.png');
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  .loading:before {
+    background-image: url('../img/loading@2x.png');
+    background-size: 45px 45px;
+  }
+}
+.fadein {
+  top: 0;
+  opacity: 1;
+}
+.fadeout {
+  opacity: 0;
 }
 table tr.success {
   color: #fff;
@@ -7995,6 +8061,9 @@ table tr.danger {
   padding: 24px 0 0;
   margin-bottom: 27px;
   position: relative;
+}
+.checkout h3 {
+  margin: 21px 0;
 }
 .checkout hr {
   width: 120%;
