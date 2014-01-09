@@ -3173,23 +3173,44 @@ input[type="button"].btn-block {
   font-size: 13px;
   line-height: 1.5;
   border-radius: 3px;
+  padding: 5px 5px;
+  padding: 3px 20px;
+  padding-bottom: 5px;
+  font-size: 12px;
+  line-height: 21px;
+  border-radius: 4px;
 }
 @media (max-width: 767px) {
   .btn-group-xs > .btn {
     padding: 1px 10px;
   }
 }
+@media (max-width: 767px) {
+  .btn-group-xs > .btn {
+    padding: 5px 10px;
+  }
+}
 .btn-group-sm > .btn {
   padding: 5px 10px;
   padding: 3px 25px;
   padding-bottom: 5px;
-  font-size: 13px;
   line-height: 1.5;
   border-radius: 3px;
+  padding: 7px 7px;
+  padding: 5px 22px;
+  padding-bottom: 7px;
+  font-size: 13px;
+  line-height: 21px;
+  border-radius: 4px;
 }
 @media (max-width: 767px) {
   .btn-group-sm > .btn {
     padding: 5px 15px;
+  }
+}
+@media (max-width: 767px) {
+  .btn-group-sm > .btn {
+    padding: 7px 12px;
   }
 }
 .btn-group-lg > .btn {
@@ -3199,10 +3220,21 @@ input[type="button"].btn-block {
   font-size: 19px;
   line-height: 1.33;
   border-radius: 6px;
+  padding: 16px 21px;
+  padding: 14px 36px;
+  padding-bottom: 16px;
+  font-size: 16px;
+  line-height: 21px;
+  border-radius: 4px;
 }
 @media (max-width: 767px) {
   .btn-group-lg > .btn {
     padding: 10px 21px;
+  }
+}
+@media (max-width: 767px) {
+  .btn-group-lg > .btn {
+    padding: 16px 26px;
   }
 }
 .btn-group > .btn + .dropdown-toggle {
@@ -7441,16 +7473,27 @@ blockquote small {
   border-width: 2px;
   border-color: transparent;
   font-weight: 500;
-  transition: all 0.2s ease;
+  padding: 10px 10px;
+  padding: 8px 25px;
+  padding-bottom: 10px;
+  font-size: 15px;
+  line-height: 21px;
+  border-radius: 4px;
+  transition: background 0.2s ease;
   /* Standard */
-  -moz-transition: all 0.2s ease;
+  -moz-transition: background 0.2s ease;
   /* Firefox 4 */
-  -webkit-transition: all 0.2s ease;
+  -webkit-transition: background 0.2s ease;
   /* Safari and Chrome */
-  -o-transition: all 0.2s ease;
+  -o-transition: background 0.2s ease;
   /* Opera */
-  -ms-transition: all 0.2s ease;
+  -ms-transition: background 0.2s ease;
   /* IE */
+}
+@media (max-width: 767px) {
+  .btn {
+    padding: 10px 15px;
+  }
 }
 .btn:hover {
   border-color: transparent;
@@ -7459,12 +7502,80 @@ blockquote small {
   color: white;
   font-size: 100%;
 }
-.btn-default {
+.btn.btn-default {
   border-color: #da1c69;
 }
-.btn-default:hover {
+.btn.btn-default:hover {
   background: #fef7fa;
   border-color: #ad1653;
+}
+.btn-lg {
+  padding: 16px 21px;
+  padding: 14px 36px;
+  padding-bottom: 16px;
+  font-size: 16px;
+  line-height: 21px;
+  border-radius: 4px;
+}
+@media (max-width: 767px) {
+  .btn-lg {
+    padding: 16px 26px;
+  }
+}
+.btn-sm {
+  padding: 7px 7px;
+  padding: 5px 22px;
+  padding-bottom: 7px;
+  font-size: 13px;
+  line-height: 21px;
+  border-radius: 4px;
+}
+@media (max-width: 767px) {
+  .btn-sm {
+    padding: 7px 12px;
+  }
+}
+.btn-xs {
+  padding: 5px 5px;
+  padding: 3px 20px;
+  padding-bottom: 5px;
+  font-size: 12px;
+  line-height: 21px;
+  border-radius: 4px;
+}
+@media (max-width: 767px) {
+  .btn-xs {
+    padding: 5px 10px;
+  }
+}
+.btn-group .btn-default,
+.btn-group-justified .btn-default {
+  border-left: 1px solid #da1c69;
+}
+.btn-group .btn-default:first-child,
+.btn-group-justified .btn-default:first-child {
+  border-left: 2px solid #da1c69;
+}
+.btn-group .btn-default:last-child,
+.btn-group-justified .btn-default:last-child {
+  border-right: 2px solid #da1c69;
+}
+.btn-group .btn-group .btn-default,
+.btn-group-justified .btn-group .btn-default {
+  border-left: 1px solid #da1c69;
+}
+.btn-group-vertical .btn-default {
+  border: 2px solid #da1c69;
+  border-bottom: 1px solid #da1c69;
+}
+.btn-group-vertical .btn-default:first-child {
+  border-top: 2px solid #da1c69;
+}
+.btn-group-vertical .btn-default:last-child {
+  border-bottom: 2px solid #da1c69 !important;
+}
+.btn-group-vertical .btn-group:last-child .btn-default:first-child {
+  border-bottom: 2px solid #da1c69 !important;
 }
 label {
   font-size: 14px;
