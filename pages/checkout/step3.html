@@ -17,11 +17,14 @@
 <body class="checkout">
 
   <div class="loading">
-    <p>
-      Processando pagamento :)<br/>
-      dusafafhdsadfs<br/>
-      dusafafhdsadfs<br/>
-    </p>
+    <div class="mine-spinner">
+      <div class="spinner"></div>
+      <p>
+        Processando pagamento :)<br/>
+        dusafafhdsadfs<br/>
+        dusafafhdsadfs<br/>
+      </p>
+    </div>
   </div>
 
 	<div class="header">
@@ -31,8 +34,8 @@
 	<div class="steps">
 		<div>Carrinho</div>
 		<div>Dados</div>
-		<div class="active">Pagamento</div>
-		<div class="inactive">Confirmação</div>
+		<div>Pagamento</div>
+		<div class="active">Confirmação</div>
 	</div>
 
 	<div class="container">
@@ -103,7 +106,7 @@
 
 			</div></div>
 
-			<div class="alert alert-danger col-sm-7 col-md-6">
+			<div class="alert main alert-danger col-sm-7 col-md-6" style="display:none">
 				<div class="fa fa-times pull-left"></div>
 				<h2>Você não sabe usar o sistema!</h2>
 				<p>
@@ -111,7 +114,7 @@
 				</p>
 			</div>
 
-			<div class="column col-sm-7 col-md-6">
+			<div class="column main col-sm-7 col-md-6">
 
 				<h1>Pagamento</h1><hr/>
 
@@ -122,7 +125,7 @@
 					<div class="form-section activate">
 
 						<div class="form-group">
-							<label class="radio checked">
+							<label class="label-fill radio">
 								<div>
 									<input type="radio" name="shipping" value="sedex">
 									<div class="input-radio"></div>
@@ -137,7 +140,7 @@
 						</div>
 
 						<div class="form-group">
-							<label class="radio">
+							<label class="label-fill radio">
 								<div>
 									<input type="radio" name="shipping" value="pac">
 									<div class="input-radio"></div>
@@ -158,7 +161,7 @@
 					<div class="form-section inactive">
 
 						<div class="form-group">
-							<label class="radio">
+							<label class="label-fill radio">
 								<div>
 									<input type="radio" name="payment" value="boleto">
 									<div class="input-radio"></div>
@@ -170,7 +173,7 @@
 						</div>
 
 						<div class="form-group">
-							<label class="radio">
+							<label class="label-fill radio">
 								<div>
 									<input type="radio" name="payment" value="card">
 									<div class="input-radio"></div>
@@ -185,7 +188,7 @@
 							Lorem ipsum dolor sit amet, consectetur elit. Pellentesque lacus dui, fringilla vitae massa in, vulputate sagittis enim. Nullam sodales non lectus non convallis. Nullam malesuada ullamcorper libero, sed ultrices eros iaculis id. Duis luctus massa purus, id eleifend tellus semper quis. Etiam sollicitudin ligula erat, eget convallis diam dignissim et.
 						</p>
 
-						<div class="form-section form-inline row card" >
+						<div class="form-section form-inline row card" style="display:none">
 
 							<div class="form-group col-sm-6 has-success">
 								<label class="control-label">Número do cartão</label>
@@ -253,6 +256,137 @@
 			</div>
 		</div>
 	</div>
+
+  <div class="container" style="display:none">
+    <div class="row">
+
+      <div class="alert alert-success col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3" >
+        <div class="fa fa-check pull-left"></div>
+        <h2>Pedido <span>#23742</span> feito com sucesso!</h2>
+      </div>
+
+      <div class="column col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+
+        <form>
+
+          <h3>Pagamento</h3>
+
+          <div class="form-section">
+
+            <div class="form-group">
+              <label class="label-fill">
+                <div class="type boleto">
+                  Boleto bancário
+                </div>
+                <div>
+                  <div class="hidden-xs">
+                    <button type="button" class="btn btn-primary">imprimir</button>
+                  </div>
+                </div>
+              </label>
+              <button type="button" class="btn btn-block btn-primary visible-xs">imprimir</button>
+            </div>
+
+          </div>
+
+          <h3>Resumo do pedido</h3>
+
+          <div class="media-list">
+
+            <div class="products">
+
+              <div class="media">
+                <a class="pull-left" href="#">
+                  <img src="../../img/bike1.png">
+                </a>
+                <div class="media-body">
+                  <a href="#">Campagnolo Fixed Gear</a>
+                  <br/>
+                  <small class="type">Grande</small>
+                  <span class="pull-right">
+                    <small>1x</small>
+                    <span class="amount">R$ 999,90</span>
+                  </span>
+                </div>
+              </div>
+              <hr/>
+
+              <div class="media">
+                <a class="pull-left" href="#">
+                  <img src="../../img/bike2.png">
+                </a>
+                <div class="media-body">
+                  <a href="#">Pignssssssarellddo Fixed Gear</a>
+                  <br/>
+                  <small class="type">Médio / Azulicssssso / Madeiras Leves</small>
+                  <span class="pull-right">
+                    <small>1x</small>
+                    <span class="amount">R$ 10000,90</span>
+                  </span>
+                </div>
+              </div>
+              <hr/>
+
+            </div>
+
+            <div class="media totals">
+
+              <span class="pull-right">
+                <small>SUBTOTAL</small>
+                <span class="amount">R$ 99,90</span>
+              </span>
+
+              <span class="pull-right">
+                <small>FRETE</small>
+                <span class="amount">R$ 13,90</span>
+              </span>
+
+              <span class="pull-right">
+                <small>TOTAL</small>
+                <span class="amount">R$ 8888,10</span>
+              </span>
+
+            </div>
+            
+          </div>
+
+          <h3>Dados de entrega</h3>
+
+          <div class="form-section">
+
+            <div class="form-group">
+              <label class="label-fill">
+                <div>
+                  SEDEX
+                  <br/>
+                  <small>Entrega em até 1 dia útil</small>
+                </div>
+              </label>
+            </div>
+
+          </div>
+
+          <div class="shipping row">
+            <div class="col-sm-5 col-xs-12">
+              <p>Henrique Gusso</p>
+              <p><a href="">amiltonpglia@matilhaestudisoas</a></p>
+              <p>(41) 9911-6662</p>
+            </div>
+            <div class="col-sm-7 col-xs-12">
+              <p>Rua Santa Rita de Cáfsgjkssia, 72, Apt 401</p>
+              <p>Novo Campo Grande</p>
+              <p>Curitiba - PR</p>
+              <p>80540-200</p>
+            </div>
+          </div>
+
+        </form>
+
+
+
+      </div>
+    </div>
+  </div>
 
 
 </body>

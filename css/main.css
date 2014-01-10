@@ -1,3 +1,4 @@
+@import url(../css/animate.css);
 /*! normalize.css v2.1.3 | MIT License | git.io/normalize */
 article,
 aside,
@@ -7463,10 +7464,6 @@ p {
 blockquote small {
   color: #c9c9c9;
 }
-.fadeout,
-.inactive {
-  opacity: 0.5;
-}
 .btn {
   border-width: 2px;
   border-color: transparent;
@@ -7607,7 +7604,7 @@ label.control-label small {
   position: relative;
   top: -1px;
 }
-.radio {
+.label-fill {
   display: table;
   width: 100%;
   height: 73px;
@@ -7630,34 +7627,32 @@ label.control-label small {
   -ms-transition: 0.2s ease-out 0.3s ease-in-out;
   /* IE */
 }
-.radio:hover {
+.label-fill:hover {
   background: #ecf5f7;
 }
-.inactive .radio:hover {
+.inactive .label-fill:hover {
   background: #f8f8f8;
   cursor: no-drop;
 }
-.radio > div {
+.label-fill > div {
   display: table-cell;
   vertical-align: middle;
   white-space: nowrap;
 }
-.radio > div:first-child {
-  width: 70px;
-  padding-left: 2px;
-  text-align: center;
+.label-fill > div:last-child {
+  text-align: right;
+  padding-right: 10px;
 }
-@media (max-width: 767px) {
-  .radio > div:first-child {
-    width: 50px;
-    padding-right: 5px;
-  }
+.label-fill > div:first-child {
+  padding-left: 22px;
+  text-align: left;
 }
-.radio > div.type {
+.label-fill > div.type {
+  text-align: left;
   position: relative;
   top: 1px;
 }
-.radio > div.type:before {
+.label-fill > div.type:before {
   content: '';
   display: block;
   float: left;
@@ -7669,43 +7664,56 @@ label.control-label small {
   background-repeat: no-repeat;
   background-position: center center;
 }
-.inactive .radio > div.type:before {
+.inactive .label-fill > div.type:before {
   -webkit-filter: grayscale(1);
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
   opacity: 0.4;
 }
-.radio > div.type.card:before {
+.label-fill > div.type.card:before {
   background-image: url('../img/cartao.png');
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  .radio > div.type.card:before {
+  .label-fill > div.type.card:before {
     background-image: url('../img/cartao@2x.png');
     background-size: 29px 20px;
   }
 }
-.radio > div.type.boleto:before {
+.label-fill > div.type.boleto:before {
   background-image: url('../img/boleto.png');
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  .radio > div.type.boleto:before {
+  .label-fill > div.type.boleto:before {
     background-image: url('../img/boleto@2x.png');
     background-size: 21px 25px;
   }
 }
-.radio > div.amount {
+.label-fill > div.amount {
   width: 1px;
+  text-align: left;
+  padding-right: 0;
   font-weight: 100;
   font-size: 16px;
 }
 @media (max-width: 767px) {
-  .radio > div.amount {
+  .label-fill > div.amount {
     font-size: 14px;
   }
 }
 @media (max-width: 767px) {
-  .radio > div small {
+  .label-fill > div small {
     font-size: 11px;
+  }
+}
+.label-fill.radio > div:first-child {
+  width: 70px;
+  padding-left: 2px;
+  text-align: center;
+}
+@media (max-width: 767px) {
+  .label-fill.radio > div:first-child {
+    width: 50px;
+    padding-right: 5px;
   }
 }
 input[type="radio"] {
@@ -7861,6 +7869,12 @@ select.form-control {
   font-size: 160%;
   margin-right: 12px;
 }
+.alert.alert-success h2 {
+  font-weight: 100;
+}
+.alert.alert-success h2 span {
+  font-weight: 500;
+}
 .loading {
   width: 100%;
   height: 100%;
@@ -7898,35 +7912,42 @@ select.form-control {
   color: #da1c69;
   font-size: 110%;
 }
-.loading:before {
-  -webkit-animation: spin 2s infinite linear;
-  -moz-animation: spin 2s infinite linear;
-  -o-animation: spin 2s infinite linear;
-  animation: spin 2s infinite linear;
-  content: '';
-  display: block;
-  width: 45px;
-  height: 45px;
+.loading .mine-spinner {
   position: absolute;
   top: -80px;
   bottom: 0;
   left: 0;
   right: 0;
+  height: 100px;
   margin: auto;
+  text-align: center;
+}
+.loading .spinner {
+  -webkit-animation: spin 2s infinite linear;
+  -moz-animation: spin 2s infinite linear;
+  -o-animation: spin 2s infinite linear;
+  animation: spin 2s infinite linear;
+  display: inline-block;
+  width: 45px;
+  height: 45px;
   background-image: url('../img/loading.png');
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  .loading:before {
+  .loading .spinner {
     background-image: url('../img/loading@2x.png');
     background-size: 45px 45px;
   }
 }
-.fadein {
+.loading.fadein {
   top: 0;
   opacity: 1;
 }
-.fadeout {
+.loading.fadeout {
   opacity: 0;
+}
+.fadeout,
+.inactive {
+  opacity: 0.5;
 }
 table tr.success {
   color: #fff;
@@ -7960,6 +7981,7 @@ table tr.danger {
 }
 .checkout .container {
   height: 1000px;
+  position: relative;
 }
 .checkout .steps {
   margin: 40px 0 34px;
@@ -8035,7 +8057,7 @@ table tr.danger {
   padding-bottom: 25px;
 }
 @media (min-width: 768px) {
-  .checkout .column:last-child {
+  .checkout .column.main {
     padding-left: 48px;
     box-shadow: inset 25px 0 0 #f8f8f8;
   }
@@ -8050,7 +8072,7 @@ table tr.danger {
   padding-left: 23px;
 }
 @media (min-width: 768px) {
-  .checkout .alert {
+  .checkout .alert.main {
     padding-left: 50px;
     box-shadow: inset 25px 0 0 #f8f8f8;
   }
@@ -8071,7 +8093,6 @@ table tr.danger {
   border-color: #f8f8f8;
 }
 .checkout .media {
-  margin: -5px 0;
   line-height: 180%;
 }
 .checkout .media img {
@@ -8129,4 +8150,18 @@ table tr.danger {
   .checkout .payments .form-control {
     padding-top: 0;
   }
+}
+.checkout .shipping {
+  margin-top: -30px;
+}
+.checkout .shipping div {
+  margin-top: 15px;
+}
+.checkout .shipping div p {
+  font-size: 89%;
+  font-weight: 100;
+  margin-bottom: 5px;
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }

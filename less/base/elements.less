@@ -22,6 +22,10 @@
 			font-size: 160%;
 			margin-right: 12px;
 		}
+    &.alert-success h2 {
+      font-weight: 100;
+      span { font-weight: 500; }
+    }
 	}
 
 // Loading
@@ -49,27 +53,32 @@
       font-size: 110%;
     }
 
-    &:before {
-      .fa-spin;
-      @width: 45px;
-      content: '';
-      display: block;
-      width: @width; height: @width;
+    .mine-spinner {
       position: absolute;
       top: -80px; bottom: 0; left: 0; right: 0;
+      height: 100px;
       margin: auto;
+      text-align: center;
+    }
+
+    .spinner {
+      .fa-spin;
+      @width: 45px;
+      display: inline-block;
+      .square(@width);
       .image-retina(url('../img/loading.png'), url('../img/loading@2x.png'), @width, @width);
+    }
+
+    &.fadein {
+      top: 0;
+      opacity: 1;
+    }
+
+    &.fadeout {
+      opacity: 0;
     }
   }
 
-  &.fadein {
-    top: 0;
-    opacity: 1;
-  }
-
-  &.fadeout {
-    opacity: 0;
-  }
 
 
 

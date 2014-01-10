@@ -23,6 +23,7 @@
 
     .container {
       height: 1000px;
+      position: relative;
     }
 
     .steps {
@@ -108,7 +109,7 @@
       padding-bottom: 25px;
 
       @media (min-width: @screen-sm) {
-        &:last-child {
+        &.main {
           padding-left: @margin-left + @padding-sides;
           box-shadow: inset @margin-left 0 0 @gray-lighter;
         }
@@ -125,8 +126,10 @@
       padding-right: @padding-sides;
       padding-left: @padding-sides;
       @media (min-width: @screen-sm) {
-        padding-left: @margin-left + @padding-sides + 2px;
-        box-shadow: inset @margin-left 0 0 @gray-lighter;
+        &.main {
+          padding-left: @margin-left + @padding-sides + 2px;
+          box-shadow: inset @margin-left 0 0 @gray-lighter;
+        }
       }
     }
 
@@ -150,7 +153,6 @@
     }
 
     .media {
-      margin: -5px 0;
       line-height: 180%;
       img {
         width: 55px;
@@ -213,6 +215,31 @@
         .form-control { padding-top: 0; }
       }
     }
+
+    .shipping {
+      margin-top: -30px;
+      div {
+        margin-top: 15px;
+        p {
+          font-size: 89%;
+          font-weight: 100;
+          margin-bottom: 5px;
+
+          width: 100%;
+          text-overflow: ellipsis;
+          overflow: hidden;
+        }
+      }
+    }
+
+
+
+
+
+
+
+
+
   }
 
 
