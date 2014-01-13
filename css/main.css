@@ -7716,6 +7716,9 @@ label.control-label small {
     padding-right: 5px;
   }
 }
+.label-fill select {
+  background: white;
+}
 input[type="radio"] {
   display: none;
 }
