@@ -46,14 +46,14 @@ $(function() {
 		loading.addClass('fadein');
 		spinner.addClass('animated fadeInUp');
 
-		setTimeout(function() { // artificial timeout simulating server response
+		setTimeout(function() { // artificial 2s timeout simulating server response
 			
 			if (sucesss) {
 				newPage.show().css('opacity', '0').find('.amount').css('width','');
 			}
 
-			loading.addClass('fadeout');
 			spinner.addClass('fadeOutUp');
+			loading.addClass('fadeout');
 
 			loading.one(animationEnd, function(){
 
@@ -72,6 +72,7 @@ $(function() {
 					$('.alert').show();
 					spinner.removeClass('fadeInUp fadeOutUp');
 				}
+
 			});
 		}, 2000);
 
