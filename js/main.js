@@ -1,5 +1,6 @@
-function amountWidth() {
-	$.each($('.media-list, .form-section'), function() {
+function amountWidth(parent) {
+	parent = typeof parent !== 'undefined' ? parent : $('body');
+	parent.find('.media-list, .form-section').each(function() {
 		maxWidth = 0;
 		margin = 0;
 		$(this).find('.amount').each(function(){
@@ -33,38 +34,43 @@ $(function() {
 	$('#credit-card').cardcheck();
 	$(".sticky").scrollToFixed();
 
-	var sucesss = false;
+	var sucesss = true;
 
 	$(".btn").click(function(){
-		$('.loading').addClass('fadein');
-		$('.loading .mine-spinner').addClass('animated fadeInUp');
+		var loading = $('.loading');
+		var spinner = $('.loading .mine-spinner')
+		var currentPage = $('.container').first();
+		var newPage = $('.container:last-child');
+		var animationEnd = 'webkitAnimationEnd mozAnimationEnd oAnimationEnd animationEnd';
+
+		loading.addClass('fadein');
+		spinner.addClass('animated fadeInUp');
 
 		setTimeout(function() { // artificial timeout simulating server response
 			
 			if (sucesss) {
-				$('.container:last-child').show().css('opacity', '0');			
-				$('.amount').css('width','');
+				newPage.show().css('opacity', '0').find('.amount').css('width','');
 			}
-			
-			$('.loading').addClass('fadeout');
-			$('.loading .mine-spinner').addClass('fadeOutUp');
 
-			$('.loading').one('webkitAnimationEnd mozAnimationEnd oAnimationEnd animationEnd', function(){
+			loading.addClass('fadeout');
+			spinner.addClass('fadeOutUp');
 
-				$('.loading').removeClass('fadein fadeout');
+			loading.one(animationEnd, function(){
+
+				loading.removeClass('fadein fadeout');
 
 				if (sucesss) {
-					$('.container').first().addClass('animated fadeOutLeft');
-					$('.container').first().one('webkitAnimationEnd mozAnimationEnd oAnimationEnd animationEnd', function(){
+					currentPage.addClass('animated fadeOutLeft');
+					currentPage.one(animationEnd, function(){
 						$('html, body').animate({scrollTop:0}, 'normal');
-						$('.container').first().hide();
-						$('.container:last-child').addClass('animated fadeInRight');	
-						amountWidth();
+						currentPage.hide();
+						newPage.addClass('animated fadeInRight');	
+						amountWidth(newPage);
 					});
 				} else {
-					$('.alert').show();
-					$('.loading .mine-spinner').removeClass('fadeInUp fadeOutUp');
 					$('html, body').animate({scrollTop:0}, 'normal');
+					$('.alert').show();
+					spinner.removeClass('fadeInUp fadeOutUp');
 				}
 			});
 		}, 2000);
