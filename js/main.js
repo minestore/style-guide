@@ -33,30 +33,41 @@ $(function() {
 	$('#credit-card').cardcheck();
 	$(".sticky").scrollToFixed();
 
+	var sucesss = false;
+
 	$(".btn").click(function(){
 		$('.loading').addClass('fadein');
 		$('.loading .mine-spinner').addClass('animated fadeInUp');
 
-		setTimeout(function() {
-			$('html, body').animate({scrollTop:0}, 'slow');
-
-			$('.container:last-child').show().css('opacity', '0');		
-			$('.amount').css('width','');
+		setTimeout(function() { // artificial timeout simulating server response
+			
+			if (sucesss) {
+				$('.container:last-child').show().css('opacity', '0');			
+				$('.amount').css('width','');
+			}
 			
 			$('.loading').addClass('fadeout');
-			$('.loading .mine-spinner').addClass('animated fadeOutUp');
+			$('.loading .mine-spinner').addClass('fadeOutUp');
 
-			setTimeout(function() {
+			$('.loading').one('webkitAnimationEnd mozAnimationEnd oAnimationEnd animationEnd', function(){
+
 				$('.loading').removeClass('fadein fadeout');
-				// $('.alert').show();
-				$('.container').first().addClass('animated fadeOutLeftBig');
-				setTimeout(function() {
-					$('.container').first().hide();
-					$('.container:last-child').addClass('animated fadeInRightBig');	
-					amountWidth();
-				}, 280);
-			}, 200);
-		}, 3000);
+
+				if (sucesss) {
+					$('.container').first().addClass('animated fadeOutLeft');
+					$('.container').first().one('webkitAnimationEnd mozAnimationEnd oAnimationEnd animationEnd', function(){
+						$('html, body').animate({scrollTop:0}, 'normal');
+						$('.container').first().hide();
+						$('.container:last-child').addClass('animated fadeInRight');	
+						amountWidth();
+					});
+				} else {
+					$('.alert').show();
+					$('.loading .mine-spinner').removeClass('fadeInUp fadeOutUp');
+					$('html, body').animate({scrollTop:0}, 'normal');
+				}
+			});
+		}, 2000);
 
 	});
 
