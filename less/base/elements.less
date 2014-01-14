@@ -74,23 +74,244 @@
     }
   }
 
+// Navs
+// -------------------------
+
+  .navbar {
+    
+    .form-group {
+      margin-bottom: 0;
+    }
+  }
+
+  .breadcrumb {
+    .active {
+      color:@brand-primary;
+    }
+  }
+
+  .pagination {
+    li { 
+      a {
+        padding:10px 20px;
+        border: 2px solid @brand-primary;
+        border-right: 1px solid @brand-primary;
+        color:@brand-primary;
+      }
+      &.disabled a {
+        border-color: @brand-primary;
+        background: @gray-light !important;
+        color: @gray;
+        
+        &:hover {
+          border-color: @brand-primary;
+          color:@gray;
+        }
+      }
+
+      &:last-child a {
+        border-right: 2px solid @brand-primary;
+      }
+    }
+  }
+
+  .pager {
+
+    li {
+      a {
+        padding: 8px 18px;
+        background: @brand-secondary;
+        border: none;
+        color:#fff;
+
+        .transition(all,0.2s,ease);
+
+        &:hover {
+          background: @brand-primary;
+        }
+      }
+    }
+  }
+
+// Labels
+// -------------------------
+
+  .label {
+    &.label-default {
+      background: @brand-secondary;
+    }
+  }
+
+  .badge {
+    background: @brand-primary;
+  }
+
+// Alerts
+// -------------------------
+
+  .alert {
+    position: relative;
+    text-align: center;
+
+    &.alert-info {
+      background: darken(@brand-info, 5%);
+      // color: darken(@brand-info,25%);
+    }
+    
+    &.alert-warning {
+      background: darken(@brand-warning, 5%);
+      // color: darken(@brand-warning,25%);
+    }
+
+    &.alert-success {
+      background: darken(@brand-success, 5%);
+      // color: darken(@brand-success,25%);
+    }
+
+    &.alert-danger {
+      background: darken(@brand-danger, 5%);
+      // color: darken(@brand-danger,35%);
+    }
+
+    .btn-default {
+      color:#fff;
+      border-color: #fff;
+      background: transparent;
+
+      &:hover {
+        background: #fff;
+        color:#666;
+      }
+    }
+
+    .btn-danger {
+      color:#fff;
+      border-color: #fff;
+      background: transparent;
+
+      &:hover {
+        background: #fff;
+        color:@brand-danger;
+      }
+    }
+
+    .btn-success {
+      color:#fff;
+      border-color: #fff;
+      background: transparent;
+
+      &:hover {
+        background: #fff;
+        color:@brand-success;
+      }
+    }
+
+    .btn-warning {
+      color:#fff;
+      border-color: #fff;
+      background: transparent;
+
+      &:hover {
+        background: #fff;
+        color:@brand-warning;
+      }
+    }
+
+    a {
+      color: #fff !important;
+      border-bottom: 2px solid #fff;
+    }
+
+    .close {
+      position: absolute;
+      top:20px;
+      right: 20px;
+    }
+
+    p {
+      margin: 0 auto;
+      width: 90%;
+    }
 
 
 
+  }
 
+// Panel
+// -------------------------
+  .panel {
+    
+    &.panel-info  {
+      border-color: @brand-info;
 
+      .panel-heading {
+        background: @brand-info;
+      }
+    }
 
+    &.panel-warning  {
+      border-color: @brand-warning;
 
+      .panel-heading {
+        background: @brand-warning;
+      }
+    }
 
+    .panel-title {
+      color:#fff;
+    }
+  }
 
+  .panel-group {
+    .panel {
+      border-color: @brand-secondary;
+      .panel-heading {
+        background: @brand-secondary;
+        .transition(background,0.2s, ease);
+        cursor:hand;
+        cursor:pointer;
 
+        &:hover {
+          background: darken(@brand-secondary, 10%);
+        }
 
+        a {
+          display: block;
+          &:hover {
+            color:#fff;
+          }
+        }
 
+      }
+    }
+  }
 
+// Modal
+// -------------------------
+  .modal {
+    .modal-content {
+      border-color: #ddd;
+      .box-shadow(0 0 20px rgba(0,0,0,0.20));
+    }
+  }
 
+// Tooltips & Popover
+// -------------------------
+  .tooltip {
+    .tooltip-inner {
+      padding:5px 10px 8px; 
+    }
+  }
 
+  .popover {
+    .popover-title {
+      font-weight: bold;
+    }
 
-
+    .popover-content {
+      padding: 9px 14px 12px;
+    }
+  }
 
 
 
