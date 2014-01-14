@@ -7723,9 +7723,6 @@ label.control-label small {
   background: white;
   font-size: 96%;
 }
-input[type="radio"] {
-  display: none;
-}
 .input-radio {
   display: inline-block;
   font-family: FontAwesome;
@@ -7883,6 +7880,103 @@ select.form-control {
 }
 .col-xs-6 {
   z-index: 100;
+}
+.icheckbox,
+.iradio {
+  display: inline-block !important;
+  *display: inline !important;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  background: rgba(126, 42, 141, 0.2);
+  border: none;
+  cursor: pointer;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  transition: width 0.1s ease;
+  /* Standard */
+  -moz-transition: width 0.1s ease;
+  /* Firefox 4 */
+  -webkit-transition: width 0.1s ease;
+  /* Safari and Chrome */
+  -o-transition: width 0.1s ease;
+  /* Opera */
+  -ms-transition: width 0.1s ease;
+  /* IE */
+}
+.icheckbox:hover {
+  background: rgba(126, 42, 141, 0.4);
+}
+.icheckbox.checked {
+  display: inline-block;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 20px;
+  background: #7e2a8d;
+  color: #fff;
+  position: relative;
+  text-align: center;
+}
+.icheckbox.checked.pull-left {
+  margin-right: .3em;
+}
+.icheckbox.checked.pull-right {
+  margin-left: .3em;
+}
+.icheckbox.checked:before {
+  content: "\f00c";
+}
+.icheckbox.disabled {
+  background: #5b1e66;
+  cursor: not-allowed;
+}
+.icheckbox.checked.disabled {
+  background-position: -66px 0;
+}
+.iradio {
+  background: transparent;
+  border: 2px solid rgba(126, 42, 141, 0.2);
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+.iradio:hover {
+  border: 2px solid rgba(126, 42, 141, 0.5);
+}
+.iradio.checked {
+  display: inline-block;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 11px;
+  line-height: 18px;
+  text-align: center;
+  border: 2px solid #7e2a8d;
+  color: #7e2a8d;
+}
+.iradio.checked.pull-left {
+  margin-right: .3em;
+}
+.iradio.checked.pull-right {
+  margin-left: .3em;
+}
+.iradio.checked:before {
+  content: "\f111";
+}
+.iradio.disabled {
+  border: 2px solid #aaa;
+  background: #ddd;
+  cursor: not-allowed;
 }
 .loading {
   width: 100%;
@@ -8186,6 +8280,9 @@ body {
   text-shadow: none;
   background-color: transparent;
   border: 0;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
   display: block;
   margin: 20px auto 0;
 }
