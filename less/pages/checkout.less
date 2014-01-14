@@ -102,13 +102,13 @@
     @padding-sides: 23px;
 
     .column {
+      background: white;
       overflow: hidden;
       padding-right: @padding-sides;
       padding-left: @padding-sides;
       padding-bottom: 25px;
 
       &.main {
-        background: white;
         @media (min-width: @screen-sm) {
           padding-left: @margin-left + @padding-sides;
           box-shadow: inset @margin-left 0 0 @gray-lighter;
@@ -116,6 +116,7 @@
       }
       
       &.side {
+        background: none;
         h1, .media-list {
           box-shadow: 0 0 0 @padding-sides white;
           background: white;
@@ -123,7 +124,7 @@
         h1 {
           box-shadow: -1 * @padding-sides 0 0 white,
                       @padding-sides 0 0 white;
-          z-index: 9000;
+          z-index: 4000;
           position: relative;
         }
         .media-list {
