@@ -1,0 +1,168 @@
+// Master Template
+// -------------------------
+
+  // general 
+    body {
+      background: #f8f8f8;
+      padding-bottom: 50px;
+    }
+
+  // main nav
+    .main-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 80px;
+      height: 100%;
+      background: #fff;
+      z-index: 100;
+      overflow: hidden;
+      .box-shadow(0 0 10px rgba(0,0,0,0.1));
+      .transition(all, 0.15s, ease);
+
+      &.open {
+        width: 190px;
+      }
+
+      &:hover {
+        span {.opacity(1);}
+      }
+
+      .logo {
+        .img-retina('../img/minestore-logo.png', '../img/minestore-logo@2x.png', 45px, 45px);
+        .square(45px);
+        .hide-text();
+
+        display: block;
+        margin: 20px auto 0;
+      }
+
+      ul {
+        margin: 20px 0 0 0;
+        padding: 0;
+
+        li {
+          list-style: none;
+          width: 190px;
+
+          a {
+
+            i {
+              position: relative;
+              top: 4px;
+              margin-left: 30px;
+              display: inline-block;
+              text-align: center;
+              width: 40px;
+              color:#CACACA;
+              zoom: 0.8;
+              .transition(all, 0.2s, ease);
+            }
+            span {
+              font:14px/40px @base-font;
+              color:#999;
+              display: inline-block;
+              .opacity(0);
+              .transition(all, 0.2s, ease);
+            }
+
+            &:hover {
+              i, span { color:@brand-primary !important; }
+              span {.opacity(1);}
+            }
+          } //a 
+        } //li
+      }//ul
+    }
+
+  // topbar 
+    .top-bar {
+      background: #EFEFEF;
+      height: 60px;
+
+      .profile-nav a.dropdown-toggle {
+        position: relative;
+        text-decoration: none;
+        font:14px @base-font;
+        color:#555;
+        height: 60px;
+        display: block;
+
+        &:hover {
+          background: #f8f8f8;
+        }
+
+        .profile-avatar {
+          position: absolute;
+          top: 10px;
+          left: 20px;
+          .square(40px);
+          -webkit-border-radius: 25px;
+          -moz-border-radius: 25px;
+          border-radius: 25px;
+          float: left;
+        }
+
+        h6 {
+          position: absolute;
+          top: 5px;
+          left:65px;
+          width: 65%;
+          display: block;
+          margin-left: 10px;
+          font:bold 15px @base-font;
+          color:#555;
+          text-overflow:clip;
+          white-space: nowrap;
+          overflow: hidden; 
+        }
+        
+        small {
+          position: absolute;
+          top: 33px;
+          left: 75px;
+          display: block;
+          font:14px @base-font;
+          color:#999;
+        }
+
+        .caret {
+          position: absolute;
+          top: 38px;
+          left: 140px;
+          color:#999;
+        }
+
+      }
+    }
+
+  // header 
+    header.header {
+      padding-top: 40px;
+      background: #F4F4F4; 
+      min-height: 200px;
+
+      .header-title {
+        // margin-top: -20px;
+        // display: block;
+      }
+    }
+
+    .back {
+      position: relative;
+      top: 11px;
+      .square(40px);
+      // margin-left: -50px;
+      margin-right: 10px;
+      background: #ececec;
+      text-align: center;
+      line-height: 45px;
+      float: left;
+      color:#666;
+      .transition(all,0.2s,ease);
+
+      &:hover {
+        background: #fff;
+        color:#333;
+      }
+    }

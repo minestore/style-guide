@@ -187,10 +187,40 @@
 			border-color: @brand-primary;
 			box-shadow: none !important;
 			outline: none !important;
+      background: #fff;
 		}
+
+    &:hover {
+      border-color: @brand-primary;
+    }
+
 		&:disabled {
 			background: darken(@gray-lighter,3);
 		}
+
+    &::-webkit-input-placeholder {
+       color: #999;
+       line-height: 25px;
+       .opacity(0.6);
+    }
+
+    &:-moz-placeholder { /* Firefox 18- */
+       color: #999;
+       line-height: 25px;
+       .opacity(0.6);
+    }
+
+    &::-moz-placeholder {  /* Firefox 19+ */
+       color: #999;
+       line-height: 25px;
+       .opacity(0.6);
+    }
+
+    &:-ms-input-placeholder {  
+       color: #999;
+       line-height: 25px;
+       .opacity(0.6);
+    }
 	}
 
 	.form-inline {
