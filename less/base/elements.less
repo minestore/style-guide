@@ -1,33 +1,3 @@
-// Alerts
-// -------------------------
-
-	.alert {
-		color: white;
-		border-radius: 0;
-		border: none;
-		margin-bottom: 0;
-		padding: 22px 0;
-		position: relative;
-		p { 
-			color:white;
-			margin-top: 10px;
-		}
-		h2 {
-			padding: 0;
-			margin: 0;
-			font-size: 130%;
-      color: white;
-		}
-		.fa {
-			font-size: 160%;
-			margin-right: 12px;
-		}
-    &.alert-success h2 {
-      font-weight: 100;
-      span { font-weight: 500; }
-    }
-	}
-
 // Loading
 // -------------------------
 
@@ -150,71 +120,17 @@
 // -------------------------
 
   .alert {
+    color: white;
+    border-radius: 0;
+    border: none;
+    margin-bottom: 0;
+    padding: 22px 0;
     position: relative;
     text-align: center;
 
-    &.alert-info {
-      background: darken(@brand-info, 5%);
-      // color: darken(@brand-info,25%);
-    }
-    
-    &.alert-warning {
-      background: darken(@brand-warning, 5%);
-      // color: darken(@brand-warning,25%);
-    }
-
-    &.alert-success {
-      background: darken(@brand-success, 5%);
-      // color: darken(@brand-success,25%);
-    }
-
-    &.alert-danger {
-      background: darken(@brand-danger, 5%);
-      // color: darken(@brand-danger,35%);
-    }
-
-    .btn-default {
-      color:#fff;
-      border-color: #fff;
-      background: transparent;
-
-      &:hover {
-        background: #fff;
-        color:#666;
-      }
-    }
-
-    .btn-danger {
-      color:#fff;
-      border-color: #fff;
-      background: transparent;
-
-      &:hover {
-        background: #fff;
-        color:@brand-danger;
-      }
-    }
-
-    .btn-success {
-      color:#fff;
-      border-color: #fff;
-      background: transparent;
-
-      &:hover {
-        background: #fff;
-        color:@brand-success;
-      }
-    }
-
-    .btn-warning {
-      color:#fff;
-      border-color: #fff;
-      background: transparent;
-
-      &:hover {
-        background: #fff;
-        color:@brand-warning;
-      }
+    .fa {
+      font-size: 160%;
+      margin-right: 12px;
     }
 
     a {
@@ -229,12 +145,72 @@
     }
 
     p {
-      margin: 0 auto;
-      width: 90%;
+      color: white;
+      margin: 0 31px;
+      margin-top: 10px;
     }
 
+    h2 {
+      padding: 0;
+      margin: 0;
+      font-size: 130%;
+      color: white;
 
+      font-weight: 100;
+      span { font-weight: 500; }
+    }
 
+    &.alert-block {
+      text-align: left;
+    }
+
+    &.alert-info {
+      background: darken(@brand-info, 5%);
+    }
+    
+    &.alert-warning {
+      background: darken(@brand-warning, 5%);
+    }
+
+    &.alert-success {
+      background: darken(@brand-success, 5%);
+    }
+
+    &.alert-danger {
+      background: darken(@brand-danger, 5%);
+    }
+
+    .btn {
+      color:#fff;
+      border-color: #fff;
+      background: transparent;
+      &:hover {
+        background: white;
+      }
+      &.btn-default {
+        &:hover {
+          color:#666;
+        }
+      }
+
+      &.btn-danger {
+        &:hover {
+          color:@brand-danger;
+        }
+      }
+
+      &.btn-success {
+        &:hover {
+          color:@brand-success;
+        }
+      }
+    
+      &.btn-warning {
+        &:hover {
+          color:@brand-warning;
+        }
+      }
+    }
   }
 
 // Panel
