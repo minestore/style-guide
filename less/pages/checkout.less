@@ -102,29 +102,47 @@
     @padding-sides: 23px;
 
     .column {
-      background: white;
       overflow: hidden;
       padding-right: @padding-sides;
       padding-left: @padding-sides;
       padding-bottom: 25px;
 
-      @media (min-width: @screen-sm) {
-        &.main {
+      &.main {
+        background: white;
+        @media (min-width: @screen-sm) {
           padding-left: @margin-left + @padding-sides;
           box-shadow: inset @margin-left 0 0 @gray-lighter;
         }
       }
-
-      @media (max-width: @screen-xs) {
-        &.side {
+      
+      &.side {
+        h1, .media-list {
+          box-shadow: 0 0 0 @padding-sides white;
+          background: white;
+        }
+        h1 {
+          box-shadow: -1 * @padding-sides 0 0 white,
+                      @padding-sides 0 0 white;
+          z-index: 9000;
+          position: relative;
+        }
+        .media-list {
+          .transition-duration(0.35s);
+          .transition-delay(0);
+        }
+        @media (max-width: @screen-xs) {
           display: none;
         }
       }
 
       .sticky {
-        background: white;
-        top: 0;
-        box-shadow: 0 0 0 @padding-sides white;
+        // position: fixed;
+      }
+
+      .scroll-to-fixed-fixed {
+        .media-list { 
+          
+        }
       }
     }
 
@@ -143,9 +161,10 @@
       color: @brand-primary;
       margin: 0;
       @padding: 24px;
-      padding: @padding 0 0;
-      margin-bottom: @padding + 3px;
+      padding: @padding 0;
+      margin-bottom: 3px - @padding;
       position: relative;
+      background: white;
     }
 
     h3 {
@@ -156,6 +175,8 @@
       width: 120%;
       margin-left: -10%;
       border-color: @gray-lighter;
+      z-index: 10000;
+      position: relative;
     }
 
     .media {

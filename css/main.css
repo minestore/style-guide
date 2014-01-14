@@ -7718,6 +7718,7 @@ label.control-label small {
 }
 .label-fill select {
   background: white;
+  font-size: 96%;
 }
 input[type="radio"] {
   display: none;
@@ -8045,11 +8046,13 @@ table tr.danger {
   }
 }
 .checkout .column {
-  background: white;
   overflow: hidden;
   padding-right: 23px;
   padding-left: 23px;
   padding-bottom: 25px;
+}
+.checkout .column.main {
+  background: white;
 }
 @media (min-width: 768px) {
   .checkout .column.main {
@@ -8057,15 +8060,26 @@ table tr.danger {
     box-shadow: inset 25px 0 0 #f8f8f8;
   }
 }
+.checkout .column.side h1,
+.checkout .column.side .media-list {
+  box-shadow: 0 0 0 23px #ffffff;
+  background: white;
+}
+.checkout .column.side h1 {
+  box-shadow: -23px 0 0 #ffffff, 23px 0 0 #ffffff;
+  z-index: 9000;
+  position: relative;
+}
+.checkout .column.side .media-list {
+  -webkit-transition-duration: 0.35s;
+  transition-duration: 0.35s;
+  -webkit-transition-delay: 0;
+  transition-delay: 0;
+}
 @media (max-width: 480px) {
   .checkout .column.side {
     display: none;
   }
-}
-.checkout .column .sticky {
-  background: white;
-  top: 0;
-  box-shadow: 0 0 0 23px #ffffff;
 }
 .checkout .alert {
   padding-right: 23px;
@@ -8080,9 +8094,10 @@ table tr.danger {
 .checkout h1 {
   color: #da1c69;
   margin: 0;
-  padding: 24px 0 0;
-  margin-bottom: 27px;
+  padding: 24px 0;
+  margin-bottom: -21px;
   position: relative;
+  background: white;
 }
 .checkout h3 {
   margin: 21px 0;
@@ -8091,6 +8106,8 @@ table tr.danger {
   width: 120%;
   margin-left: -10%;
   border-color: #f8f8f8;
+  z-index: 10000;
+  position: relative;
 }
 .checkout .media {
   line-height: 180%;
