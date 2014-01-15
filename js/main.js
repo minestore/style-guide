@@ -83,6 +83,14 @@ $(function() {
     container: 'body'
   });
 
+  function mainNav() {
+    if($('.main-nav').length){
+      $('.main-nav').on('mouseover', function(){
+        $(this).addClass('open');
+      });
+    }
+  }
+
 });
 
 try {
@@ -92,3 +100,4 @@ try {
     }
   })
 } catch(e) {}
+
