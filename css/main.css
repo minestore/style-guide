@@ -8087,6 +8087,46 @@ select.form-control {
 .tooltip .tooltip-inner {
   padding: 5px 10px 8px;
 }
+.popover-icon {
+  display: inline-block;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: block;
+  position: relative;
+  text-align: center;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  overflow: hidden;
+  width: 24px !important;
+  height: 24px;
+  top: 10px;
+  vertical-align: middle;
+  box-shadow: inset 0 0 0 2px #02b6e6;
+  border-radius: 50%;
+  color: #02b6e6;
+}
+.popover-icon.pull-left {
+  margin-right: .3em;
+}
+.popover-icon.pull-right {
+  margin-left: .3em;
+}
+.popover-icon:before {
+  content: "\f128";
+}
+.popover-icon:before {
+  font-size: 14px;
+  line-height: 25px;
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+}
 .popover .popover-title {
   font-weight: bold;
 }
@@ -8115,15 +8155,16 @@ table tr.danger {
   padding: 30px;
 }
 .checkout .header .logo {
-  background: url(../img/logo.png) no-repeat center center;
-  background-size: auto 100%;
+  text-align: center;
+}
+.checkout .header .logo img {
   height: 70px;
 }
 @media (max-width: 767px) {
   .checkout .header {
     padding: 15px;
   }
-  .checkout .header .logo {
+  .checkout .header .logo img {
     height: 50px;
   }
 }

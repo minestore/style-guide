@@ -279,6 +279,33 @@
     }
   }
 
+  .popover-icon {
+    .fa; .fa-question;
+
+    display: block;
+    position: relative;
+    text-align: center;
+    left: 0; right: 0; margin: 0 auto;
+    overflow: hidden;
+
+    @size: 24px;
+    width: @size !important;
+    height: @size;
+    top: 10px;
+    vertical-align: middle;
+
+    box-shadow: inset 0 0 0 2px @brand-info;
+    border-radius: 50%;
+    color: @brand-info;
+
+    &:before {
+      font-size: 14px;
+      line-height: @size + 1px;
+      position: absolute;
+      margin: 0 auto; left: 0; right: 0;
+    }
+  }
+
   .popover {
     .popover-title {
       font-weight: bold;

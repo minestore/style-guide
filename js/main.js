@@ -75,7 +75,12 @@ $(function() {
 
       });
     }, 2000);
+  });
 
+  $("[data-toggle=popover]").popover({
+    trigger: 'hover',
+    placement: 'bottom',
+    container: 'body'
   });
 
 });
