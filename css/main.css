@@ -7630,6 +7630,9 @@ label.control-label small {
   -ms-transition: 0.2s ease-out 0.3s ease-in-out;
   /* IE */
 }
+.label-fill input[type="radio"] {
+  display: none;
+}
 .label-fill:hover {
   background: #ecf5f7;
 }
