@@ -25,8 +25,17 @@ $(function() {
       });
     }
 
+  // typekit
+    function typekit() {
+      try {
+        Typekit.load()
+      } catch(e) {}
+    }
+
+
   // init 
 
   mainNav();
+  typekit();
 
 });
