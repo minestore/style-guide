@@ -7735,6 +7735,11 @@ label.control-label small {
   background-repeat: no-repeat;
   background-position: center center;
 }
+.label-fill > div.card:first-child,
+.label-fill > div.boleto:first-child {
+  background-position: right center;
+  padding-left: 40px;
+}
 .label-fill > div.card {
   background-image: url('../img/cartao.png');
 }
@@ -8215,7 +8220,7 @@ select.form-control:focus {
   background: #02a2cd;
 }
 .alert.alert-warning {
-  background: #eecc03;
+  background: #e6c603;
 }
 .alert.alert-success {
   background: #03b58c;

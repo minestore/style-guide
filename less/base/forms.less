@@ -87,6 +87,10 @@
         height: 100%;
         background-repeat: no-repeat;
         background-position: center center;
+        &:first-child {
+          background-position: right center;
+          padding-left: 40px;
+        }
       }
       &.card {
         .image-retina(url('../img/cartao.png'),url('../img/cartao@2x.png'),@width,20px)
