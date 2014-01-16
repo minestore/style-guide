@@ -8037,6 +8037,16 @@ select.form-control:focus {
   background: #ddd;
   cursor: not-allowed;
 }
+@-moz-document url-prefix() {
+  .label-fill > div.type #accepted-cards-images {
+    margin-top: -27px;
+  }
+  @media (max-width: 1199px) {
+    .label-fill > div.type #accepted-cards-images {
+      margin-top: 0 !important;
+    }
+  }
+}
 .loading {
   width: 100%;
   height: 100%;
