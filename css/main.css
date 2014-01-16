@@ -8014,6 +8014,59 @@ select.form-control:focus {
 .icheckbox.checked.disabled {
   background-position: -66px 0;
 }
+.icheckboxStock {
+  display: inline-block;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 26px;
+  height: 26px;
+  display: block;
+  -webkit-border-radius: 13px;
+  -moz-border-radius: 13px;
+  border-radius: 13px;
+  background: #EDEDED;
+  color: #c7c7c7;
+  text-align: center;
+  line-height: 26px;
+  cursor: hand;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  /* Standard */
+  -moz-transition: all 0.2s ease;
+  /* Firefox 4 */
+  -webkit-transition: all 0.2s ease;
+  /* Safari and Chrome */
+  -o-transition: all 0.2s ease;
+  /* Opera */
+  -ms-transition: all 0.2s ease;
+  /* IE */
+}
+.icheckboxStock.pull-left {
+  margin-right: .3em;
+}
+.icheckboxStock.pull-right {
+  margin-left: .3em;
+}
+.icheckboxStock:before {
+  content: "\f00d";
+}
+.icheckboxStock:hover {
+  background: #e0e0e0;
+}
+.icheckboxStock.checked {
+  background: #03cea0;
+  color: #fff;
+}
+.icheckboxStock.checked:before {
+  content: "\f00c";
+}
+.icheckboxStock.checked:hover {
+  background: #03b58c;
+}
 .iradio {
   background: transparent;
   border: 2px solid rgba(126, 42, 141, 0.2);
@@ -8051,6 +8104,70 @@ select.form-control:focus {
   border: 2px solid #aaa;
   background: #ddd;
   cursor: not-allowed;
+}
+.iSwitch {
+  position: relative;
+  width: 70px;
+  height: 30px;
+  cursor: pointer;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  transition: 350ms;
+  background: #ededed;
+  display: inline-block;
+  transition: all 0.2s ease;
+  /* Standard */
+  -moz-transition: all 0.2s ease;
+  /* Firefox 4 */
+  -webkit-transition: all 0.2s ease;
+  /* Safari and Chrome */
+  -o-transition: all 0.2s ease;
+  /* Opera */
+  -ms-transition: all 0.2s ease;
+  /* IE */
+}
+.iSwitch::after {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  content: '';
+  top: 3px;
+  left: 3px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: #fff;
+  transition: all 0.2s ease;
+  /* Standard */
+  -moz-transition: all 0.2s ease;
+  /* Firefox 4 */
+  -webkit-transition: all 0.2s ease;
+  /* Safari and Chrome */
+  -o-transition: all 0.2s ease;
+  /* Opera */
+  -ms-transition: all 0.2s ease;
+  /* IE */
+}
+.iSwitch::before {
+  position: relative;
+  top: 3px;
+  left: 32px;
+  content: 'não';
+  color: #999;
+}
+.iSwitch.checked {
+  background: #03cea0;
+}
+.iSwitch.checked::before {
+  left: auto;
+  right: -11px !important;
+  content: 'sim';
+  color: #fff;
+}
+.iSwitch.checked::after {
+  left: auto;
+  right: 3px;
 }
 @-moz-document url-prefix() {
   .label-fill > div.type #accepted-cards-images {
@@ -8299,10 +8416,16 @@ select.form-control:focus {
 .panel-group .panel .panel-heading a:hover {
   color: #fff;
 }
+.modal .modal-header {
+  border: none;
+}
 .modal .modal-content {
   border-color: #ddd;
   -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+.modal .modal-footer {
+  border: none;
 }
 .tooltip .tooltip-inner {
   padding: 5px 10px 8px;
@@ -8950,4 +9073,25 @@ body.products-show .product-variations.block .product-variations table.table tbo
 }
 body.products-show .product-variations.block .product-variations table.table tbody .variation-three {
   color: #03cea0;
+}
+body.products-show .variation-form .icheckboxStock {
+  margin: 25px auto 0;
+  text-align: center;
+  display: inline-block;
+  clear: both;
+  margin-left: 15px;
+}
+body.products-show .variation-form .iSwitch {
+  margin-top: 7px;
+  margin-left: 10px;
+}
+body.products-show .variation-form .block-shipment {
+  display: none;
+}
+body.products-show .variation-form .block-variations,
+body.products-show .variation-form .block-shipment,
+body.products-show .variation-form .block-price {
+  padding-top: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
 }

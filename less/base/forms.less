@@ -299,6 +299,36 @@
       }
     }
 
+    .icheckboxStock {
+      .fa; .fa-times;
+      .square(26px);
+      display: block;
+      -webkit-border-radius: 13px;
+      -moz-border-radius: 13px;
+      border-radius: 13px;
+      background: #EDEDED;
+      color:darken(#EDEDED, 15%);
+      text-align: center;
+      line-height: 26px;
+      cursor: hand;
+      cursor: pointer;
+      .transition(all,0.2s,ease);
+
+      &:hover {
+        background: darken(#ededed,5%);
+      }
+
+      &.checked {
+        background: @brand-success;
+        color:#fff;
+        .fa-check;
+        
+        &:hover {
+          background: darken(@brand-success, 5%);
+        }
+      }
+    }
+
     .iradio {
       background: transparent;
       border: 2px solid fade(@brand-secondary, 20%);
@@ -331,6 +361,62 @@
 
     }
 
+    // switch
+
+    .iSwitch {
+      position: relative; 
+      display: inline-block;
+      width: 70px; 
+      height: 30px;
+      cursor: pointer;
+      -webkit-border-radius: 15px;
+      -moz-border-radius: 15px;
+      border-radius: 15px;
+      transition: 350ms;
+      background: #ededed;
+      display: inline-block;
+
+      .transition(all,0.2s,ease);
+
+      &::after {
+        position: absolute; 
+        .square(24px);
+        content:'';
+        top: 3px; 
+        left: 3px;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+        background: #fff;.transition(all,0.2s,ease);
+      }
+
+      &::before {
+        position: relative;
+        top:3px;
+        left:32px;
+        content: 'não';
+        color:#999;
+      }
+
+      &.checked {
+        background: @brand-success; 
+
+        &::before {
+
+          left: auto;
+          right:-11px !important;
+          content: 'sim';
+          color:#fff;
+        }
+
+        &::after {
+          left: auto;
+          right: 3px; 
+        }
+      }
+    }
+
+
     // firefox fixes
 
     @-moz-document url-prefix() {
@@ -341,73 +427,3 @@
           }
         }
     }
-
-    // /* Retina support */
-    // @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
-    //        only screen and (-moz-min-device-pixel-ratio: 1.5),
-    //        only screen and (-o-min-device-pixel-ratio: 3/2),
-    //        only screen and (min-device-pixel-ratio: 1.5) {
-    //     .icheckbox,
-    //     .iradio {
-    //         background-image: url('../img/purple@2x.png');
-    //         -webkit-background-size: 176px 22px;
-    //         background-size: 176px 22px;
-    //     }
-    // }
-
-
-    // .icheckbox,
-    // .iradio {
-    //     display: inline-block !important;
-    //     *display: inline !important;
-    //     vertical-align: middle;
-    //     margin: 0;
-    //     padding: 0;
-    //     width: 20px;
-    //     height: 20px;
-    //     background: url('../img/purple.png') no-repeat;
-    //     border: none;
-    //     cursor: pointer;
-
-    // }
-
-    // .icheckbox {
-    //     background-position: 0 0;
-    // }
-    //     .icheckbox.checked {
-    //         background-position: -22px 0;
-    //     }
-    //     .icheckbox.disabled {
-    //         background-position: -44px 0;
-    //         cursor: default;
-    //     }
-    //     .icheckbox.checked.disabled {
-    //         background-position: -66px 0;
-    //     }
-
-    // .iradio {
-    //     background-position: -88px 0;
-    // }
-    //     .iradio.checked {
-    //         background-position: -110px 0;
-    //     }
-    //     .iradio.disabled {
-    //         background-position: -132px 0;
-    //         cursor: default;
-    //     }
-    //     .iradio.checked.disabled {
-    //         background-position: -154px 0;
-    //     }
-
-    // /* Retina support */
-    // @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
-    //        only screen and (-moz-min-device-pixel-ratio: 1.5),
-    //        only screen and (-o-min-device-pixel-ratio: 3/2),
-    //        only screen and (min-device-pixel-ratio: 1.5) {
-    //     .icheckbox,
-    //     .iradio {
-    //         background-image: url('../img/purple@2x.png');
-    //         -webkit-background-size: 176px 22px;
-    //         background-size: 176px 22px;
-    //     }
-    // }

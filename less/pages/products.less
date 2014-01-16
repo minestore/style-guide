@@ -82,6 +82,7 @@
 // -------------------------
   body.products-show {
     
+    // images
     .product-images.block {
       .product-images {
         .image {
@@ -106,12 +107,14 @@
         }
       }
     }
-
+    
+    // categories
     .product-category.block {
       .product-category {
       }
     }
 
+    // variations
     .product-variations.block {
       .product-variations {
         
@@ -158,6 +161,30 @@
           }// tbody
         }// table
 
+      }
+    }
+
+    .variation-form {
+
+      .icheckboxStock {
+        margin: 25px auto 0;
+        text-align: center;
+        display: inline-block;
+        clear: both;
+        margin-left: 15px
+      }
+
+      .iSwitch {
+        margin-top: 7px;
+        margin-left: 10px;
+      }
+      
+      .block-shipment {display: none;}
+
+      .block-variations, .block-shipment, .block-price {
+        padding-top: 20px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #ddd;
       }
     }
 
