@@ -14,7 +14,7 @@
 	label {
 		font-size: 14px;
 		font-weight: 400;
-		
+		width: 100%;
 		white-space: nowrap;
 		&:after { content: '\00a0' }
 		&.control-label {
@@ -62,31 +62,42 @@
 			&.type {
         text-align: left;
 				position: relative;
-				top: 1px;
-				@width: 29px; @height: 25px;
-				&:before {
-					content: '';
-					display: block;
-					float: left;
-					position: relative;
-					top: -2px;
-					margin-right: 12px;
-					width: @width; height: @height;
-					background-repeat: no-repeat;
-					background-position: center center;
-					.inactive &{
-						-webkit-filter: grayscale(1);
-						.translate3d(0,0,0);
-						opacity: 0.4;
-					}
-				}
-				&.card:before {
-					.image-retina(url('../img/cartao.png'),url('../img/cartao@2x.png'),@width,20px)
-				}
-				&.boleto:before {
-					.image-retina(url('../img/boleto.png'),url('../img/boleto@2x.png'),21px,@height)
-				}
+        padding-left: 15px;
+				top: -1px;
+        line-height: 26px;
+        #accepted-cards-images {
+          @media (min-width: @screen-lg) {
+            height: 0;
+            line-height: 23px;
+            float: right;
+          }
+          vertical-align: bottom;
+          line-height: 13px;
+          img {
+            height: 17px;
+            margin-right: 4px;
+          }
+        }
 			}
+      @width: 29px; @height: 25px;
+      &.card, &.boleto {
+        position: relative;
+        top: -1px;
+        width: @width;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: center center;
+        &:first-child {
+          background-position: right center;
+          padding-left: 40px;
+        }
+      }
+      &.card {
+        .image-retina(url('../img/cartao.png'),url('../img/cartao@2x.png'),@width,20px)
+      }
+      &.boleto {
+        .image-retina(url('../img/boleto.png'),url('../img/boleto@2x.png'),21px,@height)
+      }
 			&.amount {
 				width: 1px;
         text-align: left;
@@ -111,10 +122,6 @@
       }
       padding-left: 2px;
       text-align: center;
-    }
-    select {
-      background: white;
-      font-size: 96%;
     }
 	}
 	
@@ -234,7 +241,7 @@
 		margin-bottom: 50px;
 	}
 
-	select.form-control {
+	select.form-control, select.form-control:focus {
 		.image-retina (url('../img/select.png'),url('../img/select@2x.png'),14px,9px);
 		background-position: right 10px center;
 		background-repeat: no-repeat;
@@ -244,7 +251,7 @@
 		z-index: 100;
 	}
 
-  // iCheck plugin
+  // iCheck plugin Flat skin, purple
   // -----------------------------------
 
     .icheckbox,
@@ -321,4 +328,86 @@
       
       &.checked.disabled {
       }
+
     }
+
+    // firefox fixes
+
+    @-moz-document url-prefix() {
+        .label-fill > div.type #accepted-cards-images {
+          margin-top: -27px;
+          @media (max-width: @screen-md-max) {
+            margin-top: 0 !important;
+          }
+        }
+    }
+
+    // /* Retina support */
+    // @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+    //        only screen and (-moz-min-device-pixel-ratio: 1.5),
+    //        only screen and (-o-min-device-pixel-ratio: 3/2),
+    //        only screen and (min-device-pixel-ratio: 1.5) {
+    //     .icheckbox,
+    //     .iradio {
+    //         background-image: url('../img/purple@2x.png');
+    //         -webkit-background-size: 176px 22px;
+    //         background-size: 176px 22px;
+    //     }
+    // }
+
+
+    // .icheckbox,
+    // .iradio {
+    //     display: inline-block !important;
+    //     *display: inline !important;
+    //     vertical-align: middle;
+    //     margin: 0;
+    //     padding: 0;
+    //     width: 20px;
+    //     height: 20px;
+    //     background: url('../img/purple.png') no-repeat;
+    //     border: none;
+    //     cursor: pointer;
+
+    // }
+
+    // .icheckbox {
+    //     background-position: 0 0;
+    // }
+    //     .icheckbox.checked {
+    //         background-position: -22px 0;
+    //     }
+    //     .icheckbox.disabled {
+    //         background-position: -44px 0;
+    //         cursor: default;
+    //     }
+    //     .icheckbox.checked.disabled {
+    //         background-position: -66px 0;
+    //     }
+
+    // .iradio {
+    //     background-position: -88px 0;
+    // }
+    //     .iradio.checked {
+    //         background-position: -110px 0;
+    //     }
+    //     .iradio.disabled {
+    //         background-position: -132px 0;
+    //         cursor: default;
+    //     }
+    //     .iradio.checked.disabled {
+    //         background-position: -154px 0;
+    //     }
+
+    // /* Retina support */
+    // @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+    //        only screen and (-moz-min-device-pixel-ratio: 1.5),
+    //        only screen and (-o-min-device-pixel-ratio: 3/2),
+    //        only screen and (min-device-pixel-ratio: 1.5) {
+    //     .icheckbox,
+    //     .iradio {
+    //         background-image: url('../img/purple@2x.png');
+    //         -webkit-background-size: 176px 22px;
+    //         background-size: 176px 22px;
+    //     }
+    // }

@@ -7653,6 +7653,7 @@ fieldset[disabled] .btn.btn-secondary.active {
 label {
   font-size: 14px;
   font-weight: 400;
+  width: 100%;
   white-space: nowrap;
 }
 label:after {
@@ -7715,40 +7716,53 @@ label.control-label small {
 .label-fill > div.type {
   text-align: left;
   position: relative;
-  top: 1px;
+  padding-left: 15px;
+  top: -1px;
+  line-height: 26px;
 }
-.label-fill > div.type:before {
-  content: '';
-  display: block;
-  float: left;
+.label-fill > div.type #accepted-cards-images {
+  vertical-align: bottom;
+  line-height: 13px;
+}
+@media (min-width: 1200px) {
+  .label-fill > div.type #accepted-cards-images {
+    height: 0;
+    line-height: 23px;
+    float: right;
+  }
+}
+.label-fill > div.type #accepted-cards-images img {
+  height: 17px;
+  margin-right: 4px;
+}
+.label-fill > div.card,
+.label-fill > div.boleto {
   position: relative;
-  top: -2px;
-  margin-right: 12px;
+  top: -1px;
   width: 29px;
-  height: 25px;
+  height: 100%;
   background-repeat: no-repeat;
   background-position: center center;
 }
-.inactive .label-fill > div.type:before {
-  -webkit-filter: grayscale(1);
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-  opacity: 0.4;
+.label-fill > div.card:first-child,
+.label-fill > div.boleto:first-child {
+  background-position: right center;
+  padding-left: 40px;
 }
-.label-fill > div.type.card:before {
+.label-fill > div.card {
   background-image: url('../img/cartao.png');
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  .label-fill > div.type.card:before {
+  .label-fill > div.card {
     background-image: url('../img/cartao@2x.png');
     background-size: 29px 20px;
   }
 }
-.label-fill > div.type.boleto:before {
+.label-fill > div.boleto {
   background-image: url('../img/boleto.png');
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  .label-fill > div.type.boleto:before {
+  .label-fill > div.boleto {
     background-image: url('../img/boleto@2x.png');
     background-size: 21px 25px;
   }
@@ -7780,10 +7794,6 @@ label.control-label small {
     width: 50px;
     padding-right: 5px;
   }
-}
-.label-fill select {
-  background: white;
-  font-size: 96%;
 }
 .input-radio {
   display: inline-block;
@@ -7929,13 +7939,15 @@ label.control-label small {
 .form-section {
   margin-bottom: 50px;
 }
-select.form-control {
+select.form-control,
+select.form-control:focus {
   background-image: url('../img/select.png');
   background-position: right 10px center;
   background-repeat: no-repeat;
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  select.form-control {
+  select.form-control,
+  select.form-control:focus {
     background-image: url('../img/select@2x.png');
     background-size: 14px 9px;
   }
@@ -8039,6 +8051,16 @@ select.form-control {
   border: 2px solid #aaa;
   background: #ddd;
   cursor: not-allowed;
+}
+@-moz-document url-prefix() {
+  .label-fill > div.type #accepted-cards-images {
+    margin-top: -27px;
+  }
+  @media (max-width: 1199px) {
+    .label-fill > div.type #accepted-cards-images {
+      margin-top: 0 !important;
+    }
+  }
 }
 .loading {
   width: 100%;
@@ -8185,6 +8207,11 @@ select.form-control {
   margin: 0 31px;
   margin-top: 10px;
 }
+.alert ul {
+  font-size: 14px;
+  margin: 0 10px;
+  margin-top: 10px;
+}
 .alert h2 {
   padding: 0;
   margin: 0;
@@ -8202,7 +8229,7 @@ select.form-control {
   background: #02a2cd;
 }
 .alert.alert-warning {
-  background: #eecc03;
+  background: #e6c603;
 }
 .alert.alert-success {
   background: #03b58c;
@@ -8665,11 +8692,6 @@ header.header {
   -webkit-transition-delay: 0;
   transition-delay: 0;
 }
-@media (max-width: 480px) {
-  .checkout .column.side {
-    display: none;
-  }
-}
 .checkout .alert {
   padding-right: 23px;
   padding-left: 23px;
@@ -8690,6 +8712,9 @@ header.header {
 }
 .checkout h3 {
   margin: 21px 0;
+}
+.checkout h3 strong {
+  margin-left: 5px;
 }
 .checkout hr {
   width: 120%;

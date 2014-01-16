@@ -1,17 +1,17 @@
 /*!
  * Card Check
- * 
- * A credit card validator and type guesser 
- * 
+ *
+ * A credit card validator and type guesser
+ *
  * This is the standalone version of CardCheck.
  * It uses the jQuery methods $.extend and $.inArray
- *  
+ *
  * For documentation, look in the package you downloaded or go to
  * http://eclarian.com/cardcheck/
- * 
+ *
  * NOTE: This is not open source software and you must purchase
  * a license to legally use.
- * 
+ *
  * @uses       jQuery
  * @author     Eclarian Dev Team <eclarian@eclarian.com>
  * @copyright  Eclarian LLC
@@ -31,7 +31,7 @@
     defaultSettings = {
         cardNumber: null,
         allowSpaces: true,
-        acceptedCards:  [
+        acceptedCards: [
             'visa',
             'mastercard',
             'amex',
@@ -43,11 +43,11 @@
         ],
         // Advanced Initialization Options
         niceNames: {
-            visa: "Visa", 
-            mastercard: "Mastercard", 
-            amex: "American Express", 
-            diners: "Diners Club", 
-            hipercard: "Hipercard", 
+            visa: "Visa",
+            mastercard: "Mastercard",
+            amex: "American Express",
+            diners: "Diners Club",
+            hipercard: "Hipercard",
             // discover: "Discover", 
             // jcb: "JCB",
             // maestro: "Maestro"
@@ -55,68 +55,68 @@
         regExpNumCheck: "^[0-9]+$",
         // Allows for type guessing
         regExpApprox: {
-            visa: "^4", 
-            mastercard: "^5[1-5]", 
-            amex: "^(34|37)", 
+            visa: "^4",
+            mastercard: "^5[1-5]",
+            amex: "^(34|37)",
             diners: "^(30|36|38|39)",
-            hipercard: "", 
+            hipercard: "",
             // discover: "^6011", 
             // jcb: "^35",
             // maestro: "^(5018|5020|5038|6304|6759|6761|6762|6763)"
         },
         // Begin guessing type at one character. All arrays to maintain similar type
         startNum: {
-            visa: ['4'], 
-            mastercard: ['5'], 
+            visa: ['4'],
+            mastercard: ['5'],
             amex: ['3'],
-            diners: ['3'],     
-            hipercard: [''],     
+            diners: ['3'],
+            hipercard: [''],
             // discover: ['6'], 
             // jcb: ['3', '2', '1'],
             // maestro: ['5', '6']
         },
         // Determine when to use validation
         cardLength: {
-            visa: [13, 16], 
-            mastercard: [16], 
+            visa: [13, 16],
+            mastercard: [16],
             amex: [15],
-            diners: [14],  
-            hipercard: [''],     
+            diners: [14],
+            hipercard: [''],
             // discover: [16], 
             // jcb: [15, 16],
             // maestro: [12, 13, 14, 15, 16, 17, 18, 19]
         }
     },
-    min = function(array) {
-        return Math.min.apply( Math, array );
-    },
-    max = function(array) {
-        return Math.max.apply( Math, array );
-    },
-    // Setup the Core Functionality of instantiating separate objects
-    CardCheck = function(settings) {
-        
-        // Already instantiated
-        if (this instanceof CardCheck) {
+        min = function(array) {
+            return Math.min.apply(Math, array);
+        },
+        max = function(array) {
+            return Math.max.apply(Math, array);
+        },
+        // Setup the Core Functionality of instantiating separate objects
+        CardCheck = function(settings) {
 
-            // Setup Object & Array Properties here rather than in prototype
-            // If you don't, then they are shared across all object instances
-            this._callbacks = {};
-            this._settings = {};
+            // Already instantiated
+            if (this instanceof CardCheck) {
 
-            // Assume this is a credit card number
-            if (typeof settings === 'number' || typeof settings === 'string') {
-                return this.options().cardNumber(settings);
-            // Otherwise, assume this is a settings object
+                // Setup Object & Array Properties here rather than in prototype
+                // If you don't, then they are shared across all object instances
+                this._callbacks = {};
+                this._settings = {};
+
+                // Assume this is a credit card number
+                if (typeof settings === 'number' || typeof settings === 'string') {
+                    return this.options().cardNumber(settings);
+                    // Otherwise, assume this is a settings object
+                } else {
+                    return this.options(settings);
+                }
+
+                // New Card Check
             } else {
-                return this.options(settings);
+                return new CardCheck(settings);
             }
-
-        // New Card Check
-        } else {
-            return new CardCheck(settings);
-        }
-    };
+        };
 
     // Setup the methods and properties of each instance
     CardCheck.prototype = {
@@ -164,12 +164,12 @@
         cardType: function(niceName) {
 
             // Return null if no card type exists
-            if ( ! this._cardType) {
+            if (!this._cardType) {
                 return null;
             }
 
             return niceName ?
-                this._settings.niceNames[this._cardType]:
+                this._settings.niceNames[this._cardType] :
                 this._cardType;
         },
 
@@ -177,7 +177,7 @@
         // 
         // @param  string  card name
         // @return string  NiceName of Card
-        niceName: function (card) {
+        niceName: function(card) {
             return this._settings.niceNames[card] ? this._settings.niceNames[card] : '';
         },
 
@@ -191,10 +191,10 @@
 
             // Pass the callback the required params
             for (var i = 0; i < this._settings.acceptedCards.length; i++) {
-                
+
                 var // Pass the current cardname to the callback
                 cardName = this._settings.acceptedCards[i],
-                canContinue = callback(cardName);
+                    canContinue = callback(cardName);
 
                 // Break loop of we should no longer continue
                 if (canContinue === false) {
@@ -212,39 +212,39 @@
         // 
         // @return object  this instanceof CardCheck
         evaluate: function() {
-            
+
             // Setup RegExp
-            if ( ! this._numCheck ) {
-                this._numCheck = new RegExp( this._settings.regExpNumCheck );
+            if (!this._numCheck) {
+                this._numCheck = new RegExp(this._settings.regExpNumCheck);
             }
 
             // No card number means its not valid
             // or one or fewer characters cannot be evaluated
-            if ( ! this._cardNumber ) {
+            if (!this._cardNumber) {
                 this._switchState(null);
-            // Card number passed is not a number
-            } else if ( ! this._cardNumber.match( this._numCheck )) {
+                // Card number passed is not a number
+            } else if (!this._cardNumber.match(this._numCheck)) {
                 this._switchState(false);
-            // Evaluate the current cardNumber
+                // Evaluate the current cardNumber
             } else {
-                
+
                 // Loop over all the available cards
                 var that = this;
                 this.eachCard(function(card) {
 
                     // Check if we can guess it from one number
-                    if ( that._cardNumber.length === 1 && card in that._settings.startNum ) {
+                    if (that._cardNumber.length === 1 && card in that._settings.startNum) {
                         // Continue because this could match a number of different cards
-                        if ( that._cardNumber === '3' || that._cardNumber === '6' ) {
+                        if (that._cardNumber === '3' || that._cardNumber === '6') {
                             that._switchState(null);
                             return true;
-                        // Found an approximate match to the card
-                        } else if ( $.inArray(that._cardNumber, that._settings.startNum[card]) !== -1 ) {
+                            // Found an approximate match to the card
+                        } else if ($.inArray(that._cardNumber, that._settings.startNum[card]) !== -1) {
                             that._switchState(null, card);
                             return false; // we found it!
                         }
 
-                    // Quickly guess at discover after second character
+                        // Quickly guess at discover after second character
                     } else if (that._cardNumber.length === 2 && (that._cardNumber === '60' || that._cardNumber === '65')) {
                         that._switchState(null, 'discover');
                         return false;
@@ -255,50 +255,50 @@
                         fullValidation = false,
                         highestValue = false,
                         beyondLength = false;
-                    
+
                     // Check if we should require full validation based on whether the max card length is reached
-                    if ( card in that._settings.cardLength && $.inArray(that._cardNumber.length, that._settings.cardLength[card]) !== -1 ) {
+                    if (card in that._settings.cardLength && $.inArray(that._cardNumber.length, that._settings.cardLength[card]) !== -1) {
                         fullValidation = true;
-                    // Check if the length is greater than or equal to the max length of the card
-                    } else if ( that._cardNumber.length >= max(that._settings.cardLength[card] ) ) {
+                        // Check if the length is greater than or equal to the max length of the card
+                    } else if (that._cardNumber.length >= max(that._settings.cardLength[card])) {
                         fullValidation = true;
                         highestValue = true;
-                        beyondLength = ( that._cardNumber.length > max(that._settings.cardLength[card] ) );
-                    // Whether the _isValid is true OR if the current _cardNumber is less than minimum card length
-                    // We can rely on the fact that we need to reset here if _isValid is TRUE because of the 
-                    //  fact that the cardlength is not the current length of the string so it's impossible its still valid 
-                    } else if ( that._isValid === true ) {
+                        beyondLength = (that._cardNumber.length > max(that._settings.cardLength[card]));
+                        // Whether the _isValid is true OR if the current _cardNumber is less than minimum card length
+                        // We can rely on the fact that we need to reset here if _isValid is TRUE because of the 
+                        //  fact that the cardlength is not the current length of the string so it's impossible its still valid 
+                    } else if (that._isValid === true) {
                         that._delayState(null);
                     }
-                        
+
                     // Continue approximation with simple regex to test beginning of string
-                    if ( card in that._settings.regExpApprox ) {
-                        exp = new RegExp( that._settings.regExpApprox[card] );
-                        
+                    if (card in that._settings.regExpApprox) {
+                        exp = new RegExp(that._settings.regExpApprox[card]);
+
                         // Check the Type - Only validate if type is found
-                        if ( that._cardNumber.match(exp) ) {
-                            
+                        if (that._cardNumber.match(exp)) {
+
                             // Check to see if we require full validation yet
-                            if ( fullValidation === false ) {
+                            if (fullValidation === false) {
                                 that._switchState(null, card);
                                 return false;
                             }
-                            
+
                             // Check the LuhnCheck at this point to make sure that it validates
                             // NOTE: The luhn check can pass even if the card is not complete
                             // Example would be visa being able to have longer cards. 
-                            if ( that.luhnCheck( that._cardNumber ) === true && ! beyondLength ) {
+                            if (that.luhnCheck(that._cardNumber) === true && !beyondLength) {
                                 that._switchState(true, card);
-                            // Soft Failure - there is another possibility with more chars
-                            } else if ( highestValue ) {
+                                // Soft Failure - there is another possibility with more chars
+                            } else if (highestValue) {
                                 that._switchState(false, card);
-                            // Lower than min card length
-                            } else if ( that._cardNumber.length < min(that._settings.cardLength[card]) ) {
+                                // Lower than min card length
+                            } else if (that._cardNumber.length < min(that._settings.cardLength[card])) {
                                 that._switchState(null, card);
                             }
-                            
+
                             // Something happened up above that requires a full stop           
-                            return false;                   
+                            return false;
                         }
                     }
                 });
@@ -312,14 +312,17 @@
         // @param  numeric
         // @return boolean
         luhnCheck: function(number) {
-            var luhnArr = [[0,2,4,6,8,1,3,5,7,9],[0,1,2,3,4,5,6,7,8,9]],
+            var luhnArr = [
+                [0, 2, 4, 6, 8, 1, 3, 5, 7, 9],
+                [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+            ],
                 sum = 0;
-            
-            number.replace(/\D+/g,"").replace(/[\d]/g, function(c, p, o){
-                sum += luhnArr[ (o.length - p) & 1 ][ parseInt(c, 10) ];
+
+            number.replace(/\D+/g, "").replace(/[\d]/g, function(c, p, o) {
+                sum += luhnArr[(o.length - p) & 1][parseInt(c, 10)];
             });
 
-            return ( sum % 10 === 0 ) && ( sum > 0 );
+            return (sum % 10 === 0) && (sum > 0);
         },
 
         // Options
@@ -412,7 +415,7 @@
         // @param  function
         // @return object   this instanceof CardCheck
         onGuess: function(callback) {
-            
+
             // If callback isn't a function, then don't set anything
             if (typeof callback !== 'function') {
                 return this;
@@ -435,7 +438,7 @@
         // @param  function
         // @return object   this instanceof CardCheck
         onReset: function(callback) {
-            
+
             // If callback isn't a function, then don't set anything
             if (typeof callback !== 'function') {
                 return this;
@@ -443,7 +446,7 @@
 
             // Unknown with no card means that we've been reset
             return this.onUnknown(function(card) {
-                if ( ! card) {
+                if (!card) {
                     callback();
                 }
             });
@@ -479,7 +482,7 @@
             }
 
             // Default to empty array if not found
-            if ( ! this._callbacks[type]) {
+            if (!this._callbacks[type]) {
                 this._callbacks[type] = [];
             }
 
@@ -495,7 +498,7 @@
         _runCallbacks: function(type, args, context) {
             // Execute callbacks if any exist
             var callbacks = this._callbacks[type];
-            if ( ! callbacks || callbacks.length === 0) {
+            if (!callbacks || callbacks.length === 0) {
                 return this;
             }
 
@@ -518,7 +521,7 @@
 
             // Trigger Card Change Callback
             if (this._cardType !== card) {
-                this._runCallbacks('onCardChange', [ card, this.niceName(card) ]);
+                this._runCallbacks('onCardChange', [card, this.niceName(card)]);
             }
 
             this._cardType = card;
@@ -579,23 +582,23 @@
 
             // Call onValid
             if (isValid === true) {
-                
-                this._runCallbacks('onValid', [ card, this.niceName(card) ]);
 
-            // Call onInvalid
+                this._runCallbacks('onValid', [card, this.niceName(card)]);
+
+                // Call onInvalid
             } else if (isValid === false) {
 
                 this._runCallbacks('onInvalid');
 
-            // Call onUnknown
+                // Call onUnknown
             } else if (isValid === null) {
 
-                this._runCallbacks('onUnknown', [ card, this.niceName(card) ]);
+                this._runCallbacks('onUnknown', [card, this.niceName(card)]);
 
             }
 
             // Run OnToggle last so that the other more explicit methods fire first
-            this._runCallbacks('onToggle', [ isValid, card, this.niceName(card) ]);
+            this._runCallbacks('onToggle', [isValid, card, this.niceName(card)]);
 
             return this;
         }
@@ -606,10 +609,10 @@
 
     // All above this line is in cardcheck-standalone.js
     // Begin jQuery Plugin -----------------------------
-    
+
     var // Need to do the CardCheckIcons
     CardCheckIcons = function($el, instanceID, options) {
-        
+
         // Icons were disabled by user
         if (typeof options.enableIcons !== 'undefined' && options.enableIcons !== true) {
             this.disabled = true;
@@ -621,7 +624,7 @@
         this.acceptedCards = options.acceptedCards;
 
         // Will be defaulted if not provided
-        this.iconLocation = options.iconLocation ? $(options.iconLocation): $el.parent();
+        this.iconLocation = options.iconLocation ? $(options.iconLocation) : $('#accepted-cards-images');
         this.iconDir = options.iconDir ? options.iconDir : '../../img/cards/';
         this.iconExt = options.iconExt ? options.iconExt : 'png';
         this.iconClass = options.iconClass ? options.iconClass : 'card-icons';
@@ -629,7 +632,7 @@
         this.createIcons();
 
         // Cache all DOM nodes of image tags
-        this.icons = $( '.' + this.iconClass + this.uniqueClass );
+        this.icons = $('.' + this.iconClass + this.uniqueClass);
 
         return this;
     };
@@ -644,10 +647,10 @@
 
             var that = this;
 
-            $.each( that.acceptedCards, function( k, icon ) {
-                $('.payments .form-control').append( $('<img>').attr( 'id', 'card-' + icon + that.uniqueClass )
-                    .attr( 'src', that.iconDir + icon + '.' + that.iconExt )
-                    .addClass( that.iconClass + that.uniqueClass ) );
+            $.each(that.acceptedCards, function(k, icon) {
+                that.iconLocation.append($('<img>').attr('id', 'card-' + icon + that.uniqueClass)
+                    .attr('src', that.iconDir + icon + '.' + that.iconExt)
+                    .addClass(that.iconClass + that.uniqueClass));
             });
 
             return this;
@@ -705,15 +708,15 @@
     $.cardcheck = function(element, options) {
 
         // Used to store the card check instances of each 
-        if ( ! w.CardCheckInstances) {
+        if (!w.CardCheckInstances) {
             w.CardCheckInstances = {};
         }
 
         // Check if options defined by element and remap
         // Allows initialization like $.cardcheck({ input: '#card-input' });
-        if ( typeof element === 'object' && 'input' in element ) {
+        if (typeof element === 'object' && 'input' in element) {
             options = element;
-            element = options.input;            
+            element = options.input;
         }
 
         // Default Options if CardCheck was initialized with no settings
@@ -721,20 +724,20 @@
 
         var // Setup private vars for this instance
         $el = $(element),
-        card = new CardCheck(options),
-        instanceID = Math.floor(Math.random()*1000),
-        icons = new CardCheckIcons($el, instanceID, card._settings),
-        Broadcast = function(event) {
-            this.event = event;
-            this.run = function(args) {
-                $el.trigger('cc:' + this.event, args);
-            };
+            card = new CardCheck(options),
+            instanceID = Math.floor(Math.random() * 1000),
+            icons = new CardCheckIcons($el, instanceID, card._settings),
+            Broadcast = function(event) {
+                this.event = event;
+                this.run = function(args) {
+                    $el.trigger('cc:' + this.event, args);
+                };
 
-            return this;
-        },
-        callbacks = ['onToggle', 'onValid', 'onValidation', 'onInvalid', 'onError',
-            'onUnknown', 'onGuess', 'onReset', 'onCardChange', 'onTypeUpdate'
-        ];
+                return this;
+            },
+            callbacks = ['onToggle', 'onValid', 'onValidation', 'onInvalid', 'onError',
+                'onUnknown', 'onGuess', 'onReset', 'onCardChange', 'onTypeUpdate'
+            ];
 
         $el.addClass('cardcheck-instance-' + instanceID).data('cardcheck-instance', instanceID);
 
@@ -744,17 +747,17 @@
         // var cardinput = $('#credit-card').cardcheck();
         // var instance = cardinput.cardcheck('instance')
         // instance.onValid(); --> ALL CardCheck methods available
-        if ( ! w.CardCheckInstances[instanceID] ) {
+        if (!w.CardCheckInstances[instanceID]) {
             w.CardCheckInstances[instanceID] = card;
         }
 
         // Setup the Broadcast!
         for (var i = 0; i < callbacks.length; i++) {
             (function(callback) {
-                
+
                 // Broadcast if that method exists
                 if (card[callback]) {
-                    
+
                     var bc = new Broadcast(callback);
                     card[callback](function() {
                         bc.run(arguments);
@@ -762,13 +765,13 @@
 
                     // If this callback is found in the options, attempt to set it
                     if (options[callback]) {
-                        card[callback]( options[callback] );
+                        card[callback](options[callback]);
                     }
                 }
 
             })(callbacks[i]);
         }
-   
+
         card // Setup Callbacks for Icon Management
         .onInvalid(function() {
             icons.hideAll();
@@ -782,7 +785,7 @@
 
         // Update Card Number on User Input
         $el.on("keyup.cardcheck change.cardcheck", function() {
-            card.cardNumber( $(this).val() );
+            card.cardNumber($(this).val());
         });
 
         // Trigger initialization complete
@@ -796,9 +799,9 @@
     $.fn.cardcheck = function(options) {
 
         // Already Instantiated. Fetching Internal Methods
-        if ( $(this).data('cardcheck-instance') ) {
+        if ($(this).data('cardcheck-instance')) {
 
-            var instance = w.CardCheckInstances[ $(this).data('cardcheck-instance') ];
+            var instance = w.CardCheckInstances[$(this).data('cardcheck-instance')];
 
             if (options === 'instance') {
                 return instance;
@@ -807,17 +810,17 @@
                 return $(this);
             }
 
-        // CardCheck wasn't initialized yet
+            // CardCheck wasn't initialized yet
         } else if (options === 'instance' || options === 'evaluate') {
             return $(this);
         }
 
         // Instantiate the Plugin
         return this.each(function() {
-            if ( $(this).data('cardcheck') !== true ) {
+            if ($(this).data('cardcheck') !== true) {
                 return $.cardcheck(this, options).data('cardcheck', true);
             }
         });
     };
-    
+
 })(window, jQuery);

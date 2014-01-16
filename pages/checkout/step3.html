@@ -114,6 +114,10 @@
 				<p>
 					Lorem Ipsum is simply text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and.
 				</p>
+        <ul>
+          <li>Isso é um erro terrível.</li>
+          <li>Você errou o cartão, errou a sua vida inteira.</li>
+        </ul>
 			</div>
 
 			<div class="column main col-sm-7 col-md-6">
@@ -168,7 +172,8 @@
 									<input type="radio" name="payment" value="boleto">
 									<div class="input-radio"></div>
 								</div>
-								<div class="type boleto">
+                <div class="boleto"></div>
+								<div class="type">
 									Boleto bancário
 								</div>
 							</label>
@@ -180,15 +185,12 @@
 									<input type="radio" name="payment" value="card">
 									<div class="input-radio"></div>
 								</div>
-								<div class="type card">
+                <div class="card"></div>
+								<div class="type">
 									Cartão de crédito
+                  <div id="accepted-cards-images"></div>
 								</div>
-                <div>
-                  <select class="form-control" disabled>
-                    <option>1x de R$90.216,10</option>
-                    <option>2x de R$516,10</option>
-                  </select>
-                </div>
+                
 							</label>
 						</div>
 
@@ -202,10 +204,12 @@
 								<label class="control-label">Número do cartão</label>
 								<input id="credit-card" type="text" class="form-control">
 							</div>
-							<div class="form-group col-sm-6 payments">
-								<label></label>
-								<div class="form-control">
-								</div>
+							<div class="form-group col-sm-6">
+								<label>Parcelamento</label>
+								<select class="form-control" >
+                  <option>1x de R$90.216,10</option>
+                  <option>2x de R$516,10</option>
+                </select>
 							</div>
 							<div class="form-group col-sm-3 col-xs-6">
 								<label class="span-text">Validade do cartão</label>
@@ -227,12 +231,12 @@
 									<option>01</option>
 								</select>
 							</div>
-							<div class="form-group col-sm-3">
+							<div class="form-group col-sm-5 col-xs-6">
 								<label class="span-text">Código de segurança</label>
 								<input type="text" class="form-control">
 							</div>
-              <div class="form-group col-sm-1">
-                <label class="span-text"></label>
+              <div class="form-group col-xs-1">
+                <label></label>
                 <div  class="popover-icon" 
                       data-toggle="popover"
                       data-content="Esse código é muito importante para a sua segurança e a saúde do seu gato. Os cartões tem várias bandeiras e os países também."></div>
@@ -270,12 +274,12 @@
 		</div>
 	</div>
 
-  <div class="container" style="display:none">
+  <div class="container" style="">
     <div class="row">
 
-      <div class="alert alert-block alert-success col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3" >
-        <div class="fa fa-check pull-left"></div>
-        <h2>Pedido <span>#23742</span> feito com sucesso!</h2>
+      <div class="alert alert-block alert-warning col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3" >
+        <div class="fa fa-clock-o pull-left"></div>
+        <h2>Aguardando pagamento do <b>boleto</b></h2>
       </div>
 
       <div class="column col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
@@ -288,7 +292,8 @@
 
             <div class="form-group">
               <label class="label-fill">
-                <div class="type boleto">
+                <div class="boleto"></div>
+                <div class="type">
                   Boleto bancário
                 </div>
                 <div>
@@ -302,7 +307,7 @@
 
           </div>
 
-          <h3>Resumo do pedido</h3>
+          <h3>Resumo do pedido <strong>#34526</strong></h3>
 
           <div class="media-list">
 
