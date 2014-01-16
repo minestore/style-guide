@@ -8193,6 +8193,11 @@ select.form-control:focus {
   margin: 0 31px;
   margin-top: 10px;
 }
+.alert ul {
+  font-size: 14px;
+  margin: 0 10px;
+  margin-top: 10px;
+}
 .alert h2 {
   padding: 0;
   margin: 0;
@@ -8662,11 +8667,6 @@ header.header {
   transition-duration: 0.35s;
   -webkit-transition-delay: 0;
   transition-delay: 0;
-}
-@media (max-width: 480px) {
-  .checkout .column.side {
-    display: none;
-  }
 }
 .checkout .alert {
   padding-right: 23px;
