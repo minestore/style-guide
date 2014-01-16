@@ -168,7 +168,8 @@
 									<input type="radio" name="payment" value="boleto">
 									<div class="input-radio"></div>
 								</div>
-								<div class="type boleto">
+                <div class="boleto"></div>
+								<div class="type">
 									Boleto bancário
 								</div>
 							</label>
@@ -180,15 +181,12 @@
 									<input type="radio" name="payment" value="card">
 									<div class="input-radio"></div>
 								</div>
-								<div class="type card">
+                <div class="card"></div>
+								<div class="type">
 									Cartão de crédito
+                  <div id="accepted-cards-images"></div>
 								</div>
-                <div>
-                  <select class="form-control" disabled>
-                    <option>1x de R$90.216,10</option>
-                    <option>2x de R$516,10</option>
-                  </select>
-                </div>
+                
 							</label>
 						</div>
 
@@ -202,10 +200,12 @@
 								<label class="control-label">Número do cartão</label>
 								<input id="credit-card" type="text" class="form-control">
 							</div>
-							<div class="form-group col-sm-6 payments">
-								<label></label>
-								<div class="form-control">
-								</div>
+							<div class="form-group col-sm-6">
+								<label>Parcelamento</label>
+								<select class="form-control" >
+                  <option>1x de R$90.216,10</option>
+                  <option>2x de R$516,10</option>
+                </select>
 							</div>
 							<div class="form-group col-sm-3 col-xs-6">
 								<label class="span-text">Validade do cartão</label>
@@ -227,11 +227,11 @@
 									<option>01</option>
 								</select>
 							</div>
-							<div class="form-group col-sm-3">
+							<div class="form-group col-sm-5 col-xs-8">
 								<label class="span-text">Código de segurança</label>
 								<input type="text" class="form-control">
 							</div>
-              <div class="form-group col-sm-1">
+              <div class="form-group col-xs-1">
                 <label class="span-text"></label>
                 <div  class="popover-icon" 
                       data-toggle="popover"

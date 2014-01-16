@@ -62,31 +62,38 @@
 			&.type {
         text-align: left;
 				position: relative;
-				top: 1px;
-				@width: 29px; @height: 25px;
-				&:before {
-					content: '';
-					display: block;
-					float: left;
-					position: relative;
-					top: -2px;
-					margin-right: 12px;
-					width: @width; height: @height;
-					background-repeat: no-repeat;
-					background-position: center center;
-					.inactive &{
-						-webkit-filter: grayscale(1);
-						.translate3d(0,0,0);
-						opacity: 0.4;
-					}
-				}
-				&.card:before {
-					.image-retina(url('../img/cartao.png'),url('../img/cartao@2x.png'),@width,20px)
-				}
-				&.boleto:before {
-					.image-retina(url('../img/boleto.png'),url('../img/boleto@2x.png'),21px,@height)
-				}
+        padding-left: 15px;
+				top: -1px;
+        line-height: 26px;
+        #accepted-cards-images {
+          @media (min-width: @screen-lg) {
+            height: 0;
+            line-height: 23px;
+            float: right;
+          }
+          vertical-align: bottom;
+          line-height: 13px;
+          img {
+            height: 17px;
+            margin-right: 4px;
+          }
+        }
 			}
+      @width: 29px; @height: 25px;
+      &.card, &.boleto {
+        position: relative;
+        top: -1px;
+        width: @width;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
+      &.card {
+        .image-retina(url('../img/cartao.png'),url('../img/cartao@2x.png'),@width,20px)
+      }
+      &.boleto {
+        .image-retina(url('../img/boleto.png'),url('../img/boleto@2x.png'),21px,@height)
+      }
 			&.amount {
 				width: 1px;
         text-align: left;
@@ -111,10 +118,6 @@
       }
       padding-left: 2px;
       text-align: center;
-    }
-    select {
-      background: white;
-      font-size: 96%;
     }
 	}
 	
@@ -234,7 +237,7 @@
 		margin-bottom: 50px;
 	}
 
-	select.form-control {
+	select.form-control, select.form-control:focus {
 		.image-retina (url('../img/select.png'),url('../img/select@2x.png'),14px,9px);
 		background-position: right 10px center;
 		background-repeat: no-repeat;
