@@ -8694,6 +8694,9 @@ header.header {
 .checkout h3 {
   margin: 21px 0;
 }
+.checkout h3 strong {
+  margin-left: 5px;
+}
 .checkout hr {
   width: 120%;
   margin-left: -10%;
