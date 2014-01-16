@@ -7644,6 +7644,7 @@ fieldset[disabled] .btn.btn-secondary.active {
 label {
   font-size: 14px;
   font-weight: 400;
+  width: 100%;
   white-space: nowrap;
 }
 label:after {
