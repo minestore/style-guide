@@ -10,7 +10,7 @@
 		border-color: transparent;
     .transition(background, 0.2s, ease);
     
-    .button-size(13px, 20px, 15px, 25px, 4px);
+    .button-size(10px, 3px, 15px, 25px, 4px);
     padding-bottom: 10px;
 
 		&:hover {
@@ -27,6 +27,17 @@
       &:hover {
         background: lighten(@brand-primary, 50%);
         border-color: darken(@brand-primary,10);
+      }
+    }
+
+    &.btn-secondary {
+      .btn-primary;
+      background: @brand-secondary;
+      border-color: @brand-secondary;
+
+      &:hover {
+        background: darken(@brand-secondary, 10%);
+        border-color: darken(@brand-secondary, 10%);        
       }
     }
 
@@ -100,10 +111,20 @@
       }
     }
 
+    .input-group {
+      &.secondary {
+        input[type="text"] {
+          &:hover, &:focus {
+            border-color: @brand-secondary;  
+          }
+        }
+      }
+    }
+
   // button addons
     .input-group-btn {
       .btn {
-        .button-size(12px, 10px, 15px, 21px, 4px);
+        .button-size(12px, 3px, 15px, 21px, 4px);
       }
 
       .btn-default {
