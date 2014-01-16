@@ -41,6 +41,15 @@
       }
     }
 
+    &.btn-silent {
+      background: #EDEDED;
+
+      &:hover {
+        background: darken(#EDEDED,5%);
+        color:#000;
+      }
+    }
+
 	}
 
   // button sizes 
@@ -60,7 +69,8 @@
     }
     
     .btn-sm {
-      .button-size(7px, 7px, 13px, 21px, 4px);
+      .button-size(3px, 0px, 13px, 21px, 4px);
+      padding: 1px 8px 2px;
     }
 
     .btn-xs {

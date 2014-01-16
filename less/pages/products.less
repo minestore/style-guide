@@ -1,4 +1,4 @@
-// products
+// products list
 // -------------------------
   body.products {
 
@@ -71,6 +71,92 @@
             color:@brand-warning;
           }
         }
+
+      }
+    }
+
+  }
+
+
+// products show
+// -------------------------
+  body.products-show {
+    
+    .product-images.block {
+      .product-images {
+        .image {
+          .square(140px);
+          width: 100%;
+          background: #EBEBEB;
+          .transition(all, 0.2s, ease);
+
+          &.empty {
+            .fa; .fa-plus;
+            color:@brand-secondary;
+            text-align: center;
+            line-height: 140px;
+            cursor: hand;
+            cursor: pointer;
+
+            &:hover {
+              background: @brand-secondary;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+
+    .product-category.block {
+      .product-category {
+      }
+    }
+
+    .product-variations.block {
+      .product-variations {
+        
+        table.table {
+          .table-striped;
+          .table-hover;
+
+          // table sizes
+            .variation-actions {
+              width: 85px;
+            }
+
+          thead {
+            th {
+              font-size:13px;
+              line-height: 23px;
+              font-weight: normal;
+            }
+          }//thead 
+          
+          tbody {
+
+            tr {
+              td {
+                line-height: 30px;
+                vertical-align: middle;
+              }
+            }
+            
+            .variation-one, .variation-two, .variation-three, {
+              font:bold 14px @base-font;
+            }
+
+            .variation-one {
+              color:@brand-secondary;
+            }
+            .variation-two {
+              color:@brand-info;
+            }
+            .variation-three {
+              color:@brand-success;
+            }
+
+          }// tbody
+        }// table
 
       }
     }

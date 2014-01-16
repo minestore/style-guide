@@ -3197,12 +3197,13 @@ input[type="button"].btn-block {
   padding-bottom: 5px;
   line-height: 1.5;
   border-radius: 3px;
-  padding: 7px 7px;
-  padding: 5px 22px;
-  padding-bottom: 7px;
+  padding: 3px 0px;
+  padding: 1px 15px;
+  padding-bottom: 3px;
   font-size: 13px;
   line-height: 21px;
   border-radius: 4px;
+  padding: 1px 8px 2px;
 }
 @media (max-width: 767px) {
   .btn-group-sm > .btn {
@@ -3211,7 +3212,7 @@ input[type="button"].btn-block {
 }
 @media (max-width: 767px) {
   .btn-group-sm > .btn {
-    padding: 7px 12px;
+    padding: 3px 5px;
   }
 }
 .btn-group-lg > .btn {
@@ -7550,6 +7551,13 @@ fieldset[disabled] .btn.btn-secondary.active {
   background: #5b1e66;
   border-color: #5b1e66;
 }
+.btn.btn-silent {
+  background: #EDEDED;
+}
+.btn.btn-silent:hover {
+  background: #e0e0e0;
+  color: #000;
+}
 .btn-lg {
   padding: 16px 21px;
   padding: 14px 36px;
@@ -7564,16 +7572,17 @@ fieldset[disabled] .btn.btn-secondary.active {
   }
 }
 .btn-sm {
-  padding: 7px 7px;
-  padding: 5px 22px;
-  padding-bottom: 7px;
+  padding: 3px 0px;
+  padding: 1px 15px;
+  padding-bottom: 3px;
   font-size: 13px;
   line-height: 21px;
   border-radius: 4px;
+  padding: 1px 8px 2px;
 }
 @media (max-width: 767px) {
   .btn-sm {
-    padding: 7px 12px;
+    padding: 3px 5px;
   }
 }
 .btn-xs {
@@ -8335,6 +8344,13 @@ body {
   background: #f8f8f8;
   padding-bottom: 50px;
 }
+.block {
+  margin-bottom: 50px;
+}
+.box {
+  padding: 25px 20px 10px;
+  background: #fff;
+}
 .main-nav {
   position: fixed;
   top: 0;
@@ -8522,6 +8538,9 @@ header.header {
 .back:hover {
   background: #fff;
   color: #333;
+}
+.block-title {
+  line-height: 45px;
 }
 .checkout {
   background: #f8f8f8;
@@ -8829,4 +8848,81 @@ body.products .product-list .product-item .product-visibility .fa-eye {
 }
 body.products .product-list .product-item .product-visibility .fa-eye-slash {
   color: #fcda0e;
+}
+body.products-show .product-images.block .product-images .image {
+  width: 140px;
+  height: 140px;
+  width: 100%;
+  background: #EBEBEB;
+  transition: all 0.2s ease;
+  /* Standard */
+  -moz-transition: all 0.2s ease;
+  /* Firefox 4 */
+  -webkit-transition: all 0.2s ease;
+  /* Safari and Chrome */
+  -o-transition: all 0.2s ease;
+  /* Opera */
+  -ms-transition: all 0.2s ease;
+  /* IE */
+}
+body.products-show .product-images.block .product-images .image.empty {
+  display: inline-block;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #7e2a8d;
+  text-align: center;
+  line-height: 140px;
+  cursor: hand;
+  cursor: pointer;
+}
+body.products-show .product-images.block .product-images .image.empty.pull-left {
+  margin-right: .3em;
+}
+body.products-show .product-images.block .product-images .image.empty.pull-right {
+  margin-left: .3em;
+}
+body.products-show .product-images.block .product-images .image.empty:before {
+  content: "\f067";
+}
+body.products-show .product-images.block .product-images .image.empty:hover {
+  background: #7e2a8d;
+  color: #fff;
+}
+body.products-show .product-variations.block .product-variations table.table > tbody > tr:nth-child(odd) > td,
+body.products-show .product-variations.block .product-variations table.table > tbody > tr:nth-child(odd) > th {
+  background-color: #f9f9f9;
+}
+body.products-show .product-variations.block .product-variations table.table > tbody > tr:hover > td,
+body.products-show .product-variations.block .product-variations table.table > tbody > tr:hover > th {
+  background-color: #f5f5f5;
+}
+body.products-show .product-variations.block .product-variations table.table .variation-actions {
+  width: 85px;
+}
+body.products-show .product-variations.block .product-variations table.table thead th {
+  font-size: 13px;
+  line-height: 23px;
+  font-weight: normal;
+}
+body.products-show .product-variations.block .product-variations table.table tbody tr td {
+  line-height: 30px;
+  vertical-align: middle;
+}
+body.products-show .product-variations.block .product-variations table.table tbody .variation-one,
+body.products-show .product-variations.block .product-variations table.table tbody .variation-two,
+body.products-show .product-variations.block .product-variations table.table tbody .variation-three {
+  font: bold 14px Soleil, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+body.products-show .product-variations.block .product-variations table.table tbody .variation-one {
+  color: #7e2a8d;
+}
+body.products-show .product-variations.block .product-variations table.table tbody .variation-two {
+  color: #02b6e6;
+}
+body.products-show .product-variations.block .product-variations table.table tbody .variation-three {
+  color: #03cea0;
 }
