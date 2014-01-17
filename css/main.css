@@ -9131,6 +9131,58 @@ body.products-show .product-images.block .product-images .image.empty:hover {
   background: #7e2a8d;
   color: #fff;
 }
+body.products-show .product-category.block .product-category-list .category {
+  position: relative;
+  margin-top: 20px;
+  padding: 10px 20px 10px;
+}
+body.products-show .product-category.block .product-category-list .category h6 {
+  font: bold 14px Soleil, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #03cea0;
+}
+body.products-show .product-category.block .product-category-list .category .remove {
+  display: inline-block;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #ccc;
+  float: right;
+  line-height: 20px;
+  transition: all 0.2s ease;
+  /* Standard */
+  -moz-transition: all 0.2s ease;
+  /* Firefox 4 */
+  -webkit-transition: all 0.2s ease;
+  /* Safari and Chrome */
+  -o-transition: all 0.2s ease;
+  /* Opera */
+  -ms-transition: all 0.2s ease;
+  /* IE */
+}
+body.products-show .product-category.block .product-category-list .category .remove.pull-left {
+  margin-right: .3em;
+}
+body.products-show .product-category.block .product-category-list .category .remove.pull-right {
+  margin-left: .3em;
+}
+body.products-show .product-category.block .product-category-list .category .remove:before {
+  content: "\f00d";
+}
+body.products-show .product-category.block .product-category-list .category .remove:hover {
+  color: #666;
+}
+body.products-show .product-category.block .product-category-list .subcategory {
+  background: #FBFBFB;
+  border-left: 2px solid #03cea0;
+  padding: 4px 20px;
+  margin-bottom: 10px;
+}
+body.products-show .product-category.block .product-category-list .subcategory h6 {
+  font-size: 13px;
+}
 body.products-show .tag-list {
   margin: 0;
   padding: 0;
@@ -9172,6 +9224,44 @@ body.products-show .product-variations.block .product-variations table.table tbo
 }
 body.products-show .product-variations.block .product-variations table.table tbody .variation-three {
   color: #03cea0;
+}
+body.products-show .product-variations.block .new-variation {
+  display: inline-block;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #fff;
+  height: 40px;
+  display: block;
+  text-align: center;
+  line-height: 40px;
+  color: #7e2a8d !important;
+  transition: all 0.2s ease;
+  /* Standard */
+  -moz-transition: all 0.2s ease;
+  /* Firefox 4 */
+  -webkit-transition: all 0.2s ease;
+  /* Safari and Chrome */
+  -o-transition: all 0.2s ease;
+  /* Opera */
+  -ms-transition: all 0.2s ease;
+  /* IE */
+}
+body.products-show .product-variations.block .new-variation.pull-left {
+  margin-right: .3em;
+}
+body.products-show .product-variations.block .new-variation.pull-right {
+  margin-left: .3em;
+}
+body.products-show .product-variations.block .new-variation:before {
+  content: "\f067";
+}
+body.products-show .product-variations.block .new-variation:hover {
+  background: #7e2a8d;
+  color: #fff !important;
 }
 body.products-show .variation-form .icheckboxStock {
   margin: 25px auto 0;

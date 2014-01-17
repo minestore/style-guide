@@ -102,7 +102,7 @@
             <div class="col-sm-2">
               <div class="form-group">
                 <label for="">visível na loja?</label>
-                <input type="checkbox" class="form-control">
+                <input type="checkbox" class="form-control switch">
               </div>
             </div>
 
@@ -156,27 +156,56 @@
         <div class="product-category block">
           <h3>Categorias</h3>
           <div class="product-category box">
-          <form action="" class="form-inline">
-            <div class="row">
+            <form action="" class="form-inline">
+              <div class="row">
 
-              <div class="form-group col-sm-5">
-                <select name="" id="" class="form-control">
-                  <option value="1">Categoria</option>
-                </select>
+                <div class="form-group col-sm-5">
+                  <select name="" id="" class="form-control">
+                    <option value="1">Selecione uma categoria</option>
+                    <option value="1">Fixed Gear</option>
+                    <option value="1">Mountain Bike</option>
+                    <option value="1">Promoção</option>
+                    <option value="1">Bicicletas</option>
+                  </select>
+                </div>
+
+                <div class="form-group col-sm-5">
+                  <select name="" id="" class="form-control">
+                    <option value="1">Não usar subcategoria</option>
+                  </select>
+                </div>
+
+                <div class="form-group col-sm-2">
+                  <button class="btn btn-primary">adicionar</button>
+                </div>
+
+              </div>
+            </form>
+          </div>
+
+          <div class="row product-category-list">
+            <div class="col-sm-12">
+
+              <div class="category box">
+                <h6>
+                  Destaque na Home
+                  <a href="#" class="remove"></a>
+                </h6>
               </div>
 
-              <div class="form-group col-sm-5">
-                <select name="" id="" class="form-control">
-                  <option value="1">Sub-categoria</option>
-                </select>
+              <div class="category box">
+                <h6>
+                  Destaque na Home
+                </h6>
+                <div class="subcategory">
+                  <h6>
+                    Destaque na Home
+                    <a href="#" class="remove"></a>
+                  </h6>
+                </div>
               </div>
-
-              <div class="form-group col-sm-2">
-                <button class="btn btn-primary">adicionar</button>
-              </div>
-
+              
             </div>
-          </form>
           </div>
         </div>
 
@@ -218,9 +247,9 @@
             <table class="table">
               <thead>
                 <tr>
-                  <th class="variation-one">variação 01</th>
-                  <th class="variation-two">variação 02</th>
-                  <th class="variation-three">variação 03</th>
+                  <th class="variation-one">cor</th>
+                  <th class="variation-two">quadro</th>
+                  <th class="variation-three">relação</th>
                   <th class="variation-stock">sku</th>
                   <th class="variation-price">preço</th>
                   <th class="variation-stock">qtd</th>
@@ -230,11 +259,11 @@
               <tbody>
                 <tr>
                   <td class="variation-one">Preto</td>
-                  <td class="variation-two">38</td>
+                  <td class="variation-two">37</td>
                   <td class="variation-three">53x18</td>
-                  <td class="variation-sku">#1234</td>
+                  <td class="variation-sku">#7655</td>
                   <td class="variation-price">R$1.999,00</td>
-                  <td class="variation-stock">12</td>
+                  <td class="variation-stock">6</td>
                   <td class="variation-actions">
                     <a href="#" class="btn btn-info btn-sm" data-toggle="modal" data-target="#editVariation">
                       <i class="fa fa-pencil-square-o"></i>
@@ -245,12 +274,12 @@
                   </td>
                 </tr>
                 <tr>
-                  <td class="variation-one">Preto</td>
-                  <td class="variation-two">38</td>
+                  <td class="variation-one">Azul</td>
+                  <td class="variation-two">37</td>
                   <td class="variation-three">53x18</td>
-                  <td class="variation-sku">#1234</td>
+                  <td class="variation-sku">#6534</td>
                   <td class="variation-price">R$1.999,00</td>
-                  <td class="variation-stock">12</td>
+                  <td class="variation-stock">3</td>
                   <td class="variation-actions">
                     <a href="#" class="btn btn-info btn-sm" data-toggle="modal" data-target="#editVariation">
                       <i class="fa fa-pencil-square-o"></i>
@@ -261,12 +290,12 @@
                   </td>
                 </tr>
                 <tr>
-                  <td class="variation-one">Preto</td>
+                  <td class="variation-one">Verde</td>
                   <td class="variation-two">38</td>
                   <td class="variation-three">53x18</td>
-                  <td class="variation-sku">#1234</td>
+                  <td class="variation-sku">#5243</td>
                   <td class="variation-price">R$1.999,00</td>
-                  <td class="variation-stock">12</td>
+                  <td class="variation-stock">1</td>
                   <td class="variation-actions">
                     <a href="#" class="btn btn-info btn-sm" data-toggle="modal" data-target="#editVariation">
                       <i class="fa fa-pencil-square-o"></i>
@@ -279,6 +308,10 @@
               </tbody>
             </table>
           </div>
+
+          <a href="#" class="new-variation" data-toggle="modal" data-target="#editVariation">
+            
+          </a>
         </div>
         
 
