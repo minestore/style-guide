@@ -45,18 +45,27 @@ $(function() {
   // product show
     function productShow() {
       
-      // if($('#hasShipment').length) {
-        $('#shipment').on('click', function(){
-          if( $('#shipment').checked ) {
-            $('.block-shipment').slideUp();
-            console.log('oi');
-          } else {
-            $('.block-shipment').slideDown();
-            console.log('tchau');
+      if($('#shipment').length) {
+        $('#shipment').on('ifChecked ifUnchecked', function(event){
+          if (event.type == 'ifChecked') {
+            $('.block-shipment').addClass('open');
+          } else{
+            $('.block-shipment').removeClass('open');
           }
         });
+      }
 
-      // }
+      if($('#stockControl').length) {
+        $('#stockControl').on('ifChecked ifUnchecked', function(event){
+          if (event.type == 'ifChecked') {
+            $('#stockQty').val('').addClass('unlimited');
+            $('#stockQty').prop('disabled', true);
+          } else{
+            $('#stockQty').prop('disabled', false);
+            $('#stockQty').val('').removeClass('unlimited');
+          }
+        });
+      }
     }
 
   // init 

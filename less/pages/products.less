@@ -179,12 +179,34 @@
         margin-left: 10px;
       }
       
-      .block-shipment {display: none;}
 
       .block-variations, .block-shipment, .block-price {
         padding-top: 20px;
         padding-bottom: 10px;
         border-bottom: 1px solid #ddd;
+      }
+
+      .block-shipment {
+        height: 0px; 
+        overflow: hidden; 
+        padding:0; 
+        border: none;
+        .opacity(0);
+        .transition(all,0.3s,ease);
+
+        &.open {
+          .opacity(1);
+          height: 119px; 
+          padding-top: 20px;
+          padding-bottom: 10px;
+          border-bottom: 1px solid #ddd;
+        }
+      }
+
+      .unlimited {
+        font:32px/20px @base-font;
+        color:@brand-secondary;
+        border: none;
       }
     }
 
