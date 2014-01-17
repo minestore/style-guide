@@ -122,19 +122,22 @@
           <h3>Imagens</h3>
           
           <div class="product-images row">
-            <div class="col-sm-3">
-               <div class="image empty">
-               </div>
-            </div>
-            <div class="col-sm-3">
-               <div class="image empty"></div>
-            </div>
-            <div class="col-sm-3">
-               <div class="image empty"></div>
-            </div>
-            <div class="col-sm-3">
-               <div class="image empty"></div>
-            </div>
+            <form action="/images/" class="dropzone dz-clickable" id="imagesUpload">
+              <div class="dz-default dz-message">
+                <div class="col-sm-3">
+                   <div class="image empty"></div>
+                </div>
+                <div class="col-sm-3">
+                   <div class="image empty"></div>
+                </div>
+                <div class="col-sm-3">
+                   <div class="image empty"></div>
+                </div>
+                <div class="col-sm-3">
+                   <div class="image empty"></div>
+                </div>
+              </div>
+            </form>
           </div>
         </div>
         
@@ -314,8 +317,6 @@
           </a>
         </div>
         
-
-  
       </div>
     </div>
   </div>
@@ -455,6 +456,7 @@
   <script src="../../js/bootstrap/modal.js"></script>
   <script src="../../js/icheck.min.js"></script>
   <script src="../../js/jquery.tagsinput.min.js"></script>
+  <script src="../../js/dropzone.min.js"></script>
   <script src="../../js/dashboard.js"></script>
 </body>
 </html>

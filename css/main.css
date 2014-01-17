@@ -9131,6 +9131,53 @@ body.products-show .product-images.block .product-images .image.empty:hover {
   background: #7e2a8d;
   color: #fff;
 }
+body.products-show .product-images.block .dropzone .dz-started .dz-default.dz-message {
+  display: none;
+}
+body.products-show .product-images.block .dropzone .dz-preview {
+  position: relative;
+  display: inline-block;
+  width: 25%;
+  background: #7e2a8d;
+  overflow: hidden;
+}
+body.products-show .product-images.block .dropzone .dz-preview .dz-details .dz-filename,
+body.products-show .product-images.block .dropzone .dz-preview .dz-details .dz-size {
+  display: none;
+}
+body.products-show .product-images.block .dropzone .dz-preview .dz-details img {
+  width: 100%;
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+body.products-show .product-images.block .dropzone .dz-preview .dz-error-message {
+  display: none;
+}
+body.products-show .product-images.block .dropzone .dz-preview .dz-success-mark,
+body.products-show .product-images.block .dropzone .dz-preview .dz-error-mark {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+body.products-show .product-images.block .dropzone .dz-preview .dz-progress {
+  position: absolute;
+  top: 100px;
+  left: 6px;
+  right: 6px;
+  height: 6px;
+  background: #d7d7d7;
+  display: none;
+}
+body.products-show .product-images.block .dropzone .dz-preview .dz-progress .dz-upload {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  background-color: #8cc657;
+}
 body.products-show .product-category.block .product-category-list .category {
   position: relative;
   margin-top: 20px;

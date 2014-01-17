@@ -75,7 +75,16 @@ $(function() {
            'defaultText':'',
            'removeWithBackspace' : true
         });
+      }
 
+      if( $('#imagesUpload').length ) {
+
+        var myDropzone = new Dropzone("#imagesUpload", { thumbnailWidth: 400, thumbnailHeight:400});
+
+        myDropzone.on("addedfile", function(file) {
+        });
+
+        
       }
       
     }
