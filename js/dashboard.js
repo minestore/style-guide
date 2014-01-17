@@ -66,6 +66,18 @@ $(function() {
           }
         });
       }
+
+      if($('#productTags').length) {
+        $('#productTags').tagsInput({
+           'height':'auto',
+           'width':'100%',
+           'interactive':true,
+           'defaultText':'',
+           'removeWithBackspace' : true
+        });
+
+      }
+      
     }
 
   // init 
