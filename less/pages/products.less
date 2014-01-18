@@ -87,16 +87,17 @@
 
       .product-images {
         .image {
-          .square(140px);
+          height: 179px;
           width: 100%;
           background: #EBEBEB;
           .transition(all, 0.2s, ease);
+          margin-bottom: 10px;
 
           &.empty {
             .fa; .fa-plus;
             color:@brand-secondary;
             text-align: center;
-            line-height: 140px;
+            line-height: 179px;
             cursor: hand;
             cursor: pointer;
 
@@ -105,30 +106,129 @@
               color: #fff;
             }
           }
+
+          &.full {
+            margin-top: 10px;
+            background: #fff;
+            height: 40px;
+            line-height: 40px;
+          }
         }
       }
 
       .dropzone {
+
         .dz-started {
-          .dz-default.dz-message {
+          .dz-message {
             display: none;
           }
         }
+
         .dz-preview {
-          .col-sm-3();
           position: relative;
           display: inline-block;
-          width: 25%;
           background: @brand-secondary;
           overflow: hidden;
 
           .dz-details {
+
+            &:hover {
+              .dz-overlay {
+                .opacity(0.8);
+              }
+
+              .dz-remove, .dz-edit, .dz-move {
+                .opacity(1);
+              }
+            }
+
             .dz-filename, .dz-size {display: none;}
             
             img {
               width: 100%;
               height: auto;
               .img-responsive;
+            }
+
+            .dz-remove {
+              .fa; .fa-trash-o;
+              .square(35px);
+              position: absolute;
+              bottom:10px;
+              right:10px;
+              background: #fff;
+              color:#666;
+              text-align: center;
+              line-height: 35px;
+              -webkit-border-radius: 5px;
+              -moz-border-radius: 5px;
+              border-radius: 5px;
+              .opacity(0);
+              z-index: 2;
+              .transition(all, 0.2s, ease);
+
+              &:hover {
+                background: @brand-danger;
+                color:#fff;
+              }
+            }
+
+            .dz-edit {
+              .fa; .fa-pencil-square-o;
+              .square(35px);
+              position: absolute;
+              top:10px;
+              left:10px;
+              background: #fff;
+              color:#666;
+              text-align: center;
+              line-height: 35px;
+              -webkit-border-radius: 5px;
+              -moz-border-radius: 5px;
+              border-radius: 5px;
+              .opacity(0);
+              z-index: 2;
+              .transition(all, 0.2s, ease);
+
+              &:hover {
+                background: @brand-info;
+                color:#fff;
+              }
+            }
+
+            .dz-move {
+              .fa; .fa-arrows;
+              .square(35px);
+              position: absolute;
+              top:10px;
+              right:10px;
+              background: #fff;
+              color:#666;
+              text-align: center;
+              line-height: 35px;
+              -webkit-border-radius: 5px;
+              -moz-border-radius: 5px;
+              border-radius: 5px;
+              .opacity(0);
+              z-index: 2;
+              .transition(all, 0.2s, ease);
+
+              &:hover {
+                background: @brand-info;
+                color:#fff;
+              }
+            }
+
+            .dz-overlay {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              background: @brand-secondary;
+              z-index: 1;
+              .opacity(0);
+              .transition(all, 0.2s, ease);
             }
           }
 
@@ -138,9 +238,24 @@
 
           .dz-success-mark, .dz-error-mark {
             position: absolute;
-            top: 0;
-            left: 0;
+            top: 10px;
+            left: 10px;
+            display: block;
+            .fa-2x;
+            .opacity(0);
           }
+
+          .dz-success-mark {
+            .fa; .fa-check-circle-o;
+            color:@brand-success;
+          }
+
+          .dz-error-mark {
+            .fa; .fa-times-circle-o;
+            color:@brand-danger;
+          }
+
+
 
           .dz-progress {
             position: absolute;
@@ -162,6 +277,17 @@
             }
           }
 
+        }
+
+        .dz-error {
+          .dz-preview .dz-error-mark {
+            .opacity(1);
+          }
+        }
+        .dz-success {
+          .dz-preview .dz-success-mark {
+            .opacity(1);
+          }
         }
       }
     }

@@ -78,14 +78,67 @@ $(function() {
       }
 
       if( $('#imagesUpload').length ) {
+        var template = '<div class="col-xs-3"><div class="image"><div class="dz-preview dz-file-preview"><div class="dz-details"><a class="dz-remove" href="javascript:undefined;" data-dz-remove=""></a><a href="#" class="dz-edit" data-toggle="modal" data-target="#editImage"></a><a href="#" class="dz-move"></a><div class="dz-filename"><span data-dz-name></span></div><div class="dz-size" data-dz-size></div><div class="dz-overlay"></div><img data-dz-thumbnail /></div><div class="dz-progress"><span class="dz-upload" data-dz-uploadprogress></span></div><div class="dz-success-mark"></div><div class="dz-error-mark"></div><div class="dz-error-message"><span data-dz-errormessage></span></div></div></div></div>';
+        var myDropzone = new Dropzone("#imagesUpload", { 
+          thumbnailWidth: 400, 
+          thumbnailHeight:400,
+          previewTemplate : template,
+          maxFilesize: 4096,
+          init: function() {
+            var totalFiles = 0,
+                completeFiles = 0,
+                emptyBlocksTemplate = '<div class="col-xs-3"><div class="image empty dz-message"></div></div>',
+                emptyBlocksSingleTemplate = '<div class="col-xs-12"><div class="image empty full dz-message"></div></div>';
 
-        var myDropzone = new Dropzone("#imagesUpload", { thumbnailWidth: 400, thumbnailHeight:400});
+            this.on("addedfile", function (file) {
+                totalFiles += 1;
+            });
 
-        myDropzone.on("addedfile", function(file) {
+            this.on("removed file", function (file) {
+                totalFiles -= 1;
+                $(this).parent().remove();
+            });
+
+            this.on("complete", function (file) {
+                completeFiles += 1;
+                if (completeFiles === totalFiles) {
+                  $('form.dropzone').find('.dz-message').remove();
+                  
+                  if ( totalFiles / 4 < 1 ) {
+                    
+                    var emptyBlocks = 4 - completeFiles;
+                    $('form.dropzone').find('.image.empty').remove();
+                    
+                    for(var i = 0; i < emptyBlocks ;i++) {
+                      $('form.dropzone').append(emptyBlocksTemplate);
+                    }
+
+                  } else if (totalFiles / 4 > 1 && totalFiles / 4 < 2 ) {
+                    
+                    var emptyBlocks = 8 - completeFiles;
+                    $('form.dropzone').find('.image.empty').remove();
+                    for(var i = 0; i < emptyBlocks ;i++) {
+                      $('form.dropzone').append(emptyBlocksTemplate);
+                    }
+                  } else if ( totalFiles / 4 == 1 ) {
+                    $('form.dropzone').append(emptyBlocksSingleTemplate);
+                  }
+                }
+            });
+          } 
         });
 
-        
+
       }
+
+      $('#imagesUpload').on('change', function() {
+        console.log('1');
+        if( $('.dropzone').hasClass('dz-started') ) {
+          console.log('2');
+          $('dz-message').hide();
+          console.log('3');
+        }      })
+
       
     }
 
