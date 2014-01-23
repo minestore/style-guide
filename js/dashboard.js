@@ -149,7 +149,7 @@ $(function() {
       }
 
       if( $('#imagesUpload').length ) {
-        var template = '<div class="col-xs-3"><div class="image"><div class="dz-preview dz-file-preview"><div class="dz-details"><a class="dz-remove" href="javascript:undefined;" data-dz-remove=""></a><a href="#" class="dz-edit" data-toggle="modal" data-target="#editImage"></a><a href="#" class="dz-move"></a><div class="dz-filename"><span data-dz-name></span></div><div class="dz-size" data-dz-size></div><div class="dz-overlay"></div><img data-dz-thumbnail /></div><div class="dz-progress"><span class="dz-upload" data-dz-uploadprogress></span></div><div class="dz-success-mark"></div><div class="dz-error-mark"></div><div class="dz-error-message"><span data-dz-errormessage></span></div></div></div></div>';
+        var template = '<div class="col-xs-3"><div class="image"><div class="dz-preview dz-file-preview"><div class="dz-details"><a class="dz-remove" href="javascript:undefined;" data-dz-remove=""></a><a href="javascript:void(0);" class="dz-edit"></a><a href="#" class="dz-move"></a><div class="dz-filename"><span data-dz-name></span></div><div class="dz-size" data-dz-size></div><div class="dz-overlay"></div><img data-dz-thumbnail /></div><div class="dz-progress"><span class="dz-upload" data-dz-uploadprogress></span></div><div class="dz-success-mark"></div><div class="dz-error-mark"></div><div class="dz-error-message"><span data-dz-errormessage></span></div></div></div></div>';
         var myDropzone = new Dropzone("#imagesUpload", { 
           thumbnailWidth: 400, 
           thumbnailHeight:400,
@@ -199,15 +199,36 @@ $(function() {
             });
           } 
         });
-      }
 
-      // $('#imagesUpload').on('change', function() {
-      //   console.log('1');
-      //   if( $('.dropzone').hasClass('dz-started') ) {
-      //     console.log('2');
-      //     $('dz-message').hide();
-      //     console.log('3');
-      //   }      })
+        var featherEditor = new Aviary.Feather({
+          apiKey: '392c33a577413954',
+          apiVersion: 3,
+          theme: 'light',
+          tools: 'all',
+          appendTo: '',
+          onSave: function(imageID, newURL) {
+           var img = document.getElementById(imageID);
+           img.src = newURL;
+          },
+          onError: function(errorObj) {
+           alert(errorObj.message);
+          }
+        });
+
+        function launchEditor(id, src) {
+          featherEditor.launch({
+            image: id,
+            url: src
+          });
+          return false;
+        }
+
+        $(document).on('click', '.dz-edit', function(e) {
+          launchEditor('image1', 'http://images.aviary.com/imagesv5/feather_default.jpg');
+          e.preventDefault();
+        });
+
+      }
 
       
     }

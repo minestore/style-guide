@@ -9130,14 +9130,22 @@ header.header .list-inline {
   clear: both;
 }
 .back {
-  position: relative;
-  top: 11px;
+  display: inline-block;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   width: 40px;
   height: 40px;
+  position: relative;
+  top: 4px;
+  right: -20px;
   margin-right: 10px;
   background: #ececec;
   text-align: center;
-  line-height: 45px;
+  line-height: 40px;
   float: left;
   color: #666;
   transition: all 0.2s ease;
@@ -9150,6 +9158,15 @@ header.header .list-inline {
   /* Opera */
   -ms-transition: all 0.2s ease;
   /* IE */
+}
+.back.pull-left {
+  margin-right: .3em;
+}
+.back.pull-right {
+  margin-left: .3em;
+}
+.back:before {
+  content: "\f053";
 }
 .back:hover {
   background: #fff;
