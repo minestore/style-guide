@@ -47,14 +47,14 @@ $(function() {
 
       if( $('.inline-title').length ) {
 
-        $('.editable-title, .edit-content').on('click',function(){
+        $('.editable-title').on('click',function(){
           $('.editable-title').addClass('active').focus();
-          $('.save, .cancel').show();
+          $('.inline-title .save, .inline-title .cancel').show();
         });
 
         $('.inline-title .cancel').on('click',function(){
           $('.editable-title').removeClass('active');
-          $('.save, .cancel').hide();
+          $('.inline-title .save,.inline-title .cancel').hide();
         });
 
         // $('.editable-title').on('blur',function(){
@@ -66,12 +66,15 @@ $(function() {
 
           $('.editable-title').attr('data-toggle','tooltip').attr('title','Woo hoo :)').attr('data-trigger','manual').tooltip('show');
           $('.editable-title').removeClass('active');
-          $('.save, .cancel').hide();
+          $('.inline-title .save,.inline-title .cancel').hide();
           
           setTimeout(function(){
             $('.editable-title').tooltip('destroy');
           },2000);
         });
+      }
+
+      if( $('.product-description-content').length ) {
 
         var editor = new MediumEditor('.product-description-content', {
           anchorInputPlaceholder: 'Digite o link',
@@ -83,14 +86,35 @@ $(function() {
           targetBlank: true
         });
 
-      }
-
-      if( $('.product-description-content').length ) {
         $('.product-description-content').on('click',function(){
           $(this).addClass('active').focus();
           $('.product-description').find('.save, .cancel').show();
         });
-      });
+
+        $('.product-description .cancel').on('click',function(){
+          $('.product-description-content').removeClass('active');
+          $('.product-description .save, .product-description .cancel').hide();
+        });
+
+        $('.product-description .save').on('click',function(){
+
+          $('.product-description-content').attr('data-toggle','tooltip').attr('title','Woo hoo :)').attr('data-trigger','manual').tooltip('show');
+          $('.product-description-content').removeClass('active');
+          $('.product-description .save, .product-description .cancel').hide();
+          
+          setTimeout(function(){
+            $('.product-description-content').tooltip('destroy');
+          },2000);
+        });
+      }
+
+      if($('.edit-content').length) {
+        $('.edit-content').on('click',function(){
+          $('.editable-title').addClass('active');
+          $('.product-description-content').addClass('active');
+          $('.save, .cancel').show();
+        });
+      }
       
       if($('#shipment').length) {
         $('#shipment').on('ifChecked ifUnchecked', function(event){

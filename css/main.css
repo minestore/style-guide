@@ -9850,6 +9850,15 @@ body.products-show .product-description .product-description-content:-ms-input-p
 body.products-show .product-description .product-description-content.active {
   border-color: #ddd;
 }
+body.products-show .product-description .product-description-content.active:hover {
+  border-color: #ddd;
+}
+body.products-show .product-description .product-description-content.active:focus {
+  border-color: #da1c69;
+}
+body.products-show .product-description .product-description-content:hover {
+  border-color: transparent;
+}
 body.products-show .product-description .product-description-content h1 {
   font: 16px Soleil, "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333;
