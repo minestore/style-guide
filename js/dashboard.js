@@ -44,6 +44,53 @@ $(function() {
 
   // product show
     function productShow() {
+
+      if( $('.inline-title').length ) {
+
+        $('.editable-title, .edit-content').on('click',function(){
+          $('.editable-title').addClass('active').focus();
+          $('.save, .cancel').show();
+        });
+
+        $('.inline-title .cancel').on('click',function(){
+          $('.editable-title').removeClass('active');
+          $('.save, .cancel').hide();
+        });
+
+        // $('.editable-title').on('blur',function(){
+        //   $('.editable-title').removeClass('active');
+        //   $('.save, .cancel').hide();
+        // });
+
+        $('.inline-title .save').on('click',function(){
+
+          $('.editable-title').attr('data-toggle','tooltip').attr('title','Woo hoo :)').attr('data-trigger','manual').tooltip('show');
+          $('.editable-title').removeClass('active');
+          $('.save, .cancel').hide();
+          
+          setTimeout(function(){
+            $('.editable-title').tooltip('destroy');
+          },2000);
+        });
+
+        var editor = new MediumEditor('.product-description-content', {
+          anchorInputPlaceholder: 'Digite o link',
+          buttons: ['header1','bold', 'italic', 'unorderedlist'],
+          buttonLabels: 'fontawesome',
+          firstHeader: 'h1',
+          secondHeader: 'h2',
+          delay: 100,
+          targetBlank: true
+        });
+
+      }
+
+      if( $('.product-description-content').length ) {
+        $('.product-description-content').on('click',function(){
+          $(this).addClass('active').focus();
+          $('.product-description').find('.save, .cancel').show();
+        });
+      });
       
       if($('#shipment').length) {
         $('#shipment').on('ifChecked ifUnchecked', function(event){
@@ -96,7 +143,8 @@ $(function() {
 
             this.on("removed file", function (file) {
                 totalFiles -= 1;
-                $(this).parent().remove();
+                
+                console.log(file);
             });
 
             this.on("complete", function (file) {
@@ -127,17 +175,15 @@ $(function() {
             });
           } 
         });
-
-
       }
 
-      $('#imagesUpload').on('change', function() {
-        console.log('1');
-        if( $('.dropzone').hasClass('dz-started') ) {
-          console.log('2');
-          $('dz-message').hide();
-          console.log('3');
-        }      })
+      // $('#imagesUpload').on('change', function() {
+      //   console.log('1');
+      //   if( $('.dropzone').hasClass('dz-started') ) {
+      //     console.log('2');
+      //     $('dz-message').hide();
+      //     console.log('3');
+      //   }      })
 
       
     }

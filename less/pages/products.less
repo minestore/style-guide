@@ -81,6 +81,90 @@
 // products show
 // -------------------------
   body.products-show {
+
+    // inline title
+    .inline-title {
+      float: left;
+      clear:both;
+      .clearfix();
+
+      .editable-title {
+        .form-control;
+        position: relative;
+        left: -14px;
+        width: 350px;
+        font:26px @base-font;
+        color:@brand-primary;
+        float: left;
+        background: transparent;
+        border-color: transparent;
+        .transition(all, 0.2s, ease);
+
+        &:hover {
+          border-color: transparent;
+        }
+
+        &.active {
+          .form-control;
+          position: relative;
+          left: -14px;
+          width: 350px;
+          width: 350px;
+          float: left;
+          font:26px @base-font;
+          color:@brand-primary;
+        }
+          
+        &::after {
+          .fa; .fa-pencil-square-o;
+        }
+
+      }
+
+      .save, .cancel {
+        display: none;
+        float: left;
+        margin-right: 10px;
+      }
+    }
+
+    // description
+    .product-description {
+
+      .product-description-content {
+        .form-control;
+        height: auto;
+        font:14px/170% @base-font;
+        color:#666;
+        padding: 20px 25px;
+        border-color: transparent;
+
+        &.active {
+          border-color: #ddd;
+        }
+
+        h1 {
+          font:16px @base-font;
+          color:#333;
+          display: block;
+          font-weight: 600;
+          margin: 10px 0;
+        }
+        
+        strong, b {
+          font-weight: 900;
+          color:#333;
+        } 
+
+        em, i {
+          font-style: italic;
+        }
+      }
+
+      .save, .cancel {
+        display: none;
+      }
+    }
     
     // images
     .product-images.block {
@@ -343,8 +427,6 @@
         display: inline-block;
       }
     }
-
-
 
     // variations
     .product-variations.block {

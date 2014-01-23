@@ -92,8 +92,16 @@
               </a>
             </div>
             <div class="col-sm-9">
-              <h1 class="header-title">Fixed Gear</h1>
+              <div class="inline-title">
+                <form action="">
+                  <input type="text" name="" id="" value="Fixed Gear" class="editable-title" tabindex="-1">
+                  <button class="btn btn-secondary save" type="button"><i class="fa fa-check"></i></button>
+                  <button class="btn btn-danger cancel" type="button"><i class="fa fa-times"></i></button>
+                </form>
+              </div>
+
               <ul class="list-inline">
+                <li><a href="#" class="edit-content">Editar</a></li>
                 <li><a href="#">Duplicar</a></li>
                 <li><a href="#">Excluir</a></li>
               </ul>  
@@ -117,6 +125,19 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-8 col-sm-offset-2">
+
+        <div class="product-description block">
+          <h3 class="block-title">
+            Descrição
+            <!-- <button class="btn btn-info btn-sm pull-right"> <i class="fa fa-pencil-square-o"></i> editar </button> -->
+          </h3>
+          
+          <div class="form-group">
+            <div class="product-description-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+          </div>
+          <a href="#" class="btn btn-secondary save"><i class="fa fa-check"></i></a>
+          <a href="#" class="btn btn-danger cancel"><i class="fa fa-times"></i></a>
+        </div>
         
         <div class="product-images block">
           <h3>Imagens</h3>
@@ -138,21 +159,6 @@
                 </div>
               </div>
             </form>
-          </div>
-        </div>
-        
-        <div class="product-description block">
-          <h3 class="block-title">
-            Descrição
-            <button class="btn btn-info btn-sm pull-right"> <i class="fa fa-pencil-square-o"></i> editar </button>
-          </h3>
-          <div class="product-description">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           </div>
         </div>
         
@@ -473,9 +479,11 @@
   <script src="../../js/retina-1.1.0.min.js"></script>
   <script src="../../js/bootstrap/dropdown.js"></script>
   <script src="../../js/bootstrap/modal.js"></script>
+  <script src="../../js/bootstrap/tooltip.js"></script>
   <script src="../../js/icheck.min.js"></script>
   <script src="../../js/jquery.tagsinput.min.js"></script>
   <script src="../../js/dropzone.min.js"></script>
+  <script src="../../js/medium-editor.min.js"></script>
   <script src="../../js/dashboard.js"></script>
 </body>
 </html>
