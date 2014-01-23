@@ -77,8 +77,8 @@ $(function() {
       if( $('.product-description-content').length ) {
 
         var editor = new MediumEditor('.product-description-content', {
-          anchorInputPlaceholder: 'Digite o link',
-          buttons: ['header1','bold', 'italic', 'unorderedlist'],
+          anchorInputPlaceholder: 'www.exemplo.com.br',
+          buttons: ['header1','bold', 'italic','anchor', 'unorderedlist'],
           buttonLabels: 'fontawesome',
           firstHeader: 'h1',
           secondHeader: 'h2',

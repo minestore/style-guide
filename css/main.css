@@ -8876,7 +8876,6 @@ span.tag a:before {
 }
 .medium-editor-toolbar-form-anchor {
   display: none;
-  background: #02b6e6;
   color: #fff;
 }
 .medium-editor-toolbar-form-anchor input,
@@ -8885,10 +8884,12 @@ span.tag a:before {
 }
 .medium-editor-toolbar-form-anchor input {
   margin: 0;
-  padding: 6px;
-  height: 60px;
-  width: 316px;
+  padding: 15px 20px;
+  width: 210px;
   background: #02b6e6;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
   border: none;
   color: #fff;
   font-size: 14px;
@@ -9874,6 +9875,10 @@ body.products-show .product-description .product-description-content b {
 body.products-show .product-description .product-description-content em,
 body.products-show .product-description .product-description-content i {
   font-style: italic;
+}
+body.products-show .product-description .product-description-content a {
+  font-weight: 900;
+  color: #02b6e6;
 }
 body.products-show .product-description .save,
 body.products-show .product-description .cancel {
