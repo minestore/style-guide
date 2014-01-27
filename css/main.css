@@ -8963,6 +8963,7 @@ table tr.danger {
 }
 body.login {
   background: #da1c69;
+  -webkit-font-smoothing: subpixel-antialiased;
 }
 body.login .logo {
   width: 75px;
@@ -8977,7 +8978,7 @@ body.login .form-group .control-label small {
   filter: alpha(opacity=10000);
 }
 body.login .form-group .control-label small a {
-  font-size: 13px;
+  font-size: 14px;
   color: #ffffff !important;
   opacity: 100;
   filter: alpha(opacity=10000);
