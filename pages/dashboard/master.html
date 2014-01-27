@@ -109,7 +109,13 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-8 col-sm-offset-2">
-        woo hoo
+        
+        <a href="#" class="btn btn-danger" onclick="noty({text: 'noty - a jquery notification library!', type: 'error'});">erro</a>
+        <a href="#" class="btn btn-warning" onclick="noty({text: 'noty - a jquery notification library!', type: 'alert'});">alerta</a>
+        <a href="#" class="btn btn-success" onclick="noty({text: 'noty - a jquery notification library!', type: 'success'});">sucesso!</a>
+        <a href="#" class="btn btn-info" onclick="noty({text: 'noty - a jquery notification library!', type: 'information'});">info!</a>
+
+
       </div>
     </div>
   </div>
@@ -117,10 +123,10 @@
   <!-- scripts -->
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   <script src="../../js/retina-1.1.0.min.js"></script>
+  <script src="../../js/noty/packaged/jquery.noty.packaged.min.js"></script>
   <script src="../../js/bootstrap/dropdown.js"></script>
   <script src="../../js/icheck.min.js"></script>
   <script src="../../js/dashboard.js"></script>
-
 </body>
 </html>
 

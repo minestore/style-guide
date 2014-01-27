@@ -8382,6 +8382,38 @@ select.form-control:focus {
 .alert .btn.btn-warning:hover {
   color: #fcda0e;
 }
+#noty_top_layout_container {
+  width: 100% !important;
+  left: 0 !important;
+  z-index: 90 !important;
+}
+#noty_top_layout_container li {
+  -webkit-border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+  border-radius: 0 !important;
+  border: none !important;
+  background-image: none !important;
+}
+#noty_top_layout_container li .noty_bar {
+  padding: 14px 30px;
+  font-weight: bold;
+}
+#noty_top_layout_container li .noty_type_error {
+  color: #fff;
+  background: #f54627 !important;
+}
+#noty_top_layout_container li .noty_type_alert {
+  color: #fff;
+  background: #fcda0e !important;
+}
+#noty_top_layout_container li .noty_type_success {
+  color: #fff;
+  background: #03cea0 !important;
+}
+#noty_top_layout_container li .noty_type_information {
+  color: #fff;
+  background: #02b6e6 !important;
+}
 .panel.panel-info {
   border-color: #02b6e6;
 }
