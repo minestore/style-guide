@@ -8978,8 +8978,9 @@ body.login .form-group .control-label small {
   filter: alpha(opacity=10000);
 }
 body.login .form-group .control-label small a {
-  font-size: 14px;
+  font-size: 13px;
   color: #ffffff !important;
+  font-weight: bold;
   opacity: 100;
   filter: alpha(opacity=10000);
 }
