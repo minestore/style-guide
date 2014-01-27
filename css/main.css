@@ -8986,7 +8986,7 @@ body.login .form-group input {
   border: 0 !important;
   font-weight: bold;
 }
-body.login .btn-default {
+body.login .btn-login {
   width: 140px;
   display: block;
   text-align: center;
@@ -9002,9 +9002,26 @@ body.login .cta {
 }
 body.login .cta a {
   font-weight: bold;
+  color: #fff;
 }
 body.login .cta a:hover {
   text-decoration: underline;
+}
+body.login .new-account {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  height: 0;
+  overflow: hidden;
+}
+body.login .new-account.animated {
+  height: auto !important;
+}
+body.login .new-account .btn {
+  text-align: center;
+  width: 190px;
+  display: block;
+  margin: 0 auto;
+  outline: 0;
 }
 body {
   background: #f8f8f8;

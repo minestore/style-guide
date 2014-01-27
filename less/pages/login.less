@@ -24,13 +24,14 @@
           }
         }
       }
+
       input {
         border: 0 !important;
         font-weight: bold;
       }
     }
 
-    .btn-default {
+    .btn-login {
       width: 140px;
       display: block;
       text-align: center;
@@ -48,9 +49,27 @@
 
       a {
         font-weight: bold;
+        color:#fff;
         &:hover {
           text-decoration: underline;
         }
+      }
+    }
+    .new-account {
+      .opacity(0);
+      height: 0;
+      overflow: hidden;
+
+      &.animated {
+        height: auto !important;
+      }
+
+      .btn {
+        text-align: center;
+        width: 190px;
+        display: block;
+        margin: 0 auto;
+        outline: 0;
       }
     }
   }

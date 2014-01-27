@@ -233,10 +233,45 @@ $(function() {
       
     }
 
+  // login
+    function login() {
+      if ($('#new-account').length) {
+        
+        $('#new-account').on('click', function(e){
+          $('form.new-account').addClass('animated fadeInUp');
+          e.preventDefault();
+        });
+
+        $('#create-store').on('click', function(e){
+          var email = $('.new-account .e-mail').val();
+
+          $.ajax({
+              url: "http://www.minestore.com.br/leads",
+              type: "POST",
+              data: { email: email }
+          }).done(function(data) {
+              window.location.href = "/?blog_success=true";
+              analytics.track('Captured Lead');
+          }).fail(function(data) {
+              analytics.track('Fail to capture Lead');
+              $('.new-account .e-mail').addClass('animated shake');
+              $('.new-account .e-mail').attr('placeholder', 'pode digitar o email de novo?').val('');
+              setTimeout(function() {
+                  $('.e-mail').removeClass('shake');
+              }, 500);
+          });
+          e.preventDefault();
+        })
+
+      }
+    }
+
+
   // init 
 
   mainNav();
   typekit();
   productShow();
+  login();
 
 });

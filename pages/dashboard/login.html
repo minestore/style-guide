@@ -28,14 +28,21 @@
           <input type="password" class="form-control" id="password">
         </div>
 
-        <button class="btn btn-default btn-inverse">entrar</button>
+        <button class="btn btn-default btn-inverse btn-login">entrar</button>
 
       </form>
 
       <hr>
       
       <p class="cta">
-        Não tem conta? <a href="#" class="cta">Crie sua loja, é gratis! :)</a>
+        Não tem conta? <a href="#" id="new-account">Crie sua loja, é gratis! :)</a>
+
+        <form action="" class="new-account">
+          <div class="form-group">
+            <input type="e-mail" class="form-control e-mail" autocomplete="off" placeholder="Qual é seu e-mail?">
+          </div>
+          <button class="btn btn-default btn-inverse text-center" id="create-store">criar loja</button>
+        </form>
       </p>
 
       
@@ -45,10 +52,8 @@
   <!-- scripts -->
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   <script src="../../js/retina-1.1.0.min.js"></script>
-  <script src="../../js/bootstrap/dropdown.js"></script>
   <script src="../../js/icheck.min.js"></script>
   <script src="../../js/dashboard.js"></script>
-
 </body>
 </html>
 
