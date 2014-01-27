@@ -9023,6 +9023,13 @@ body.login .new-account .btn {
   margin: 0 auto;
   outline: 0;
 }
+body.login-recover h3 {
+  color: #fff;
+}
+body.login-recover label {
+  margin-top: 30px;
+  text-align: center;
+}
 body {
   background: #f8f8f8;
   padding-bottom: 50px;
