@@ -7504,6 +7504,14 @@ blockquote small {
   background: #fef7fa;
   border-color: #ad1653;
 }
+.btn.btn-default.btn-inverse {
+  border-color: #fff;
+  color: #fff;
+}
+.btn.btn-default.btn-inverse:hover {
+  background: #fff;
+  color: #da1c69;
+}
 .btn.btn-secondary {
   color: #ffffff;
   background-color: #da1c69;
@@ -8952,6 +8960,51 @@ table tr.warning td {
 }
 table tr.danger {
   color: #fff !important;
+}
+body.login {
+  background: #da1c69;
+}
+body.login .logo {
+  width: 75px;
+  height: 75px;
+  margin: 100px auto 50px;
+  text-align: center;
+  display: block;
+  text-decoration: none;
+}
+body.login .form-group label {
+  color: #fff;
+  font-weight: bold;
+}
+body.login .form-group label a {
+  color: #fff;
+}
+body.login .form-group label a:hover {
+  text-decoration: underline;
+}
+body.login .form-group input {
+  border: 0 !important;
+  font-weight: bold;
+}
+body.login .btn-default {
+  width: 140px;
+  display: block;
+  text-align: center;
+  margin: 20px auto;
+}
+body.login hr {
+  margin: 40px 0 30px;
+  border-color: #ea5994;
+}
+body.login .cta {
+  color: #fff;
+  text-align: center;
+}
+body.login .cta a {
+  font-weight: bold;
+}
+body.login .cta a:hover {
+  text-decoration: underline;
 }
 body {
   background: #f8f8f8;

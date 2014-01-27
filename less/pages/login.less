@@ -1,0 +1,56 @@
+// login
+// -------------------------
+  
+  body.login {
+    background: @brand-primary;
+
+    .logo {
+      .square(75px);
+      margin: 100px auto 50px;
+      text-align: center;
+      display: block;
+      text-decoration: none;
+    }
+
+    .form-group {
+      label {
+        color:#fff;
+        font-weight: bold;
+
+        a {
+          color:#fff;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+      input {
+        border: 0 !important;
+        font-weight: bold;
+      }
+    }
+
+    .btn-default {
+      width: 140px;
+      display: block;
+      text-align: center;
+      margin: 20px auto;
+    }
+
+    hr {
+      margin: 40px 0 30px;
+      border-color: lighten(@brand-primary, 15%);
+    }
+
+    .cta {
+      color:#fff;
+      text-align: center;
+
+      a {
+        font-weight: bold;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
